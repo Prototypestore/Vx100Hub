@@ -18,11 +18,26 @@ body {
   align-items: flex-end;
 }
 
-.site-nav a {
+.site-nav li {
   list-style: none;
 }
 
 .site-nav a {
+  text-decoration: none;
+  font-weight: 200;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-tart;
+}
+
+.logo li {
+  list-style: none;
+}
+
+.logo a {
   text-decoration: none;
   font-weight: 200;
 }
