@@ -24,36 +24,18 @@
     <section class="product-detail container">
       <!-- Service Image -->
       <figure class="product-image">
-        <img src="https://via.placeholder.com/600x400" alt="Service Image">
+        <img src="" alt="Service Image">
       </figure>
       <!-- Service Info -->
       <div class="product-info">
-        <h1 class="product-title">Website Design Package</h1>
-        <p class="product-price">£350</p>
-        <!-- Description (bullet points) -->
-        <ul id="product-details">
-          <li>• Single-page landing website designed to convert visitors.</li>
-          <li>• Fast and responsive design for mobile and desktop.</li>
-          <li>• Optimized for SEO to rank better on search engines.</li>
-          <li>• Customizable templates for small businesses.</li>
-          <li>• Optional blog page to complement the website.</li>
-        </ul>
+        <h1 class="product-title">Service Title</h1>
+        <p class="product-price">£0</p>
+        <!-- Description (bullet points injected dynamically) -->
+        <ul id="product-details"></ul>
         <!-- Packages / Options -->
         <form class="product-options" id="package-form">
           <fieldset class="package-fieldset">
             <legend>Choose a Package</legend>
-            <label>
-              <input type="radio" name="package" value="350" checked>
-              <span>Basic Website Package - £350</span>
-            </label>
-            <label>
-              <input type="radio" name="package" value="500">
-              <span>Standard Website Package - £500</span>
-            </label>
-            <label>
-              <input type="radio" name="package" value="750">
-              <span>Premium Website Package - £750</span>
-            </label>
           </fieldset>
           <!-- Quantity -->
           <fieldset class="quantity-fieldset">
@@ -66,13 +48,11 @@
           </fieldset>
           <button type="submit" class="btn-add-to-cart">Book Now</button>
         </form>
-        <!-- Guarantee -->
+        <!-- Guarantee Accordion -->
         <section class="product-accordion">
           <div class="accordion-item">
             <h2>Guarantee <button id="btn-re">∨</button></h2>
-            <p id="returns">
-              30-day satisfaction guarantee included with every service.
-            </p>
+            <p id="returns">30-day satisfaction guarantee included with every service.</p>
           </div>
         </section>
       </div>
@@ -83,5 +63,6 @@
     <p><a href="contact.html">Contact Us</a></p>
     <p>© 2025 Vx100Hub. All Rights Reserved.</p>
   </footer>
+  <script src="product.js"></script>
 </body>
 </html>
