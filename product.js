@@ -100,3 +100,13 @@ fetch("services.json")
 
   })
   .catch(err => console.error("Failed to load services.json", err));
+
+// ====== REDIRECT TO CONTACT PAGE ======
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('package-form');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // stop form submitting normally
+    window.location.href = 'contact.html';
+  });
+});
