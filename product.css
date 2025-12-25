@@ -45,15 +45,6 @@ body {
   color: #c8b6ff;
 }
 
-.cart-icon svg {
-  transition: transform 0.2s ease, stroke 0.2s ease;
-}
-
-.cart-icon:hover svg {
-  transform: scale(1.08);
-  stroke: #c8b6ff;
-}
-
 /* ================= PRODUCT PAGE LAYOUT ================= */
 .product-page .container {
   max-width: 1200px;
@@ -94,41 +85,39 @@ body {
   color: #c8b6ff;
 }
 
-/* ================= RATINGS ================= */
-.product-rating svg {
-  width: 160px;
-  height: 20px;
+/* ================= DESCRIPTION BULLET POINTS ================= */
+.product-description ul,
+#product-details {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #111827;
 }
 
-/* ================= COLOR OPTIONS ================= */
+.product-description li {
+  margin-bottom: 0.6rem;
+}
+
+/* ================= PACKAGE OPTIONS ================= */
 .product-options fieldset {
   border: none;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-.swatch {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  margin-right: 8px;
+.package-fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.swatch.beige  { background-color: #f5f5dc; }
-.swatch.white  { background-color: #ffffff; border: 1px solid #ccc; }
-.swatch.black  { background-color: #111827; }
-.swatch.purple { background-color: #c8b6ff; }
-
-input[type="radio"]:checked + .swatch {
+.package-fieldset input[type="radio"]:checked + span {
+  background-color: #c8b6ff;
+  color: #fff;
   border-color: #c8b6ff;
-  transform: scale(1.2);
 }
 
 /* ================= QUANTITY ================= */
@@ -161,6 +150,23 @@ input[type="radio"]:checked + .swatch {
   outline: none;
 }
 
+/* ================= BUTTON ================= */
+.btn-add-to-cart {
+  width: 180px;
+  padding: 12px 0;
+  background: #111827;
+  color: #fff;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-add-to-cart:hover {
+  background: #333;
+}
+
 /* ================= ACCORDION ================= */
 .accordion-item h2 {
   display: flex;
@@ -182,7 +188,7 @@ input[type="radio"]:checked + .swatch {
   display: block;
 }
 
-#btn-pro, #btn-re {
+#btn-re {
   border-radius: 50%;
   width: 28px;
   height: 28px;
@@ -191,14 +197,6 @@ input[type="radio"]:checked + .swatch {
   background: #fff;
   color: #111827;
   cursor: pointer;
-}
-
-/* ================= DETAILS BULLET POINTS ================= */
-#product-details ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-  margin-top: 0.8rem;
-  color: #111827;
 }
 
 /* ================= SIMILAR STYLES ================= */
