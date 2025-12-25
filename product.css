@@ -1,0 +1,228 @@
+/* ================= BASE & RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #fff;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: #111827; /* dark header */
+}
+
+.site-header .logo a {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #c8b6ff;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: #c8b6ff;
+}
+
+.cart-icon svg {
+  transition: transform 0.2s ease, stroke 0.2s ease;
+}
+
+.cart-icon:hover svg {
+  transform: scale(1.08);
+  stroke: #c8b6ff;
+}
+
+/* ================= PRODUCT PAGE LAYOUT ================= */
+.product-page .container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.product-image {
+  flex: 1 1 45%;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.product-info {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.product-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.product-price {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #c8b6ff;
+}
+
+/* ================= RATINGS ================= */
+.product-rating svg {
+  width: 160px;
+  height: 20px;
+}
+
+/* ================= COLOR OPTIONS ================= */
+.product-options fieldset {
+  border: none;
+  margin-bottom: 1.2rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.swatch {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.swatch.beige  { background-color: #f5f5dc; }
+.swatch.white  { background-color: #ffffff; border: 1px solid #ccc; }
+.swatch.black  { background-color: #111827; }
+.swatch.purple { background-color: #c8b6ff; }
+
+input[type="radio"]:checked + .swatch {
+  border-color: #c8b6ff;
+  transform: scale(1.2);
+}
+
+/* ================= QUANTITY ================= */
+.quantity {
+  display: inline-flex;
+  border: 2px solid #c8b6ff;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 42px;
+  width: fit-content;
+}
+
+.qty-btn {
+  width: 42px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.qty-btn:hover {
+  background: #f3f0ff;
+}
+
+#qty-value {
+  width: 55px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+/* ================= ACCORDION ================= */
+.accordion-item h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.accordion-item p {
+  display: none;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.accordion-item p.show {
+  display: block;
+}
+
+#btn-pro, #btn-re {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-weight: 600;
+  border: 1px solid #c8b6ff;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+}
+
+/* ================= DETAILS BULLET POINTS ================= */
+#product-details ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.8rem;
+  color: #111827;
+}
+
+/* ================= SIMILAR STYLES ================= */
+.similar-styles {
+  font-size: 0.9rem;
+  color: #374151;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.site-footer a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
