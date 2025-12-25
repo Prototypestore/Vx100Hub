@@ -24,6 +24,11 @@ body {
 }
 
 /* ================= FORM CONTAINER ================= */
+.contact-page h1,
+.contact-page p {
+  text-align: center;
+}
+
 .contact-form {
   background: #f9f9ff;
   padding: 2rem;
