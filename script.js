@@ -4,14 +4,14 @@ async function loadServices() {
     const response = await fetch('services.json');
     const services = await response.json();
 
-    const serviceGrid = document.getElementById('product-grid'); // use same grid ID
-    const trendingGrid = document.getElementById('trending-grid');
+    const serviceGrid = document.getElementById('service-grid'); // fixed ID
+    const trendingGrid = document.getElementById('trending-grid'); // optional, keep if needed
 
     services.forEach(service => {
       // Build URL to product.html
       const serviceURL = `product.html?id=${service.id}`;
 
-      // Calculate price display (you could add promo logic if needed)
+      // Price display
       const displayPrice = service.price.toFixed(2);
 
       // Service card HTML
@@ -29,8 +29,8 @@ async function loadServices() {
         window.location.href = serviceURL;
       });
 
-      // Optional trending grid (if you add a "trending" field to services)
-      if (service.trending) {
+      // Optional trending grid
+      if (service.trending && trendingGrid) {
         trendingGrid.insertAdjacentHTML('beforeend', cardHTML);
         trendingGrid.lastElementChild.addEventListener('click', () => {
           window.location.href = serviceURL;
