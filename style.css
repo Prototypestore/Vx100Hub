@@ -72,7 +72,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #8a7cf6, #000);
+  background: #8a2be2;
   height: 80vh;
   text-align: center;
   color: #fff;
@@ -177,26 +177,13 @@ main {
   margin-bottom: 1rem;
 }
 
-/* Low Stock Badge */
-.product-card .low-stock {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #8a7cf6;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.product-card h3,
+.product-card p {
+  color: #ffffff;
 }
 
-.product-card .low-stock:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+.product-card a {
+  text-decoration: none;
 }
 
 /* Reviews Section */
