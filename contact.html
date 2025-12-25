@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">Vx100<strong>Hub</strong></a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Main Content -->
+  <main class="contact-page container" style="margin-top: 4rem;">
+    <h1>Contact Us</h1>
+    <p>Have questions or want to discuss your project? Fill out the form below and we'll get back to you!</p>
+    <form id="contact-form" class="contact-form" style="margin-top: 2rem; max-width: 600px;">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" placeholder="Your Name" required>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  <label for="service">Service</label>
+  <select id="service" name="service" required>
+    <option value="">Select a Service</option>
+    <option value="Startup Website Package">Startup Website Package</option>
+    <option value="Landing Page">Landing Page</option>
+    <option value="Blog Page">Blog Page</option>
+    <option value="Themed Website Package">Themed Website Package</option>
+  </select>
+  <label for="message">Message / Details</label>
+  <textarea id="message" name="message" rows="6" placeholder="Any extra details..." required></textarea>
+  <button type="submit" class="btn-add-to-cart">Send / Book Now</button>
+  <p id="form-status" style="margin-top:1rem;"></p>
+</form>
+  </main>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p><a href="contact.html">Contact Us</a></p>
+    <p>© 2025 Vx100Hub. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
 
