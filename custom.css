@@ -1,1 +1,36 @@
+/* ================= CUSTOM PAGE ================= */
+.custom-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.custom-center {
+  text-align: center;
+}
+
+.custom-center h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.custom-center p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #374151;
+}
+
+/* Purple button override */
+.custom-center .btn-add-to-cart {
+  background: #8a7cf6;
+  color: #ffffff;
+}
+
+.custom-center .btn-add-to-cart:hover {
+  background: #6f63e6;
+}
 
