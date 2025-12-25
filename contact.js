@@ -1,5 +1,4 @@
-<script type="module">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
   const supabaseUrl = 'https://gwasxibrhchgrxctdngt.supabase.co';
   const supabaseKey = 'sb_publishable_MCTQtkika8OnHSOT27UpJQ__vcbV0Ja';
@@ -34,4 +33,3 @@
       form.reset();
     }
   });
-</script>
