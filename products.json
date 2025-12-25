@@ -1,1 +1,89 @@
+[
+  {
+    "id": "1",
+    "title": "Single-page Landing Website",
+    "image": "images/landing-page.jpg",
+    "details": "• Designed to convert visitors.\n• Fast and responsive.\n• SEO optimized for Google ranking.\n• Perfect for small businesses and startups.",
+    "returns": "• 30-day satisfaction guarantee.\n• Minor revisions included.",
+    "variants": [
+      {
+        "color": "Default",
+        "size": "Default",
+        "price": 299,
+        "stock": 100,
+        "trending": true
+      }
+    ],
+    "promotions": [
+      {
+        "type": "sale",
+        "discount": 0.15,
+        "start": "2025-12-01T00:00:00Z",
+        "end": "2025-12-31T23:59:59Z"
+      }
+    ],
+    "trending": true
+  },
+  {
+    "id": "2",
+    "title": "Full Business Website Package",
+    "image": "images/business-package.jpg",
+    "details": "• Complete website for cafes, salons, or plumbers.\n• Includes Home, About, Services, and Contact pages.\n• Mobile-first responsive design.\n• SEO optimized and performance-focused.",
+    "returns": "• 30-day satisfaction guarantee.\n• Minor revisions included.",
+    "variants": [
+      {
+        "color": "Default",
+        "size": "Default",
+        "price": 799,
+        "stock": 50,
+        "trending": false
+      }
+    ],
+    "promotions": [],
+    "trending": true
+  },
+  {
+    "id": "3",
+    "title": "Blog Integration",
+    "image": "images/blog-page.jpg",
+    "details": "• Fully integrated blog page.\n• Customizable categories and posts.\n• SEO friendly and fast loading.\n• Works with existing website or standalone.",
+    "returns": "• 30-day satisfaction guarantee.\n• Minor revisions included.",
+    "variants": [
+      {
+        "color": "Default",
+        "size": "Default",
+        "price": 199,
+        "stock": 75,
+        "trending": false
+      }
+    ],
+    "promotions": [],
+    "trending": false
+  },
+  {
+    "id": "4",
+    "title": "Marketing Agency Website Pack",
+    "image": "images/agency-pack.jpg",
+    "details": "• Themed website bundle for marketing agencies.\n• Includes landing, services, and portfolio pages.\n• Fully responsive and SEO optimized.\n• Optimized for client leads and conversions.",
+    "returns": "• 30-day satisfaction guarantee.\n• Minor revisions included.",
+    "variants": [
+      {
+        "color": "Default",
+        "size": "Default",
+        "price": 999,
+        "stock": 30,
+        "trending": true
+      }
+    ],
+    "promotions": [
+      {
+        "type": "sale",
+        "discount": 0.2,
+        "start": "2025-12-20T00:00:00Z",
+        "end": "2025-12-31T23:59:59Z"
+      }
+    ],
+    "trending": true
+  }
+]
 
