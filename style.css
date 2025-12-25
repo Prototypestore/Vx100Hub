@@ -44,6 +44,13 @@ body {
   text-decoration: none;
 }
 
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+
 .nav ul {
   display: flex;
   gap: 2rem;
