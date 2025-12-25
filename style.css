@@ -1,0 +1,244 @@
+/* Base & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  border-bottom: 1px solid #8a7cf6;
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #8a7cf6;
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #8a7cf6;
+}
+
+/* Offset main content for fixed header */
+main {
+  margin-top: 80px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8a7cf6, #000);
+  height: 80vh;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.hero-btn {
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  background: #fff;
+  color: #8a7cf6;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #8a7cf6;
+  color: #fff;
+}
+
+/* About Section */
+.about {
+  padding: 4rem 0;
+  background: #f9f9ff;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.about p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* Services Grid */
+.services {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #000;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Service Cards */
+.product-card {
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 0.8rem 0;
+}
+
+.product-card .price {
+  color: #8a7cf6;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Low Stock Badge */
+.product-card .low-stock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #8a7cf6;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card .low-stock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 4rem 0;
+  background: #f9f9ff;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.review-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #8a7cf6;
+}
+
+footer a {
+  color: #8a7cf6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
