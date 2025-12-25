@@ -12,6 +12,17 @@ body {
   line-height: 1.6;
 }
 
+.site-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.site-nav a {
+  text-decoration: none;
+  front-weight: 200;
+}
+
 /* ================= FORM CONTAINER ================= */
 .contact-form {
   background: #f9f9ff;
