@@ -26,8 +26,11 @@
 
 /* Purple button override */
 .custom-center .btn-add-to-cart {
-  background: #8a7cf6;
+  background: #411d73;
   color: #ffffff;
+  width: 150px;
+  height: 95px;
+  border-radius: 35px;
 }
 
 .custom-center .btn-add-to-cart:hover {
