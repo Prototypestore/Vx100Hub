@@ -20,7 +20,7 @@ body {
 
 .site-nav a {
   text-decoration: none;
-  front-weight: 200;
+  font-weight: 200;
 }
 
 /* ================= FORM CONTAINER ================= */
