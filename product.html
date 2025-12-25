@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details | Vx100Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">Vx100<strong>Hub</strong></a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li class="cart-nav">
+          <a href="cart.html" class="cart-icon" aria-label="View Cart"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- MAIN SERVICE DETAIL -->
+  <main class="product-page">
+    <section class="product-detail container">
+      <!-- Service Image -->
+      <figure class="product-image">
+        <img src="" alt="Service Image">
+      </figure>
+      <!-- Service Info -->
+      <div class="product-info">
+        <h1 class="product-title">Service Title</h1>
+        <p class="product-price">£0</p>
+        <!-- Description -->
+        <div class="product-description">
+          <ul id="product-details">
+            <!-- Bullet points injected here dynamically -->
+          </ul>
+        </div>
+        <!-- Packages / Options -->
+        <form class="product-options" id="package-form">
+          <fieldset class="package-fieldset">
+            <legend>Choose a Package</legend>
+            <!-- Options dynamically inserted -->
+          </fieldset>
+          <fieldset class="quantity-fieldset">
+            <legend>Quantity</legend>
+            <div class="quantity">
+              <button type="button" id="decrease" class="qty-btn">−</button>
+              <input type="number" id="qty-value" name="quantity" value="1" min="1">
+              <button type="button" id="increase" class="qty-btn">+</button>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn-add-to-cart">Book Now</button>
+        </form>
+        <!-- Guarantee -->
+        <section class="product-accordion">
+          <div class="accordion-item">
+            <h2>Guarantee <button id="btn-re">∨</button></h2>
+            <p id="returns">30-day satisfaction guarantee included with every service.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p><a href="contact.html">Contact Us</a></p>
+    <p>© 2025 Vx100Hub. All Rights Reserved.</p>
+  </footer>
+  <script src="product.js"></script>
+</body>
+</html>
