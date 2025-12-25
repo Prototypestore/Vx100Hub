@@ -107,6 +107,12 @@ body {
   color: #374151;
 }
 
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
   .contact-form {
