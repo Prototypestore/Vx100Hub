@@ -1,0 +1,81 @@
+/* ================= BASE & RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #fff;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* ================= FORM CONTAINER ================= */
+.contact-form {
+  background: #f9f9ff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #c8b6ff;
+}
+
+/* ================= BUTTON ================= */
+.contact-form .btn-add-to-cart {
+  padding: 0.8rem 2rem;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-form .btn-add-to-cart:hover {
+  background: #333;
+}
+
+/* ================= STATUS MESSAGE ================= */
+#form-status {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+}
