@@ -34,3 +34,23 @@
   background: #6f63e6;
 }
 
+.head {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #6f63e6;
+}
