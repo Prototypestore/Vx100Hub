@@ -2,28 +2,48 @@
   {
     "id": "1",
     "title": "Startup Website Package",
-    "description": "Full website including landing, contact, product pages for small businesses. Optimized for SEO and responsive.",
+    "details": [
+      "Full website including landing, contact, and product pages",
+      "Optimized for SEO",
+      "Responsive design for mobile and desktop",
+      "Perfect for small businesses"
+    ],
     "price": 250,
     "image": "images/startup-website.png"
   },
   {
     "id": "2",
     "title": "Landing Page",
-    "description": "Single-page landing website designed to convert visitors. Fast, responsive, SEO optimized.",
+    "details": [
+      "Single-page landing website",
+      "Designed to convert visitors",
+      "Fast loading and responsive",
+      "SEO optimized"
+    ],
     "price": 70,
     "image": "images/landing-page.png"
   },
   {
     "id": "3",
     "title": "Blog Page",
-    "description": "Stand-alone blog page or add-on to existing website. Clean design and SEO optimized.",
+    "details": [
+      "Stand-alone blog page or add-on to existing website",
+      "Clean and modern design",
+      "SEO optimized for better visibility",
+      "Responsive on all devices"
+    ],
     "price": 50,
     "image": "images/blog-page.png"
   },
   {
     "id": "4",
     "title": "Themed Website Package",
-    "description": "Multiple websites themed for industries like marketing agencies, cafes, salons, plumbers. Responsive & SEO ready.",
+    "details": [
+      "Multiple websites themed for specific industries",
+      "Industries include marketing agencies, cafes, salons, plumbers",
+      "Responsive & SEO ready",
+      "Customizable design options"
+    ],
     "price": 500,
     "image": "images/themed-package.png"
   }
