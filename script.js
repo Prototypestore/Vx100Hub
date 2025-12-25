@@ -1,63 +1,46 @@
-// -------------------- Dynamic Product Rendering --------------------
-async function loadProducts() {
+// -------------------- Dynamic Service Rendering --------------------
+async function loadServices() {
   try {
-    const response = await fetch('products.json');
-    const products = await response.json();
+    const response = await fetch('services.json');
+    const services = await response.json();
 
-    const shopGrid = document.getElementById('product-grid');
+    const serviceGrid = document.getElementById('product-grid'); // use same grid ID
     const trendingGrid = document.getElementById('trending-grid');
 
-    products.forEach(product => {
-      // Skip out-of-stock variants
-      const inStockVariants = product.variants.filter(v => v.stock > 0);
-      if (!inStockVariants.length) return;
-
-      // Pick best variant (trending or first in stock)
-      const bestVariant = inStockVariants.find(v => v.trending) || inStockVariants[0];
-
-      // Calculate promotion price
-      let displayPrice = bestVariant.price;
-      const now = new Date();
-      if (product.promotions && product.promotions.length > 0) {
-        product.promotions.forEach(promo => {
-          const start = new Date(promo.start);
-          const end = new Date(promo.end);
-          if (promo.type === "sale" && now >= start && now <= end) {
-            displayPrice = (bestVariant.price * (1 - promo.discount)).toFixed(2);
-          }
-        });
-      }
-
+    services.forEach(service => {
       // Build URL to product.html
-      const productURL = `product.html?id=${product.id}&color=${encodeURIComponent(bestVariant.color)}&size=${encodeURIComponent(bestVariant.size)}`;
+      const serviceURL = `product.html?id=${service.id}`;
 
-      // Product card HTML exactly like your product.html expects
+      // Calculate price display (you could add promo logic if needed)
+      const displayPrice = service.price.toFixed(2);
+
+      // Service card HTML
       const cardHTML = `
         <article class="product-card" style="cursor:pointer">
-          <img src="${product.image}" alt="${product.title}">
-          <h3>${product.title}</h3>
+          <img src="${service.image}" alt="${service.title}">
+          <h3>${service.title}</h3>
           <p class="price">£${displayPrice}</p>
         </article>
       `;
 
-      // Insert card into shop grid
-      shopGrid.insertAdjacentHTML('beforeend', cardHTML);
-      shopGrid.lastElementChild.addEventListener('click', () => {
-        window.location.href = productURL;
+      // Insert card into main grid
+      serviceGrid.insertAdjacentHTML('beforeend', cardHTML);
+      serviceGrid.lastElementChild.addEventListener('click', () => {
+        window.location.href = serviceURL;
       });
 
-      // Insert into trending grid if flagged
-      if (product.trending) {
+      // Optional trending grid (if you add a "trending" field to services)
+      if (service.trending) {
         trendingGrid.insertAdjacentHTML('beforeend', cardHTML);
         trendingGrid.lastElementChild.addEventListener('click', () => {
-          window.location.href = productURL;
+          window.location.href = serviceURL;
         });
       }
     });
   } catch (err) {
-    console.error("Failed to load products.json", err);
+    console.error("Failed to load services.json", err);
   }
 }
 
-// Load products on page load
-document.addEventListener('DOMContentLoaded', loadProducts);
+// Load services on page load
+document.addEventListener('DOMContentLoaded', loadServices);
