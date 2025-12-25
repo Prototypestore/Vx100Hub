@@ -33,4 +33,31 @@ async function loadProducts() {
 
       // Product card HTML exactly like your product.html expects
       const cardHTML = `
-        <article class="product-card" style=
+        <article class="product-card" style="cursor:pointer">
+          <img src="${product.image}" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <p class="price">£${displayPrice}</p>
+        </article>
+      `;
+
+      // Insert card into shop grid
+      shopGrid.insertAdjacentHTML('beforeend', cardHTML);
+      shopGrid.lastElementChild.addEventListener('click', () => {
+        window.location.href = productURL;
+      });
+
+      // Insert into trending grid if flagged
+      if (product.trending) {
+        trendingGrid.insertAdjacentHTML('beforeend', cardHTML);
+        trendingGrid.lastElementChild.addEventListener('click', () => {
+          window.location.href = productURL;
+        });
+      }
+    });
+  } catch (err) {
+    console.error("Failed to load products.json", err);
+  }
+}
+
+// Load products on page load
+document.addEventListener('DOMContentLoaded', loadProducts);
