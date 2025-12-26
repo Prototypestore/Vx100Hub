@@ -118,48 +118,6 @@ body {
   border-color: #c8b6ff;
 }
 
-/* ================= QUANTITY ================= */
-.quantity {
-  display: inline-flex;
-  border: 2px solid #c8b6ff;
-  border-radius: 6px;
-  overflow: hidden;
-  height: 42px;
-  width: fit-content;
-}
-
-.qty-btn {
-  width: 42px;
-  border: none;
-  background: #fff;
-  cursor: pointer;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.qty-btn:hover {
-  background: #f3f0ff;
-}
-
-#qty-value {
-  width: 55px;
-  text-align: center;
-  border: none;
-  outline: none;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
 /* ================= BUTTON ================= */
 .btn-add-to-cart {
   width: 180px;
