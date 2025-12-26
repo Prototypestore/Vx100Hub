@@ -26,12 +26,20 @@
 
 /* Purple button override */
 .custom-center .btn-add-to-cart {
+  display: inline-flex;          /* KEY FIX */
+  justify-content: center;
+  align-items: center;
+
   background: #411d73;
   color: #ffffff;
+
   width: 160px;
   height: 110px;
+
   border-radius: 35px;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .custom-center .btn-add-to-cart:hover {
