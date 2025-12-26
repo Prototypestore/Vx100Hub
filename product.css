@@ -177,6 +177,9 @@ input[type=number] {
   background: #333;
 }
 
+.btn-add-to-cart a {
+  text-decoration: none;
+}
 /* ================= ACCORDION ================= */
 .accordion-item h2 {
   display: flex;
