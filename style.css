@@ -192,30 +192,6 @@ main {
   text-decoration: none;
 }
 
-/* Reviews Section */
-.reviews {
-  padding: 4rem 0;
-  background: #f9f9ff;
-  text-align: center;
-}
-
-.reviews h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #000;
-}
-
-.review-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.review-grid img {
-  width: 100%;
-  border-radius: 10px;
-}
-
 /* Footer */
 footer {
   background: #000;
