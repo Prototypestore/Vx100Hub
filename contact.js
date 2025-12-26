@@ -5,12 +5,17 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
   status.textContent = 'Sending...';
 
-  // Send the form using EmailJS
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+  // 1️⃣ Send email to YOU
+  emailjs.sendForm('YOUR_SERVICE_ID', 'TEMPLATE_TO_YOU_ID', this)
     .then(() => {
-      status.textContent = '✅ Your message has been sent!';
+      // 2️⃣ Send auto-reply to USER
+      return emailjs.sendForm('YOUR_SERVICE_ID', 'TEMPLATE_AUTOREPLY_ID', this);
+    })
+    .then(() => {
+      status.textContent = '✅ Booking request sent!';
       form.reset();
-    }, (error) => {
+    })
+    .catch((error) => {
       console.error('EmailJS error:', error);
       status.textContent = '❌ Failed to send. Please try again.';
     });
