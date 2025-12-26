@@ -1,31 +1,32 @@
-// Initialize EmailJS with your Public Key
-emailjs.init('1gpBID1fbY4JDmxMY');
-
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
 
   // Show "Sending..." immediately
-  status.textContent = '📤 Sending your booking request…';
+  status.textContent = '📤 Sending...';
 
-  // Send booking email to YOU first
-  emailjs.sendForm('YOUR_SERVICE_ID', 'TEMPLATE_TO_YOU_ID', this)
-    .then(() => {
-      // Show success message immediately
-      status.textContent = '✅ Booking request sent! Thank you!';
-      form.reset();
+  // Collect all form data
+  const formData = new FormData(form);
+  const data = {};
+  formData.forEach((value, key) => data[key] = value);
 
-      // Send auto-reply to user asynchronously
-      emailjs.sendForm('YOUR_SERVICE_ID', 'TEMPLATE_AUTOREPLY_ID', this)
-        .catch((error) => {
-          console.error('Auto-reply error:', error);
-          // User already sees confirmation, so we don't block
-        });
-    })
-    .catch((error) => {
-      console.error('EmailJS error:', error);
-      status.textContent = '❌ Failed to send. Please try again.';
+  try {
+    // Send data to Google Sheet via your Apps Script Web App
+    await fetch('https://script.google.com/macros/s/AKfycbxyVVTISwp0XxWuu9r03YDbPxpq3J5KwPmx3dlHYs49ukZqhWtG51d10q20PA0g06bjTg/exec', {
+      method: 'POST',
+      mode: 'no-cors', // prevents CORS errors
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
+
+    // Assume success (no response due to no-cors)
+    status.textContent = '✅ Booking request sent! Thank you!';
+    form.reset();
+
+  } catch (err) {
+    console.error('Google Sheet error:', err);
+    status.textContent = '❌ Failed sending. Please try again.';
+  }
 });
