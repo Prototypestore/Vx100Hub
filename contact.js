@@ -2,7 +2,7 @@ const contactForm = document.getElementById('contact-form');
 const contactStatus = document.getElementById('form-status');
 
 contactForm.addEventListener('submit', async function(e) {
-  e.preventDefault(); // prevent default form submission
+  e.preventDefault(); // prevent default submission
 
   // Show sending message immediately
   contactStatus.textContent = '📤 Sending...';
@@ -13,14 +13,13 @@ contactForm.addEventListener('submit', async function(e) {
   formData.forEach((value, key) => data[key] = value);
 
   try {
-    // Send data to your Google Apps Script
     const response = await fetch(contactForm.action, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
 
-    // If the response returns JSON, parse it
+    // Parse JSON response from Apps Script
     const result = await response.json();
 
     if (result.status === 'success') {
