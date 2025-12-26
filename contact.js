@@ -1,30 +1,32 @@
 // ====== AUTO-FILL SERVICE AND TIER FROM URL ======
 const urlParams = new URLSearchParams(window.location.search);
-const serviceParam = urlParams.get('service');
-const tierParam = urlParams.get('tier');
+const contactServiceParam = urlParams.get('service');
+const contactTierParam = urlParams.get('tier');
 
-if (serviceParam) {
-  const serviceSelect = document.getElementById('service');
-  serviceSelect.value = serviceParam;
+const contactForm = document.getElementById('contact-form');
+const contactStatus = document.getElementById('form-status');
+
+const serviceSelect = document.getElementById('service');
+const tierInput = document.getElementById('selected-tier');
+
+if (contactServiceParam && serviceSelect) {
+  serviceSelect.value = contactServiceParam;
   serviceSelect.disabled = true; // prevent user from changing
 }
 
-if (tierParam) {
-  const tierInput = document.getElementById('selected-tier');
-  tierInput.value = tierParam;
+if (contactTierParam && tierInput) {
+  tierInput.value = contactTierParam;
 }
 
-const form = document.getElementById('contact-form');
-const status = document.getElementById('form-status');
-
-form.addEventListener('submit', async function(e) {
+// ====== FORM SUBMISSION TO GOOGLE SHEETS ======
+contactForm.addEventListener('submit', async function(e) {
   e.preventDefault();
 
   // Show sending immediately
-  status.textContent = '📤 Sending...';
+  contactStatus.textContent = '📤 Sending...';
 
   // Collect all form data
-  const formData = new FormData(form);
+  const formData = new FormData(contactForm);
   const data = {};
   formData.forEach((value, key) => data[key] = value);
 
@@ -32,7 +34,7 @@ form.addEventListener('submit', async function(e) {
   data.timestamp = new Date().toISOString();
 
   try {
-    // Send data to Google Sheets via Apps Script Web App
+    // Send data to Google Sheets
     await fetch('https://script.google.com/macros/s/AKfycbxyVVTISwp0XxWuu9r03YDbPxpq3J5KwPmx3dlHYs49ukZqhWtG51d10q20PA0g06bjTg/exec', {
       method: 'POST',
       mode: 'no-cors',
@@ -41,11 +43,11 @@ form.addEventListener('submit', async function(e) {
     });
 
     // Show success message
-    status.textContent = '✅ Booking request sent! Thank you!';
-    form.reset();
+    contactStatus.textContent = '✅ Booking request sent! Thank you!';
+    contactForm.reset();
 
   } catch (err) {
     console.error('Google Sheet error:', err);
-    status.textContent = '❌ Failed sending. Please try again.';
+    contactStatus.textContent = '❌ Failed sending. Please try again.';
   }
 });
