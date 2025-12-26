@@ -7,7 +7,6 @@ fetch("services.json")
   .then(res => res.json())
   .then(services => {
     const service = services.find(s => s.id === serviceId);
-
     if (!service) {
       document.querySelector(".product-title").textContent = "Service Not Found";
       document.querySelector(".product-price").textContent = "-";
@@ -28,18 +27,12 @@ fetch("services.json")
     imageEl.src = service.image;
     imageEl.alt = service.title;
 
-    // ====== FUNCTION TO UPDATE DETAILS & PRICE BASED ON PACKAGE ======
+    // ====== FUNCTION TO UPDATE DETAILS BASED ON PACKAGE ======
     function updatePackage(packageName) {
       let pkgDetails = [];
-      let pkgPrice = service.price;
-
-      if (packageName === "basic" && service.basic) {
-        pkgDetails = service.basic;
-      } else if (packageName === "pro" && service.pro) {
-        pkgDetails = service.pro;
-      } else if (packageName === "premium" && service.premium) {
-        pkgDetails = service.premium;
-      }
+      if (packageName === "basic" && service.basic) pkgDetails = service.basic;
+      else if (packageName === "pro" && service.pro) pkgDetails = service.pro;
+      else if (packageName === "premium" && service.premium) pkgDetails = service.premium;
 
       detailsList.innerHTML = "";
       pkgDetails.forEach(item => {
@@ -47,10 +40,6 @@ fetch("services.json")
         li.textContent = `• ${item}`;
         detailsList.appendChild(li);
       });
-
-      // Optionally adjust price if you want different prices per tier
-      // For now, we'll keep the main service price
-      priceEl.textContent = `£${pkgPrice.toFixed(2)}`;
     }
 
     // ====== INITIAL LOAD (basic by default) ======
@@ -62,67 +51,56 @@ fetch("services.json")
 
     ["basic", "pro", "premium"].forEach(tier => {
       const label = document.createElement("label");
-      label.classList.add("package-card"); // keep card styling
+      label.classList.add("package-card");
       label.innerHTML = `
         <input type="radio" name="package" value="${tier}" ${tier === "basic" ? "checked" : ""}>
         ${tier.charAt(0).toUpperCase() + tier.slice(1)}
       `;
       packageFieldset.appendChild(label);
 
-      // ====== LISTEN FOR CHECK ======
       label.querySelector("input").addEventListener("change", () => {
         updatePackage(tier);
       });
     });
 
-    // ====== ADD TO CART ======
+    // ====== ADD TO CART & REDIRECT ======
     const addToCartBtn = document.querySelector(".btn-add-to-cart");
     addToCartBtn.addEventListener("click", e => {
       e.preventDefault();
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
       const selectedPackage = document.querySelector('input[name="package"]:checked');
       if (!selectedPackage) return alert("Please select a package.");
 
+      // Add to cart
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const itemKey = service.id + "-" + selectedPackage.value;
-
       const existingIndex = cart.findIndex(item => item.id === itemKey);
-
       if (existingIndex !== -1) {
         cart[existingIndex].quantity += 1;
       } else {
         cart.push({
           id: itemKey,
           name: `${service.title} (${selectedPackage.value})`,
-          price: service.price, // use main service price
+          price: service.price,
           quantity: 1,
           image: service.image
         });
       }
-
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert("Added to cart!");
+
+      // Redirect to contact page with service & tier
+      const serviceName = encodeURIComponent(service.title);
+      const tier = encodeURIComponent(selectedPackage.value);
+      window.location.href = `contact.html?service=${serviceName}&tier=${tier}`;
     });
 
     // ====== ACCORDION ======
-    document.getElementById("btn-re").addEventListener("click", () => {
-      document.getElementById("returns").classList.toggle("show");
-    });
+    const accordionBtn = document.getElementById("btn-re");
+    if (accordionBtn) {
+      accordionBtn.addEventListener("click", () => {
+        document.getElementById("returns").classList.toggle("show");
+      });
+    }
 
   })
   .catch(err => console.error("Failed to load services.json", err));
-
-// Redirect to contact page with selected service & package
-const addToCartBtn = document.querySelector(".btn-add-to-cart");
-addToCartBtn.addEventListener("click", e => {
-  e.preventDefault();
-
-  const selectedPackage = document.querySelector('input[name="package"]:checked');
-  if (!selectedPackage) return alert("Please select a package.");
-
-  const serviceName = encodeURIComponent(service.title);
-  const tier = encodeURIComponent(selectedPackage.value);
-
-  // Redirect with URL parameters
-  window.location.href = `contact.html?service=${serviceName}&tier=${tier}`;
-});
