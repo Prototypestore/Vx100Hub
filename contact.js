@@ -1,3 +1,20 @@
+// ====== AUTO-FILL SERVICE AND TIER FROM URL ======
+const urlParams = new URLSearchParams(window.location.search);
+const serviceParam = urlParams.get('service');
+const tierParam = urlParams.get('tier');
+
+if (serviceParam) {
+  const serviceSelect = document.getElementById('service');
+  serviceSelect.value = serviceParam;
+  serviceSelect.disabled = true; // optional: prevent user from changing
+}
+
+if (tierParam) {
+  const tierInput = document.getElementById('selected-tier');
+  tierInput.value = tierParam;
+}
+
+
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
@@ -29,4 +46,24 @@ form.addEventListener('submit', async function(e) {
     console.error('Google Sheet error:', err);
     status.textContent = '❌ Failed sending. Please try again.';
   }
+});
+
+// ====== ADD TIER INFO TO BOOK NOW BUTTON ======
+const addToCartBtn = document.querySelector(".btn-add-to-cart");
+
+addToCartBtn.addEventListener("click", (e) => {
+  const selectedPackage = document.querySelector('input[name="package"]:checked');
+  if (!selectedPackage) {
+    e.preventDefault();
+    alert("Please select a package.");
+    return;
+  }
+
+  // Get current service name
+  const serviceName = document.querySelector(".product-title").textContent;
+  const tier = selectedPackage.value;
+
+  // Redirect to contact.html with service and tier in query string
+  const contactUrl = `contact.html?service=${encodeURIComponent(serviceName)}&tier=${encodeURIComponent(tier)}`;
+  addToCartBtn.setAttribute("href", contactUrl); // update link href dynamically
 });
