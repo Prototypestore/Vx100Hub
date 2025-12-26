@@ -9,7 +9,7 @@
       "Perfect for small businesses"
     ],
     "price": 250,
-    "image": "images/startup-website.png"
+    "image": "STARTUP WEBSITE.svg"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
       "SEO optimized"
     ],
     "price": 70,
-    "image": "images/landing-page.png"
+    "image": "Landing page.svg"
   },
   {
     "id": "3",
@@ -33,7 +33,7 @@
       "Responsive on all devices"
     ],
     "price": 50,
-    "image": "images/blog-page.png"
+    "image": "Blog.svg"
   },
   {
     "id": "4",
@@ -45,6 +45,6 @@
       "Customizable design options"
     ],
     "price": 500,
-    "image": "images/themed-package.png"
+    "image": "Website themes.svg"
   }
 ]
