@@ -46,24 +46,7 @@ fetch("services.json")
       packageFieldset.innerHTML += "<p>No packages available</p>";
     }
 
-    // ====== QUANTITY BUTTONS ======
-    const qtyInput = document.getElementById("qty-value");
-    const decreaseBtn = document.getElementById("decrease");
-    const increaseBtn = document.getElementById("increase");
-
-    decreaseBtn.addEventListener("click", () => {
-      qtyInput.value = Math.max(1, parseInt(qtyInput.value) - 1);
-    });
-
-    increaseBtn.addEventListener("click", () => {
-      qtyInput.value = parseInt(qtyInput.value) + 1;
-    });
-
-    qtyInput.addEventListener("input", () => {
-      if (isNaN(qtyInput.value) || qtyInput.value < 1) qtyInput.value = 1;
-    });
-
-    // ====== ADD TO CART ======
+      // ====== ADD TO CART ======
     const addToCartBtn = document.querySelector(".btn-add-to-cart");
     addToCartBtn.addEventListener("click", e => {
       e.preventDefault();
