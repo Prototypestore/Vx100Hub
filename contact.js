@@ -1,47 +1,26 @@
-// ====== AUTO-FILL SERVICE AND TIER FROM URL ======
-const urlParams = new URLSearchParams(window.location.search);
-const contactServiceParam = urlParams.get('service');
-const contactTierParam = urlParams.get('tier');
-
 const contactForm = document.getElementById('contact-form');
 const contactStatus = document.getElementById('form-status');
 
-const serviceSelect = document.getElementById('service');
-const tierInput = document.getElementById('selected-tier');
-
-if (contactServiceParam && serviceSelect) {
-  serviceSelect.value = contactServiceParam;
-  serviceSelect.disabled = true; // prevent user from changing
-}
-
-if (contactTierParam && tierInput) {
-  tierInput.value = contactTierParam;
-}
-
-// ====== FORM SUBMISSION TO GOOGLE SHEETS ======
 contactForm.addEventListener('submit', async function(e) {
-  e.preventDefault();
+  e.preventDefault(); // prevent default form submission
 
-  // Show sending immediately
+  // Show sending message immediately
   contactStatus.textContent = '📤 Sending...';
 
-  // Collect all form data
+  // Collect form data
   const formData = new FormData(contactForm);
   const data = {};
   formData.forEach((value, key) => data[key] = value);
 
-  // Add timestamp
-  data.timestamp = new Date().toISOString();
-
   try {
-    // Send data to Google Sheets
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxyVVTISwp0XxWuu9r03YDbPxpq3J5KwPmx3dlHYs49ukZqhWtG51d10q20PA0g06bjTg/exec', {
+    // Send data to your Google Apps Script
+    const response = await fetch(contactForm.action, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
 
-    // Parse JSON response from Apps Script
+    // If the response returns JSON, parse it
     const result = await response.json();
 
     if (result.status === 'success') {
@@ -52,7 +31,7 @@ contactForm.addEventListener('submit', async function(e) {
     }
 
   } catch (err) {
-    console.error('Error sending to Google Sheet:', err);
+    console.error('Error sending form:', err);
     contactStatus.textContent = '❌ Failed sending. Please try again.';
   }
 });
