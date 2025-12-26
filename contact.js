@@ -29,3 +29,23 @@ contactForm.addEventListener('submit', async function(e) {
     console.error(err);
   }
 });
+
+// ====== AUTO-FILL SERVICE AND TIER FROM URL ======
+const urlParams = new URLSearchParams(window.location.search);
+const contactServiceParam = urlParams.get('service');
+const contactTierParam = urlParams.get('tier');
+
+const serviceSelect = document.getElementById('service');
+const tierInput = document.getElementById('selected-tier');
+
+if (contactServiceParam && serviceSelect) {
+  serviceSelect.value = contactServiceParam;
+  serviceSelect.disabled = true; // prevent users from changing it
+  serviceSelect.style.pointerEvents = 'none'; // extra safety against clicks
+}
+
+if (contactTierParam && tierInput) {
+  tierInput.value = contactTierParam;
+  tierInput.disabled = true; // prevent users from changing it
+}
+
