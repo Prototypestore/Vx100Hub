@@ -35,19 +35,24 @@ contactForm.addEventListener('submit', async function(e) {
 
   try {
     // Send data to Google Sheets
-    await fetch('https://script.google.com/macros/s/AKfycbxyVVTISwp0XxWuu9r03YDbPxpq3J5KwPmx3dlHYs49ukZqhWtG51d10q20PA0g06bjTg/exec', {
-  method: 'POST',
-  mode: 'no-cors', // still needed for Google Apps Script
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(data)
-});
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxyVVTISwp0XxWuu9r03YDbPxpq3J5KwPmx3dlHYs49ukZqhWtG51d10q20PA0g06bjTg/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-    // Show success message
-    contactStatus.textContent = '✅ Booking request sent! Thank you!';
-    contactForm.reset();
+    // Parse JSON response from Apps Script
+    const result = await response.json();
+
+    if (result.status === 'success') {
+      contactStatus.textContent = '✅ Booking request sent! Thank you!';
+      contactForm.reset();
+    } else {
+      contactStatus.textContent = '❌ Failed sending: ' + (result.message || 'Unknown error');
+    }
 
   } catch (err) {
-    console.error('Google Sheet error:', err);
+    console.error('Error sending to Google Sheet:', err);
     contactStatus.textContent = '❌ Failed sending. Please try again.';
   }
 });
