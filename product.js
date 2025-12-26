@@ -19,34 +19,63 @@ fetch("services.json")
     }
 
     // ====== FILL PAGE CONTENT ======
-    document.querySelector(".product-title").textContent = service.title;
-    document.querySelector(".product-price").textContent = `£${service.price.toFixed(2)}`;
-    document.querySelector(".product-image img").src = service.image;
-    document.querySelector(".product-image img").alt = service.title;
-
-    // ====== BULLET POINT DESCRIPTION ======
+    const titleEl = document.querySelector(".product-title");
+    const priceEl = document.querySelector(".product-price");
+    const imageEl = document.querySelector(".product-image img");
     const detailsList = document.getElementById("product-details");
-    detailsList.innerHTML = "";
-    service.details.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = `• ${item}`;
-      detailsList.appendChild(li);
-    });
+
+    titleEl.textContent = service.title;
+    imageEl.src = service.image;
+    imageEl.alt = service.title;
+
+    // ====== FUNCTION TO UPDATE DETAILS & PRICE BASED ON PACKAGE ======
+    function updatePackage(packageName) {
+      let pkgDetails = [];
+      let pkgPrice = service.price;
+
+      if (packageName === "basic" && service.basic) {
+        pkgDetails = service.basic;
+      } else if (packageName === "pro" && service.pro) {
+        pkgDetails = service.pro;
+      } else if (packageName === "premium" && service.premium) {
+        pkgDetails = service.premium;
+      }
+
+      detailsList.innerHTML = "";
+      pkgDetails.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `• ${item}`;
+        detailsList.appendChild(li);
+      });
+
+      // Optionally adjust price if you want different prices per tier
+      // For now, we'll keep the main service price
+      priceEl.textContent = `£${pkgPrice.toFixed(2)}`;
+    }
+
+    // ====== INITIAL LOAD (basic by default) ======
+    updatePackage("basic");
 
     // ====== PACKAGES OPTIONS ======
     const packageFieldset = document.querySelector(".package-fieldset");
-    packageFieldset.innerHTML = "<legend>Choose a Package</legend>"; // reset
-    if(service.packages && service.packages.length > 0) {
-      service.packages.forEach(pkg => {
-        const label = document.createElement("label");
-        label.innerHTML = `<input type="radio" name="package" value="${pkg.name}"> ${pkg.name} - £${pkg.price}`;
-        packageFieldset.appendChild(label);
-      });
-    } else {
-      packageFieldset.innerHTML += "<p>No packages available</p>";
-    }
+    packageFieldset.innerHTML = "<legend>Choose a Package</legend>";
 
-      // ====== ADD TO CART ======
+    ["basic", "pro", "premium"].forEach(tier => {
+      const label = document.createElement("label");
+      label.classList.add("package-card"); // keep card styling
+      label.innerHTML = `
+        <input type="radio" name="package" value="${tier}" ${tier === "basic" ? "checked" : ""}>
+        ${tier.charAt(0).toUpperCase() + tier.slice(1)}
+      `;
+      packageFieldset.appendChild(label);
+
+      // ====== LISTEN FOR CHECK ======
+      label.querySelector("input").addEventListener("change", () => {
+        updatePackage(tier);
+      });
+    });
+
+    // ====== ADD TO CART ======
     const addToCartBtn = document.querySelector(".btn-add-to-cart");
     addToCartBtn.addEventListener("click", e => {
       e.preventDefault();
@@ -56,18 +85,17 @@ fetch("services.json")
       if (!selectedPackage) return alert("Please select a package.");
 
       const itemKey = service.id + "-" + selectedPackage.value;
+
       const existingIndex = cart.findIndex(item => item.id === itemKey);
 
-      const pkgPrice = service.packages.find(p => p.name === selectedPackage.value).price;
-
       if (existingIndex !== -1) {
-        cart[existingIndex].quantity += parseInt(qtyInput.value);
+        cart[existingIndex].quantity += 1;
       } else {
         cart.push({
           id: itemKey,
           name: `${service.title} (${selectedPackage.value})`,
-          price: pkgPrice,
-          quantity: parseInt(qtyInput.value),
+          price: service.price, // use main service price
+          quantity: 1,
           image: service.image
         });
       }
