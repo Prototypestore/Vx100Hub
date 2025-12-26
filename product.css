@@ -120,52 +120,75 @@ body {
 
 /* ================= PACKAGE CARDS ================= */
 
-/* Make the main package fieldset act as a container */
+/* Container for all packages */
 .package-fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin-bottom: 2rem;
+  justify-content: center;
 }
 
-/* Style each package fieldset as a card */
+/* Style each package as a card */
 .package-basic,
 .package-pro,
 .package-premium {
+  flex: 1 1 250px; /* responsive width */
   border: 1px solid #e5e7eb;
   border-radius: 14px;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: #ffffff;
   box-shadow: 0 4px 14px rgba(0,0,0,0.05);
   transition: all 0.25s ease;
   cursor: pointer;
+  text-align: center;
+  min-width: 220px;
 }
 
-/* Space cards evenly */
-.package-basic,
-.package-pro {
-  margin-bottom: 1.5rem;
+/* Card hover effect */
+.package-basic:hover,
+.package-pro:hover,
+.package-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  border-color: #8b5cf6; /* purple highlight */
 }
 
-/* Legend styling (card title) */
+/* Card title */
 .package-basic legend,
 .package-pro legend,
 .package-premium legend {
   font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
   color: #111827;
 }
 
-/* Hover effect */
-.package-basic:hover,
-.package-pro:hover,
-.package-premium:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
-  border-color: #c8b6ff;
+/* Optional emphasis for Pro card */
+.package-pro {
+  border: 2px solid #8b5cf6;
 }
 
-/* Optional visual emphasis */
-.package-pro {
-  border-color: #c8b6ff;
+/* Package button styling */
+.btn-add-to-cart {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #8b5cf6;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #6d28d9;
 }
 
 /* ================= BUTTON ================= */
