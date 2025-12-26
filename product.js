@@ -112,12 +112,17 @@ fetch("services.json")
   })
   .catch(err => console.error("Failed to load services.json", err));
 
-// ====== REDIRECT TO CONTACT PAGE ======
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('package-form');
+// Redirect to contact page with selected service & package
+const addToCartBtn = document.querySelector(".btn-add-to-cart");
+addToCartBtn.addEventListener("click", e => {
+  e.preventDefault();
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault(); // stop form submitting normally
-    window.location.href = 'contact.html';
-  });
+  const selectedPackage = document.querySelector('input[name="package"]:checked');
+  if (!selectedPackage) return alert("Please select a package.");
+
+  const serviceName = encodeURIComponent(service.title);
+  const tier = encodeURIComponent(selectedPackage.value);
+
+  // Redirect with URL parameters
+  window.location.href = `contact.html?service=${serviceName}&tier=${tier}`;
 });
