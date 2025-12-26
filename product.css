@@ -118,6 +118,56 @@ body {
   border-color: #c8b6ff;
 }
 
+/* ================= PACKAGE CARDS ================= */
+
+/* Make the main package fieldset act as a container */
+.package-fieldset {
+  margin-bottom: 2rem;
+}
+
+/* Style each package fieldset as a card */
+.package-basic,
+.package-pro,
+.package-premium {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* Space cards evenly */
+.package-basic,
+.package-pro {
+  margin-bottom: 1.5rem;
+}
+
+/* Legend styling (card title) */
+.package-basic legend,
+.package-pro legend,
+.package-premium legend {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
+  color: #111827;
+}
+
+/* Hover effect */
+.package-basic:hover,
+.package-pro:hover,
+.package-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  border-color: #c8b6ff;
+}
+
+/* Optional visual emphasis */
+.package-pro {
+  border-color: #c8b6ff;
+}
+
 /* ================= BUTTON ================= */
 .btn-add-to-cart {
   width: 180px;
