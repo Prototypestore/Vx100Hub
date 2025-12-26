@@ -36,11 +36,11 @@ contactForm.addEventListener('submit', async function(e) {
   try {
     // Send data to Google Sheets
     await fetch('https://script.google.com/macros/s/AKfycbxyVVTISwp0XxWuu9r03YDbPxpq3J5KwPmx3dlHYs49ukZqhWtG51d10q20PA0g06bjTg/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+  method: 'POST',
+  mode: 'no-cors', // still needed for Google Apps Script
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data)
+});
 
     // Show success message
     contactStatus.textContent = '✅ Booking request sent! Thank you!';
