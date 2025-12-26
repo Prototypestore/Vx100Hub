@@ -2,49 +2,121 @@
   {
     "id": "1",
     "title": "Startup Website Package",
-    "details": [
+    "basic": [
       "Full website including landing, contact, and product pages",
       "Optimized for SEO",
       "Responsive design for mobile and desktop",
       "Perfect for small businesses"
     ],
     "price": 250,
-    "image": "STARTUP WEBSITE.svg"
+    "image": "STARTUP WEBSITE.svg",
+    "pro": [
+      "Everything in Basic",
+      "1–6 pages",
+      "Landing page focused on conversion",
+      "Better layout & spacing",
+      "Multiple color themes",
+      "Slight branding polish",
+      "Faster turnaround"
+    ],
+    "premium": [
+      "Everything in Pro",
+      "Custom layout",
+      "Extra sections (Testimonials, Services, FAQs)",
+      "Blog or portfolio setup",
+      "Advanced styling",
+      "Priority support",
+      "Future expansion-ready"
+    ]
   },
   {
     "id": "2",
     "title": "Landing Page",
-    "details": [
+    "basic": [
       "Single-page landing website",
       "Designed to convert visitors",
       "Fast loading and responsive",
       "SEO optimized"
     ],
     "price": 70,
-    "image": "Landing page.svg"
+    "image": "Landing page.svg",
+    "pro": [
+      "Everything in Basic",
+      "1–6 pages",
+      "Landing page focused on conversion",
+      "Better layout & spacing",
+      "Multiple color themes",
+      "Slight branding polish",
+      "Faster turnaround"
+    ],
+    "premium": [
+      "Everything in Pro",
+      "Custom layout",
+      "Extra sections (Testimonials, Services, FAQs)",
+      "Blog or portfolio setup",
+      "Advanced styling",
+      "Priority support",
+      "Future expansion-ready"
+    ]
   },
   {
     "id": "3",
     "title": "Blog Page",
-    "details": [
+    "basic": [
       "Stand-alone blog page or add-on to existing website",
       "Clean and modern design",
       "SEO optimized for better visibility",
       "Responsive on all devices"
     ],
     "price": 50,
-    "image": "Blog.svg"
+    "image": "Blog.svg",
+    "pro": [
+      "Everything in Basic",
+      "1–6 pages",
+      "Landing page focused on conversion",
+      "Better layout & spacing",
+      "Multiple color themes",
+      "Slight branding polish",
+      "Faster turnaround"
+    ],
+    "premium": [
+      "Everything in Pro",
+      "Custom layout",
+      "Extra sections (Testimonials, Services, FAQs)",
+      "Blog or portfolio setup",
+      "Advanced styling",
+      "Priority support",
+      "Future expansion-ready"
+    ]
   },
   {
     "id": "4",
     "title": "Themed Website Package",
-    "details": [
+    "basic": [
       "Multiple websites themed for specific industries",
       "Industries include marketing agencies, cafes, salons, plumbers",
       "Responsive & SEO ready",
       "Customizable design options"
     ],
     "price": 500,
-    "image": "Website themes.svg"
+    "image": "Website themes.svg",
+    "pro": [
+      "Everything in Basic",
+      "1–6 pages",
+      "Landing page focused on conversion",
+      "Better layout & spacing",
+      "Multiple color themes",
+      "Slight branding polish",
+      "Faster turnaround"
+    ],
+    "premium": [
+      "Everything in Pro",
+      "Custom layout",
+      "Extra sections (Testimonials, Services, FAQs)",
+      "Blog or portfolio setup",
+      "Advanced styling",
+      "Priority support",
+      "Future expansion-ready"
+    ]
   }
 ]
