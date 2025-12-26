@@ -63,3 +63,12 @@
   text-decoration: none;
   color: #6f63e6;
 }
+
+
+/* ================= CUSTOM FOOTER ================= */
+.foot address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
