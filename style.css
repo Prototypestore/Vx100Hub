@@ -78,7 +78,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #330673;
+  background: url('hero.svg');
   height: 80vh;
   text-align: center;
   color: #fff;
