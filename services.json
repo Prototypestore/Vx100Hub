@@ -4,7 +4,7 @@
     "title": "Startup Website Package",
     "basic": {
       "price": 1500,
-      "features": [
+      "details": [
         "Full website including landing, contact, and product pages",
         "Optimized for SEO",
         "Responsive design for mobile and desktop",
@@ -13,7 +13,7 @@
     },
     "pro": {
       "price": 3000,
-      "features": [
+      "details": [
         "Everything in Basic",
         "1–6 pages",
         "Landing page focused on conversion",
@@ -25,7 +25,7 @@
     },
     "premium": {
       "price": 8500,
-      "features": [
+      "details": [
         "Everything in Pro",
         "Custom layout",
         "Extra sections (Testimonials, Services, FAQs)",
@@ -42,7 +42,7 @@
     "title": "Landing Page",
     "basic": {
       "price": 800,
-      "features": [
+      "details": [
         "Single-page landing website",
         "Designed to convert visitors",
         "Fast loading and responsive",
@@ -51,7 +51,7 @@
     },
     "pro": {
       "price": 1200,
-      "features": [
+      "details": [
         "Everything in Basic",
         "1–6 pages",
         "Landing page focused on conversion",
@@ -63,7 +63,7 @@
     },
     "premium": {
       "price": 2000,
-      "features": [
+      "details": [
         "Everything in Pro",
         "Custom layout",
         "Extra sections (Testimonials, Services, FAQs)",
@@ -80,7 +80,7 @@
     "title": "Blog Page",
     "basic": {
       "price": 900,
-      "features": [
+      "details": [
         "Stand-alone blog page or add-on to existing website",
         "Clean and modern design",
         "SEO optimized for better visibility",
@@ -89,7 +89,7 @@
     },
     "pro": {
       "price": 1500,
-      "features": [
+      "details": [
         "Everything in Basic",
         "1–6 pages",
         "Landing page focused on conversion",
@@ -101,7 +101,7 @@
     },
     "premium": {
       "price": 3000,
-      "features": [
+      "details": [
         "Everything in Pro",
         "Custom layout",
         "Extra sections (Testimonials, Services, FAQs)",
@@ -118,7 +118,7 @@
     "title": "Themed Website Package",
     "basic": {
       "price": 2000,
-      "features": [
+      "details": [
         "Multiple websites themed for specific industries",
         "Industries include marketing agencies, cafes, salons, plumbers",
         "Responsive & SEO ready",
@@ -127,7 +127,7 @@
     },
     "pro": {
       "price": 3500,
-      "features": [
+      "details": [
         "Everything in Basic",
         "1–6 pages",
         "Landing page focused on conversion",
@@ -139,7 +139,7 @@
     },
     "premium": {
       "price": 7500,
-      "features": [
+      "details": [
         "Everything in Pro",
         "Custom layout",
         "Extra sections (Testimonials, Services, FAQs)",
