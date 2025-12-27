@@ -96,12 +96,23 @@ body {
 }
 
 /* ================= PACKAGE OPTIONS ================= */
+.package-fieldset {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;       /* space between buttons */
+  border: none;       /* remove fieldset border */
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+/* Package buttons */
 .package-card {
   position: relative;
   display: inline-block;
   padding: 0.65rem 2rem;
-  border-radius: 16px;            /* <-- rounded rectangle */
-  background: #f3f4f6;             /* light grey default */
+  border-radius: 16px;        /* rounded rectangle */
+  border: 1px solid #ccc;     /* thin light border */
+  background: #f3f4f6;
   color: #111827;
   font-weight: 600;
   font-size: 0.9rem;
@@ -113,7 +124,7 @@ body {
 
 .package-card input {
   position: absolute;
-  opacity: 0;                     /* hide the radio input */
+  opacity: 0;                  /* hide the radio input */
   pointer-events: none;
 }
 
@@ -121,10 +132,11 @@ body {
   transform: translateY(-1px);
 }
 
-/* Checked state = sleek black with shadow */
+/* Checked state */
 .package-card:has(input:checked) {
   background: #000000;
   color: #ffffff;
+  border: 1px solid #000;      /* keep border black when selected */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
