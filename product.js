@@ -26,6 +26,7 @@ fetch("services.json")
     titleEl.textContent = service.title;
     imageEl.src = service.image;
     imageEl.alt = service.title;
+    priceEl.textContent = `£${service.price.toFixed(2)}`;
 
     // ====== FUNCTION TO UPDATE DETAILS BASED ON PACKAGE ======
     function updatePackage(packageName) {
