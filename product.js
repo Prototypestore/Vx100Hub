@@ -26,27 +26,28 @@ fetch("services.json")
     titleEl.textContent = service.title;
     imageEl.src = service.image;
     imageEl.alt = service.title;
-    priceEl.textContent = `£${service.price.toFixed(2)}`;
 
-    // ====== FUNCTION TO UPDATE DETAILS BASED ON PACKAGE ======
+    // ====== FUNCTION TO UPDATE DETAILS AND PRICE BASED ON PACKAGE ======
     function updatePackage(packageName) {
-      let pkgDetails = [];
-      if (packageName === "basic" && service.basic) pkgDetails = service.basic;
-      else if (packageName === "pro" && service.pro) pkgDetails = service.pro;
-      else if (packageName === "premium" && service.premium) pkgDetails = service.premium;
+      const pkg = service[packageName]; // basic, pro, or premium
+      if (!pkg) return;
 
+      // Update details list
       detailsList.innerHTML = "";
-      pkgDetails.forEach(item => {
+      pkg.features.forEach(item => {
         const li = document.createElement("li");
         li.textContent = `• ${item}`;
         detailsList.appendChild(li);
       });
+
+      // Update price dynamically
+      priceEl.textContent = `£${pkg.price.toFixed(2)}`;
     }
 
     // ====== INITIAL LOAD (basic by default) ======
     updatePackage("basic");
 
-    // ====== PACKAGES OPTIONS ======
+    // ====== PACKAGE OPTIONS ======
     const packageFieldset = document.querySelector(".package-row");
 
     ["basic", "pro", "premium"].forEach(tier => {
@@ -58,6 +59,7 @@ fetch("services.json")
       `;
       packageFieldset.appendChild(label);
 
+      // Update package details & price when changed
       label.querySelector("input").addEventListener("change", () => {
         updatePackage(tier);
       });
@@ -71,17 +73,20 @@ fetch("services.json")
       const selectedPackage = document.querySelector('input[name="package"]:checked');
       if (!selectedPackage) return alert("Please select a package.");
 
+      const pkg = service[selectedPackage.value]; // get tier-specific info
+
       // Add to cart
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const itemKey = service.id + "-" + selectedPackage.value;
       const existingIndex = cart.findIndex(item => item.id === itemKey);
+
       if (existingIndex !== -1) {
         cart[existingIndex].quantity += 1;
       } else {
         cart.push({
           id: itemKey,
           name: `${service.title} (${selectedPackage.value})`,
-          price: service.price,
+          price: pkg.price,       // ✅ use tier-specific price
           quantity: 1,
           image: service.image
         });
