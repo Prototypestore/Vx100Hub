@@ -48,7 +48,6 @@ fetch("services.json")
 
     // ====== PACKAGES OPTIONS ======
     const packageFieldset = document.querySelector(".package-fieldset");
-    packageFieldset.innerHTML = "<legend>Choose a Package</legend>";
 
     ["basic", "pro", "premium"].forEach(tier => {
       const label = document.createElement("label");
