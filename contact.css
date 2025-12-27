@@ -78,6 +78,12 @@ body {
   transition: border 0.2s ease;
 }
 
+.contact-form input[readonly] {
+  background-color: #f0f0f0;  /* gray background like disabled */
+  color: #555;                /* slightly dim text */
+  cursor: not-allowed;        /* shows uneditable cursor */
+}
+
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
