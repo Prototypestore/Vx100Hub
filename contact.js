@@ -27,9 +27,10 @@ if (serviceName && serviceSelect) {
     serviceSelect.appendChild(newOption);
   }
 
-  // Disable the service so user cannot change it
-  serviceSelect.disabled = true;
-}
+  // Disable the service visaully so user cannot change it
+  serviceSelect.style.pointerEvents = 'none';
+  serviceSelect.style.backgroundColor = '#f0f0f0';
+  serviceSelect.style.color = '#333';
 
 // Set hidden package tier
 if (tier && tierInput) {
