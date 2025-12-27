@@ -97,12 +97,20 @@ body {
 
 /* ================= PACKAGE OPTIONS ================= */
 .package-fieldset {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;       /* space between buttons */
-  border: none;       /* remove fieldset border */
-  margin-bottom: 2rem;
+  border: none;
   padding: 0;
+  margin-bottom: 2rem;
+}
+
+.package-fieldset legend {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+/* Buttons row */
+.package-row {
+  display: flex;
+  gap: 1.2rem;
 }
 
 /* Package buttons */
