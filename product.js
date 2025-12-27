@@ -47,7 +47,7 @@ fetch("services.json")
     updatePackage("basic");
 
     // ====== PACKAGES OPTIONS ======
-    const packageFieldset = document.querySelector(".package-fieldset");
+    const packageFieldset = document.querySelector(".package-row");
 
     ["basic", "pro", "premium"].forEach(tier => {
       const label = document.createElement("label");
