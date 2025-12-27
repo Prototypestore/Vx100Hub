@@ -34,7 +34,7 @@ fetch("services.json")
 
       // Update details list
       detailsList.innerHTML = "";
-      pkg.features.forEach(item => {
+      pkg.details.forEach(item => {
         const li = document.createElement("li");
         li.textContent = `• ${item}`;
         detailsList.appendChild(li);
