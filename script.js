@@ -12,7 +12,7 @@ async function loadServices() {
       const serviceURL = `product.html?id=${service.id}`;
 
       // Price display
-      const displayPrice = service.price.toFixed(2);
+      const displayPrice = service.basic.price.toFixed(2);
 
       // Service card HTML
       const cardHTML = `
