@@ -35,10 +35,10 @@ fetch("services.json")
       // Update details list
       detailsList.innerHTML = "";
       pkg.details.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `• ${item}`;
-        detailsList.appendChild(li);
-      });
+  const li = document.createElement("li");
+  li.textContent = `• ${item}`;
+  detailsList.appendChild(li);
+});
 
       // Update price dynamically
       priceEl.textContent = `£${pkg.price.toFixed(2)}`;
