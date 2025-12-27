@@ -96,52 +96,36 @@ body {
 }
 
 /* ================= PACKAGE OPTIONS ================= */
-.product-options fieldset {
-  border: none;
-  margin-bottom: 1.5rem;
-}
-
-/* ================= PACKAGE CARDS ================= */
-.package-fieldset {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-legend input {
-  position: absolute;
-  opacity: 0;
-}
-
-/* Button appearance */
-.package-basic legend label,
-.package-pro legend label,
-.package-premium legend label {
+.package-card {
+  position: relative;
   display: inline-block;
-  padding: 0.65rem 1.9rem;
-  border-radius: 12px;      /* <-- less round, more rectangular */
-  background: #f3f4f6;
+  padding: 0.65rem 2rem;
+  border-radius: 16px;            /* <-- rounded rectangle */
+  background: #f3f4f6;             /* light grey default */
   color: #111827;
   font-weight: 600;
   font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
-/* Checked state = luxury black */
-.package-basic:has(input:checked) legend label,
-.package-pro:has(input:checked) legend label,
-.package-premium:has(input:checked) legend label {
-  background: #000000;
-  color: #ffffff;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+.package-card input {
+  position: absolute;
+  opacity: 0;                     /* hide the radio input */
+  pointer-events: none;
 }
 
-legend label:hover {
+.package-card:hover {
   transform: translateY(-1px);
+}
+
+/* Checked state = sleek black with shadow */
+.package-card:has(input:checked) {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Package button styling */
