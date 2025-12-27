@@ -101,23 +101,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.package-fieldset label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.package-fieldset input[type="radio"]:checked + span {
-  background-color: #c8b6ff;
-  color: #fff;
-  border-color: #c8b6ff;
-}
-
 /* ================= PACKAGE CARDS ================= */
 .package-fieldset {
   display: flex;
@@ -137,7 +120,7 @@ legend input {
 .package-premium legend label {
   display: inline-block;
   padding: 0.65rem 1.9rem;
-  border-radius: 999px;
+  border-radius: 12px;      /* <-- less round, more rectangular */
   background: #f3f4f6;
   color: #111827;
   font-weight: 600;
