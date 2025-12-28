@@ -90,6 +90,16 @@ main {
   color: #fff;
 }
 
+#hero-bg-img {
+  position: absolute;   /* place it behind content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* cover full hero section */
+  z-index: -2;          /* behind waves and hero text */
+}
+
 #waves {
   position: fixed;
   inset: 0;
