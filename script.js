@@ -19,7 +19,7 @@ async function loadServices() {
         <article class="product-card" style="cursor:pointer">
           <img src="${service.image}" alt="${service.title}">
           <h3>${service.title}</h3>
-          <p class="price">£${displayPrice}</p>
+          <p class="price">R${displayPrice}</p>
         </article>
       `;
 
