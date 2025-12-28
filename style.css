@@ -71,7 +71,7 @@ body {
 .nav a:hover,
 .nav a:focus {
   color: #8a7cf6;
-  outline: 3px solid #8a7cf6; /* visible focus for keyboard users */
+  outline: 3px solid transparent;
   outline-offset: 3px;
 }
 
@@ -243,6 +243,6 @@ footer a {
 footer a:hover,
 footer a:focus {
   text-decoration: underline;
-  outline: 3px solid #8a7cf6; /* visible focus */
+  outline: 3px solid transparent; /* visible focus */
   outline-offset: 3px;
 }
