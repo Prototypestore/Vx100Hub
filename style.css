@@ -85,17 +85,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('hero.svg');
+  background: url('hero.svg') no-repeat center center/cover; /* ensure proper scaling */
   height: 80vh;
   text-align: center;
   color: #fff;
+  position: relative; /* creates stacking context so text sits above waves */
+  z-index: 0;         /* ensures content is above #waves */
 }
 
+/* Waves canvas */
 #waves {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
+  position: fixed;       /* stays in place when scrolling */
+  inset: 0;              /* covers entire viewport */
+  z-index: -1;           /* above hero background, behind text */
+  pointer-events: none;  /* allows clicks to pass through */
+  aria-hidden: true;     /* hides from screen readers (optional, JS can set it too) */
 }
 
 .hero h1 {
