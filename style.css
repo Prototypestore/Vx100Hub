@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
 body {
   font-family: 'Arial', sans-serif;
   background: #ffffff;
@@ -50,7 +54,7 @@ body {
   display: block;
 }
 
-
+/* Nav accessibility: focus styles */
 .nav ul {
   display: flex;
   gap: 2rem;
@@ -64,8 +68,11 @@ body {
   transition: color 0.3s;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a:focus {
   color: #8a7cf6;
+  outline: 3px solid #8a7cf6; /* visible focus for keyboard users */
+  outline-offset: 3px;
 }
 
 /* Offset main content for fixed header */
@@ -112,9 +119,12 @@ main {
   transition: 0.3s;
 }
 
-.hero-btn:hover {
+.hero-btn:hover,
+.hero-btn:focus {
   background: #8a7cf6;
   color: #fff;
+  outline: 3px solid #8a7cf6; /* focus visible */
+  outline-offset: 3px;
 }
 
 /* About Section */
@@ -167,7 +177,8 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card:hover {
+.product-card:hover,
+.product-card:focus-within {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
@@ -194,6 +205,11 @@ main {
   color: #ffffff;
 }
 
+.product-card a:focus {
+  outline: 3px solid #8a7cf6; /* visible focus */
+  outline-offset: 3px;
+}
+
 .product-card a {
   text-decoration: none;
 }
@@ -214,6 +230,9 @@ footer a {
   text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
   text-decoration: underline;
+  outline: 3px solid #8a7cf6; /* visible focus */
+  outline-offset: 3px;
 }
