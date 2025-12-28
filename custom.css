@@ -66,9 +66,12 @@
 
 
 /* ================= CUSTOM FOOTER ================= */
+.foot {
+  margin-top: 0;              /* footer directly under button */
+  text-align: center;
+}
+
 .foot address {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 12px;
+  color: #6f63e6;
 }
