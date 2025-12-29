@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "iframe": "https://prototypestore.github.io/WebsiteStarter/"
+  },
+  {
+    "id": "2",
+    "iframe": "https://example.com/landing-demo"
+  },
+  {
+    "id": "3",
+    "iframe": "https://example.com/blog-demo"
+  },
+  {
+    "id": "4",
+    "iframe": "https://example.com/themed-demo"
+  }
+]
