@@ -10,7 +10,6 @@ fetch("services.json")
     if (!service) {
       document.querySelector(".product-title").textContent = "Service Not Found";
       document.querySelector(".product-price").textContent = "-";
-      document.querySelector(".product-image img").src = "";
       document.getElementById("product-details").innerHTML = "<li>Service does not exist.</li>";
       document.getElementById("returns").textContent = "";
       document.querySelector(".btn-add-to-cart").disabled = true;
@@ -20,12 +19,9 @@ fetch("services.json")
     // ====== FILL PAGE CONTENT ======
     const titleEl = document.querySelector(".product-title");
     const priceEl = document.querySelector(".product-price");
-    const imageEl = document.querySelector(".product-image img");
     const detailsList = document.getElementById("product-details");
 
     titleEl.textContent = service.title;
-    imageEl.src = service.image;
-    imageEl.alt = service.title;
 
     // ====== FUNCTION TO UPDATE DETAILS AND PRICE BASED ON PACKAGE ======
     function updatePackage(packageName) {
@@ -49,7 +45,6 @@ fetch("services.json")
 
     // ====== PACKAGE OPTIONS ======
     const packageFieldset = document.querySelector(".package-row");
-
     ["basic", "pro", "premium"].forEach(tier => {
       const label = document.createElement("label");
       label.classList.add("package-card");
@@ -59,7 +54,6 @@ fetch("services.json")
       `;
       packageFieldset.appendChild(label);
 
-      // Update package details & price when changed
       label.querySelector("input").addEventListener("change", () => {
         updatePackage(tier);
       });
@@ -75,7 +69,6 @@ fetch("services.json")
 
       const pkg = service[selectedPackage.value]; // get tier-specific info
 
-      // Add to cart
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const itemKey = service.id + "-" + selectedPackage.value;
       const existingIndex = cart.findIndex(item => item.id === itemKey);
@@ -86,14 +79,13 @@ fetch("services.json")
         cart.push({
           id: itemKey,
           name: `${service.title} (${selectedPackage.value})`,
-          price: pkg.price,       // still numeric for calculations
+          price: pkg.price,
           quantity: 1,
-          image: service.image
+          image: "" // image removed since we're using iframe
         });
       }
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      // Redirect to contact page with service & tier
       const serviceName = encodeURIComponent(service.title);
       const tier = encodeURIComponent(selectedPackage.value);
       window.location.href = `contact.html?service=${serviceName}&tier=${tier}`;
@@ -106,6 +98,25 @@ fetch("services.json")
         document.getElementById("returns").classList.toggle("show");
       });
     }
+
+    // ====== REPLACE IMAGE WITH IFRAME ======
+    fetch("iframe.json")
+      .then(res => res.json())
+      .then(iframes => {
+        const iframeData = iframes.find(f => f.id === serviceId);
+        if (iframeData) {
+          const figureEl = document.querySelector(".product-image");
+          figureEl.innerHTML = ""; // remove image
+          const iframeEl = document.createElement("iframe");
+          iframeEl.src = iframeData.iframe;
+          iframeEl.width = "100%";
+          iframeEl.height = "400";
+          iframeEl.frameBorder = "0";
+          iframeEl.allowFullscreen = true;
+          figureEl.appendChild(iframeEl);
+        }
+      })
+      .catch(err => console.error("Failed to load iframe.json", err));
 
   })
   .catch(err => console.error("Failed to load services.json", err));
