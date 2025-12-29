@@ -100,23 +100,46 @@ fetch("services.json")
     }
 
     // ====== REPLACE IMAGE WITH IFRAME ======
-    fetch("iframe.json")
-      .then(res => res.json())
-      .then(iframes => {
-        const iframeData = iframes.find(f => f.id === serviceId);
-        if (iframeData) {
-          const figureEl = document.querySelector(".product-image");
-          figureEl.innerHTML = ""; // remove image
-          const iframeEl = document.createElement("iframe");
-          iframeEl.src = iframeData.iframe;
-          iframeEl.width = "100%";
-          iframeEl.height = "400";
-          iframeEl.frameBorder = "0";
-          iframeEl.allowFullscreen = true;
-          figureEl.appendChild(iframeEl);
-        }
-      })
-      .catch(err => console.error("Failed to load iframe.json", err));
+   // ====== REPLACE IMAGE WITH IFRAME ======
+fetch("iframe.json")
+  .then(res => res.json())
+  .then(iframes => {
+    const iframeData = iframes.find(f => f.id === serviceId);
+    if (iframeData) {
+      const figureEl = document.querySelector(".product-image");
+      figureEl.innerHTML = ""; // remove any existing image
 
+      const iframeEl = document.createElement("iframe");
+      iframeEl.src = iframeData.iframe;
+
+      // Fixed size like your example (width x height)
+      iframeEl.style.width = "370px";
+      iframeEl.style.height = "360px";
+      iframeEl.style.border = "0";
+      iframeEl.style.display = "block";
+      iframeEl.style.margin = "0 auto"; // center horizontally
+
+      // Add hovering effect (subtle shadow + lift)
+      iframeEl.style.transition = "transform 0.5s ease, box-shadow 0.5s ease";
+      iframeEl.style.boxShadow = "0 10px 20px rgba(0,0,0,0.2)";
+      iframeEl.style.transform = "translateY(-5px)"; // initial lift
+
+      // Optional: constant subtle “hovering” animation
+      iframeEl.animate(
+        [
+          { transform: "translateY(-5px)" },
+          { transform: "translateY(-10px)" },
+          { transform: "translateY(-5px)" }
+        ],
+        {
+          duration: 2000,
+          iterations: Infinity
+        }
+      );
+
+      figureEl.appendChild(iframeEl);
+    }
+  })
+  .catch(err => console.error("Failed to load iframe.json", err));
   })
   .catch(err => console.error("Failed to load services.json", err));
