@@ -1,18 +1,22 @@
 [
   {
     "id": "1",
-    "iframe": "https://prototypestore.github.io/WebsiteStarter/"
+    "iframe": "https://prototypestore.github.io/WebsiteStarter/",
+    "note": "Interactive demo. Not a live site."
   },
   {
     "id": "2",
-    "iframe": "https://example.com/landing-demo"
+    "iframe": "https://example.com/landing-demo",
+    "note": "Interactive demo. Not a live site."
   },
   {
     "id": "3",
-    "iframe": "https://example.com/blog-demo"
+    "iframe": "https://example.com/blog-demo",
+    "note": "Interactive demo. Not a live site."
   },
   {
     "id": "4",
-    "iframe": "https://example.com/themed-demo"
+    "iframe": "https://example.com/themed-demo",
+    "note": "Interactive demo. Not a live site."
   }
 ]
