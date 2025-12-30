@@ -113,11 +113,12 @@ fetch("iframe.json")
       iframeEl.src = iframeData.iframe;
 
       // Fixed size like your example (width x height)
-      iframeEl.style.width = "370px";
+      iframeEl.style.width = "470px";
       iframeEl.style.height = "360px";
       iframeEl.style.border = "0";
       iframeEl.style.display = "block";
       iframeEl.style.margin = "0 auto"; // center horizontally
+      iframeEl.style.borderRadius = "17px"; 
 
       // Add hovering effect (subtle shadow + lift)
       iframeEl.style.transition = "transform 0.5s ease, box-shadow 0.5s ease";
