@@ -75,3 +75,127 @@
   font-size: 12px;
   color: #6f63e6;
 }
+
+/* ================= MOBILE MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+
+  /* Custom Page Container */
+  .custom-page {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .custom-center h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .custom-center p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #4b5563;
+  }
+
+  /* Button */
+  .custom-center .btn-add-to-cart {
+    width: 160px;
+    height: 42px;
+    font-size: 15px;
+    border-radius: 30px;
+  }
+
+  .custom-center .btn-add-to-cart:hover {
+    background: #7f74f2;
+  }
+
+  /* Header/Nav */
+  .head {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav li {
+    list-style: none;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+    color: #7f74f2;
+  }
+
+  /* Footer */
+  .foot {
+    margin-top: 2rem;
+  }
+
+  .foot address {
+    font-size: 11px;
+    color: #7f74f2;
+  }
+}
+
+/* Extra Small Devices: under 480px */
+@media (max-width: 480px) {
+
+  .custom-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .custom-center h1 {
+    font-size: 2rem;
+  }
+
+  .custom-center p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-center .btn-add-to-cart {
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .head {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav ul {
+    gap: 0.6rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+
+  .foot address {
+    font-size: 10px;
+  }
+}
+
+/* ================= LUXURY TOUCH ================= */
+.custom-center .btn-add-to-cart {
+  transition: all 0.25s ease;
+}
+
+.custom-center .btn-add-to-cart:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(65,29,115,0.25);
+}
+
+.nav a:hover {
+  color: #9c8fff;
+}
+
