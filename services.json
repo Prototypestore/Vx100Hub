@@ -6,8 +6,8 @@
       "price": 7000,
       "details": [
         "4 pages (Home, Services, Portfolio, Contact)",
-        "Homepage (included: social media integration)",
-        "Service section",
+        "Homepage banner with text and images",
+        "Service section with titles and descriptions",
         "Copyright included",
         "Email contact setup",
         "Phone contact setup",
@@ -18,11 +18,11 @@
       "price": 10000,
       "details": [
         "Everything in Basic",
-        "5 extra pages (included)",
-        "Custom branding",
+        "5 extra pages included",
+        "Custom branding design",
         "Customer reviews carousel",
-        "Advanced content",
-        "Pop-up CTA buttons"
+        "Advanced content and layout",
+        "Call-to-action buttons"
       ]
     },
     "premium": {
@@ -32,7 +32,7 @@
         "Interactive pop-ups",
         "Image carousel",
         "Multiple review sections",
-        "Animated stats / numbers"
+        "Animated stats and numbers"
       ]
     },
     "image": "STARTUP WEBSITE.svg"
@@ -43,13 +43,13 @@
     "basic": {
       "price": 3000,
       "details": [
-        "Single page site",
+        "Single page website",
         "Call-to-action buttons",
         "Icons and features section",
         "Portfolio section",
         "Reviews section",
-        "Email setup",
-        "Phone setup",
+        "Email contact setup",
+        "Phone contact setup",
         "Social media links"
       ]
     },
@@ -59,7 +59,7 @@
         "Everything in Basic",
         "Add 5 extra pages",
         "Scroll animations",
-        "Interactive buttons",
+        "Call-to-action buttons",
         "Promotion section"
       ]
     },
@@ -68,7 +68,7 @@
       "details": [
         "Everything in Pro",
         "Full-page interactive promotions",
-        "Full-screen welcome section",
+        "Full-screen welcome/banner section",
         "Smooth scrolling effects"
       ]
     },
@@ -80,11 +80,11 @@
     "basic": {
       "price": 2500,
       "details": [
-        "Intro section",
-        "Article",
+        "Intro/banner section",
+        "Article section",
         "Read-more buttons",
         "Copyright included",
-        "1 article"
+        "1 article included"
       ]
     },
     "pro": {
@@ -92,20 +92,20 @@
       "details": [
         "Everything in Basic",
         "Social sharing buttons",
-        "Advanced SEO",
+        "Advanced SEO setup",
         "Newsletter signup",
         "Sign-up form",
-        "3 extra articles",
-        "Add 5 extra pages"
+        "3 extra articles added",
+        "5 extra pages included"
       ]
     },
     "premium": {
       "price": 7000,
       "details": [
         "Everything in Pro",
-        "Custom graphics",
+        "Custom graphics for posts",
         "Table of contents",
-        "Fixed Navigation (recommended: long posts)",
+        "Fixed navigation for easier scrolling",
         "Interactive elements",
         "Comment section"
       ]
@@ -118,12 +118,12 @@
     "basic": {
       "price": 8500,
       "details": [
-        "Banner",
+        "Homepage banner with text and images",
         "Call-to-action button",
         "20 product cards",
         "Email contact setup",
-        "Portfolio",
-        "Custom branding",
+        "Portfolio section",
+        "Custom branding design",
         "Custom menu with hover effects",
         "Copyright included",
         "Contact form (no backend)"
@@ -133,12 +133,12 @@
       "price": 11500,
       "details": [
         "Everything in Basic",
-        "5 extra pages",
+        "5 extra pages included",
         "Advanced interactive features",
         "Custom color theme",
         "Google Map integration",
-        "Mini blog",
-        "Interactive buttons"
+        "Mini blog section",
+        "Call-to-action buttons"
       ]
     },
     "premium": {
@@ -148,13 +148,13 @@
         "Advanced animations",
         "Micro interactions",
         "Animated buttons",
-        "3 extra pages",
-        "Custom icons",
-        "Branding package",
-        "Interactive portfolio",
+        "3 extra pages included",
+        "Custom icon set",
+        "Complete branding package",
+        "Interactive portfolio section",
         "Map or mini blog",
         "FAQ section",
-        "Lightweight animation for banner section"
+        "Lightweight animation for homepage banner"
       ]
     },
     "image": "Website themes.svg"
