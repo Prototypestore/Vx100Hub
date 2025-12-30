@@ -250,7 +250,6 @@ footer a:focus {
 /* === Mobile First Enhancements === */
 /* ================= MOBILE: 768px and below ================= */
 @media (max-width: 768px) {
-
   /* Header container: logo left, nav right */
   .header-container {
     display: flex;
@@ -289,11 +288,11 @@ footer a:focus {
   }
 
   .nav a:hover,
-.nav a:focus {
-  color: #8a7cf6;
-  outline: 3px solid transparent;
-  outline-offset: 3px;
-}
+  .nav a:focus {
+    color: #8a7cf6;
+    outline: 3px solid transparent;
+    outline-offset: 3px;
+  }
 
   /* Hero */
   .hero {
@@ -335,17 +334,24 @@ footer a:focus {
 
   /* Services Grid */
   .grid {
-    grid-template-columns: 1fr; /* stack cards vertically */
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 1rem 1.2rem; /* row gap 1rem, column gap 1.2rem */
+    width: 100%;
   }
 
   .product-card {
+    width: 100%; /* ensures cards fit their grid cell */
     border-radius: 14px;
     overflow: hidden;
   }
 
   .product-card img {
-    height: 180px;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
   }
 
   .product-card h3 {
@@ -361,7 +367,6 @@ footer a:focus {
 
 /* ================= EXTRA SMALL SCREENS: 480px and below ================= */
 @media (max-width: 480px) {
-
   /* Header */
   .header-container {
     padding: 0.8rem 1rem;
@@ -411,11 +416,12 @@ footer a:focus {
 
   /* Services Grid */
   .grid {
-    gap: 1rem;
+    grid-template-columns: 1fr; /* stack 1 per row on very small screens */
+    gap: 0.8rem;
   }
 
   .product-card img {
-    height: 160px;
+    max-height: 160px;
   }
 
   .product-card h3 {
