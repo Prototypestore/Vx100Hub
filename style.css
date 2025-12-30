@@ -285,8 +285,15 @@ footer a:focus {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    color: #111827;
+    color: #fff;
   }
+
+  .nav a:hover,
+.nav a:focus {
+  color: #8a7cf6;
+  outline: 3px solid transparent;
+  outline-offset: 3px;
+}
 
   /* Hero */
   .hero {
