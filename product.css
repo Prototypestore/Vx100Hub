@@ -333,6 +333,7 @@ body {
   .product-info {
     flex: 1 1 100%;
     gap: 1.2rem;
+    margin-top: 0.5rem;
   }
 
   .product-title {
