@@ -1,15 +1,90 @@
 [
   {
     "id": "1",
-    "title": "Blog",
+    "title": "Startup Website Package",
+    "basic": {
+      "price": 7000,
+      "details": [
+        "4 pages (Home, Services, Portfolio, Contact)",
+        "Homepage (included: social media integration)",
+        "Service section",
+        "Copyright included",
+        "Email contact setup",
+        "Phone contact setup",
+        "Basic branding design"
+      ]
+    },
+    "pro": {
+      "price": 10000,
+      "details": [
+        "Everything in Basic",
+        "5 extra pages (included)",
+        "Custom branding",
+        "Customer reviews carousel",
+        "Advanced content",
+        "Pop-up CTA buttons"
+      ]
+    },
+    "premium": {
+      "price": 15000,
+      "details": [
+        "Everything in Pro",
+        "Interactive pop-ups",
+        "Image carousel",
+        "Multiple review sections",
+        "Animated stats / numbers"
+      ]
+    },
+    "image": "STARTUP WEBSITE.svg"
+  },
+  {
+    "id": "2",
+    "title": "Landing Page",
+    "basic": {
+      "price": 3000,
+      "details": [
+        "Single page site",
+        "Call-to-action buttons",
+        "Icons and features section",
+        "Portfolio section",
+        "Reviews section",
+        "Email setup",
+        "Phone setup",
+        "Social media links"
+      ]
+    },
+    "pro": {
+      "price": 5000,
+      "details": [
+        "Everything in Basic",
+        "Add 5 extra pages",
+        "Scroll animations",
+        "Interactive buttons",
+        "Promotion section"
+      ]
+    },
+    "premium": {
+      "price": 8000,
+      "details": [
+        "Everything in Pro",
+        "Full-page interactive promotions",
+        "Full-screen welcome section",
+        "Smooth scrolling effects"
+      ]
+    },
+    "image": "Landing page.svg"
+  },
+  {
+    "id": "3",
+    "title": "Blog Page",
     "basic": {
       "price": 2500,
       "details": [
-        "Hero (headline and subtext)",
-        "Card (custom image, title, description)",
-        "CTA (on card)",
-        "Copywrite (2 pages)",
-        "Article (2 pages in total)"
+        "Intro section",
+        "Article",
+        "Read-more buttons",
+        "Copyright included",
+        "1 article"
       ]
     },
     "pro": {
@@ -18,9 +93,10 @@
         "Everything in Basic",
         "Social sharing buttons",
         "Advanced SEO",
-        "Newsletter (frontend only)",
-        "Sign-up",
-        "5 extra pages"
+        "Newsletter signup",
+        "Sign-up form",
+        "3 extra articles",
+        "Add 5 extra pages"
       ]
     },
     "premium": {
@@ -29,41 +105,40 @@
         "Everything in Pro",
         "Custom graphics",
         "Table of contents",
-        "Sticky navigation for long posts",
+        "Fixed Navigation (recommended: long posts)",
         "Interactive elements",
-        "Front-end comment section"
+        "Comment section"
       ]
     },
     "image": "Blog.svg"
   },
   {
-    "id": "2",
-    "title": "Theme Website",
+    "id": "4",
+    "title": "Themed Website Package",
     "basic": {
       "price": 8500,
       "details": [
-        "Hero (headline and subtext)",
-        "CTA (on hero)",
-        "20 products total (each with hover effect card and CTA for inquiry)",
-        "Email integration (for inquiry)",
-        "Portfolio (images of chefs, names, ranks)",
+        "Banner",
+        "Call-to-action button",
+        "20 product cards",
+        "Email contact setup",
+        "Portfolio",
         "Custom branding",
-        "Custom menu (hover effects)",
-        "Copywrite (2 pages)",
-        "Contact (form with no backend)",
-        "Total of 3 pages"
+        "Custom menu with hover effects",
+        "Copyright included",
+        "Contact form (no backend)"
       ]
     },
     "pro": {
       "price": 11500,
       "details": [
         "Everything in Basic",
-        "5–10 extra product cards/pages",
-        "Advanced interactivity",
-        "Custom color palette",
+        "5 extra pages",
+        "Advanced interactive features",
+        "Custom color theme",
         "Google Map integration",
         "Mini blog",
-        "Interactive CTA"
+        "Interactive buttons"
       ]
     },
     "premium": {
@@ -72,92 +147,16 @@
         "Everything in Pro",
         "Advanced animations",
         "Micro interactions",
-        "Animated CTA buttons",
+        "Animated buttons",
         "3 extra pages",
-        "Custom icon set",
+        "Custom icons",
         "Branding package",
         "Interactive portfolio",
         "Map or mini blog",
-        "FAQ accordion",
-        "Lightweight animation for hero section"
+        "FAQ section",
+        "Lightweight animation for banner section"
       ]
     },
     "image": "Website themes.svg"
-  },
-  {
-    "id": "3",
-    "title": "Website Starter",
-    "basic": {
-      "price": 7000,
-      "details": [
-        "4 pages: Home, Service, Portfolio, Contact",
-        "Home page: CTA, hero, about, social media integration",
-        "Service cards: title, description, price, images, hover effect",
-        "Copywrite for all pages",
-        "Email integration",
-        "Phone integration",
-        "Basic custom branding"
-      ]
-    },
-    "pro": {
-      "price": 10000,
-      "details": [
-        "Everything in Basic",
-        "5 extra pages",
-        "Custom branding",
-        "Carousel/reviews",
-        "Advanced copywrite",
-        "Pop-up CTA"
-      ]
-    },
-    "premium": {
-      "price": 15000,
-      "details": [
-        "Everything in Pro",
-        "Interactive pop-ups",
-        "Carousel",
-        "Multiple review sections",
-        "Animated stats and counts (front-end only)"
-      ]
-    },
-    "image": "STARTUP WEBSITE.svg"
-  },
-  {
-    "id": "4",
-    "title": "Landing Page",
-    "basic": {
-      "price": 3000,
-      "details": [
-        "1 page total",
-        "Copywrite",
-        "CTA",
-        "Icons/features",
-        "Portfolio",
-        "Reviews",
-        "Email integration",
-        "Phone integration",
-        "Social media integration (Facebook and LinkedIn)"
-      ]
-    },
-    "pro": {
-      "price": 5000,
-      "details": [
-        "Everything in Basic",
-        "5 extra pages",
-        "Scroll animation",
-        "Interactive CTA",
-        "Promo selection"
-      ]
-    },
-    "premium": {
-      "price": 8000,
-      "details": [
-        "Everything in Pro",
-        "Interactive promo section",
-        "Full-screen hero animations",
-        "Scroll-triggered effects (fade, slide, or parallax)"
-      ]
-    },
-    "image": "Landing page.svg"
   }
 ]
