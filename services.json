@@ -1,155 +1,163 @@
 [
   {
     "id": "1",
-    "title": "Startup Website Package",
+    "title": "Blog",
     "basic": {
-      "price": 1500,
+      "price": 2500,
       "details": [
-        "Full website including landing, contact, and product pages",
-        "Optimized for SEO",
-        "Responsive design for mobile and desktop",
-        "Perfect for small businesses"
+        "Hero (headline and subtext)",
+        "Card (custom image, title, description)",
+        "CTA (on card)",
+        "Copywrite (2 pages)",
+        "Article (2 pages in total)"
       ]
     },
     "pro": {
-      "price": 3000,
+      "price": 4000,
       "details": [
         "Everything in Basic",
-        "1–6 pages",
-        "Landing page focused on conversion",
-        "Better layout & spacing",
-        "Multiple color themes",
-        "Slight branding polish",
-        "Faster turnaround"
+        "Social sharing buttons",
+        "Advanced SEO",
+        "Newsletter (frontend only)",
+        "Sign-up",
+        "5 extra pages"
       ]
     },
     "premium": {
-      "price": 8500,
+      "price": 7000,
       "details": [
         "Everything in Pro",
-        "Custom layout",
-        "Extra sections (Testimonials, Services, FAQs)",
-        "Blog or portfolio setup",
-        "Advanced styling",
-        "Priority support",
-        "Future expansion-ready"
-      ]
-    },
-    "image": "STARTUP WEBSITE.svg"
-  },
-  {
-    "id": "2",
-    "title": "Landing Page",
-    "basic": {
-      "price": 800,
-      "details": [
-        "Single-page landing website",
-        "Designed to convert visitors",
-        "Fast loading and responsive",
-        "SEO optimized"
-      ]
-    },
-    "pro": {
-      "price": 1200,
-      "details": [
-        "Everything in Basic",
-        "1–6 pages",
-        "Landing page focused on conversion",
-        "Better layout & spacing",
-        "Multiple color themes",
-        "Slight branding polish",
-        "Faster turnaround"
-      ]
-    },
-    "premium": {
-      "price": 2000,
-      "details": [
-        "Everything in Pro",
-        "Custom layout",
-        "Extra sections (Testimonials, Services, FAQs)",
-        "Blog or portfolio setup",
-        "Advanced styling",
-        "Priority support",
-        "Future expansion-ready"
-      ]
-    },
-    "image": "Landing page.svg"
-  },
-  {
-    "id": "3",
-    "title": "Blog Page",
-    "basic": {
-      "price": 900,
-      "details": [
-        "Stand-alone blog page or add-on to existing website",
-        "Clean and modern design",
-        "SEO optimized for better visibility",
-        "Responsive on all devices"
-      ]
-    },
-    "pro": {
-      "price": 1500,
-      "details": [
-        "Everything in Basic",
-        "1–6 pages",
-        "Landing page focused on conversion",
-        "Better layout & spacing",
-        "Multiple color themes",
-        "Slight branding polish",
-        "Faster turnaround"
-      ]
-    },
-    "premium": {
-      "price": 3000,
-      "details": [
-        "Everything in Pro",
-        "Custom layout",
-        "Extra sections (Testimonials, Services, FAQs)",
-        "Blog or portfolio setup",
-        "Advanced styling",
-        "Priority support",
-        "Future expansion-ready"
+        "Custom graphics",
+        "Table of contents",
+        "Sticky navigation for long posts",
+        "Interactive elements",
+        "Front-end comment section"
       ]
     },
     "image": "Blog.svg"
   },
   {
-    "id": "4",
-    "title": "Themed Website Package",
+    "id": "2",
+    "title": "Theme Website",
     "basic": {
-      "price": 2000,
+      "price": 8500,
       "details": [
-        "Multiple websites themed for specific industries",
-        "Industries include marketing agencies, cafes, salons, plumbers",
-        "Responsive & SEO ready",
-        "Customizable design options"
+        "Hero (headline and subtext)",
+        "CTA (on hero)",
+        "20 products total (each with hover effect card and CTA for inquiry)",
+        "Email integration (for inquiry)",
+        "Portfolio (images of chefs, names, ranks)",
+        "Custom branding",
+        "Custom menu (hover effects)",
+        "Copywrite (2 pages)",
+        "Contact (form with no backend)",
+        "Total of 3 pages"
       ]
     },
     "pro": {
-      "price": 3500,
+      "price": 11500,
       "details": [
         "Everything in Basic",
-        "1–6 pages",
-        "Landing page focused on conversion",
-        "Better layout & spacing",
-        "Multiple color themes",
-        "Slight branding polish",
-        "Faster turnaround"
+        "5–10 extra product cards/pages",
+        "Advanced interactivity",
+        "Custom color palette",
+        "Google Map integration",
+        "Mini blog",
+        "Interactive CTA"
       ]
     },
     "premium": {
-      "price": 7500,
+      "price": 17000,
       "details": [
         "Everything in Pro",
-        "Custom layout",
-        "Extra sections (Testimonials, Services, FAQs)",
-        "Blog or portfolio setup",
-        "Advanced styling",
-        "Priority support",
-        "Future expansion-ready"
+        "Advanced animations",
+        "Micro interactions",
+        "Animated CTA buttons",
+        "3 extra pages",
+        "Custom icon set",
+        "Branding package",
+        "Interactive portfolio",
+        "Map or mini blog",
+        "FAQ accordion",
+        "Lightweight animation for hero section"
       ]
     },
     "image": "Website themes.svg"
+  },
+  {
+    "id": "3",
+    "title": "Website Starter",
+    "basic": {
+      "price": 7000,
+      "details": [
+        "4 pages: Home, Service, Portfolio, Contact",
+        "Home page: CTA, hero, about, social media integration",
+        "Service cards: title, description, price, images, hover effect",
+        "Copywrite for all pages",
+        "Email integration",
+        "Phone integration",
+        "Basic custom branding"
+      ]
+    },
+    "pro": {
+      "price": 10000,
+      "details": [
+        "Everything in Basic",
+        "5 extra pages",
+        "Custom branding",
+        "Carousel/reviews",
+        "Advanced copywrite",
+        "Pop-up CTA"
+      ]
+    },
+    "premium": {
+      "price": 15000,
+      "details": [
+        "Everything in Pro",
+        "Interactive pop-ups",
+        "Carousel",
+        "Multiple review sections",
+        "Animated stats and counts (front-end only)"
+      ]
+    },
+    "image": "STARTUP WEBSITE.svg"
+  },
+  {
+    "id": "4",
+    "title": "Landing Page",
+    "basic": {
+      "price": 3000,
+      "details": [
+        "1 page total",
+        "Copywrite",
+        "CTA",
+        "Icons/features",
+        "Portfolio",
+        "Reviews",
+        "Email integration",
+        "Phone integration",
+        "Social media integration (Facebook and LinkedIn)"
+      ]
+    },
+    "pro": {
+      "price": 5000,
+      "details": [
+        "Everything in Basic",
+        "5 extra pages",
+        "Scroll animation",
+        "Interactive CTA",
+        "Promo selection"
+      ]
+    },
+    "premium": {
+      "price": 8000,
+      "details": [
+        "Everything in Pro",
+        "Interactive promo section",
+        "Full-screen hero animations",
+        "Scroll-triggered effects (fade, slide, or parallax)"
+      ]
+    },
+    "image": "Landing page.svg"
   }
 ]
-
