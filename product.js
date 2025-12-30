@@ -139,6 +139,16 @@ fetch("iframe.json")
       );
 
       figureEl.appendChild(iframeEl);
+
+      // ====== CREATE NOTE ======
+if (iframeData.note) {
+  const noteEl = document.createElement("p");
+  noteEl.textContent = iframeData.note;
+  noteEl.style.fontWeight = "bold";   // make bold
+  noteEl.style.textAlign = "center";  // center under iframe
+  noteEl.style.marginTop = "10px";    // spacing from iframe
+  figureEl.appendChild(noteEl);
+}
     }
   })
   .catch(err => console.error("Failed to load iframe.json", err));
