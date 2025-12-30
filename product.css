@@ -421,3 +421,25 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+@media (max-width: 768px) {
+
+  .product-image iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .product-image p {
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+    color: #6b7280;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image iframe {
+    aspect-ratio: 4 / 3;
+  }
+}
