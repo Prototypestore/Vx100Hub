@@ -335,13 +335,13 @@ footer a:focus {
   /* Services Grid */
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-    gap: 1rem 1.2rem; /* row gap 1rem, column gap 1.2rem */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* automatically wrap */
+    gap: 1rem 1rem; /* row gap + column gap */
     width: 100%;
   }
 
   .product-card {
-    width: 100%; /* ensures cards fit their grid cell */
+    width: 100%; /* fit grid cell */
     border-radius: 14px;
     overflow: hidden;
   }
@@ -416,7 +416,7 @@ footer a:focus {
 
   /* Services Grid */
   .grid {
-    grid-template-columns: 1fr; /* stack 1 per row on very small screens */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* stack if necessary */
     gap: 0.8rem;
   }
 
