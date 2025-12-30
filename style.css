@@ -391,3 +391,41 @@ footer a:focus {
   }
 }
 
+@media (max-width: 768px) {
+
+  /* Better tap rhythm */
+  .hero-btn {
+    min-height: 44px;
+  }
+
+  /* Cards feel more premium on mobile */
+  .product-card {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .product-card h3 {
+    line-height: 1.3;
+  }
+
+  .product-card .price {
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Typography polish */
+  .hero h1 {
+    letter-spacing: -0.02em;
+  }
+
+  .about p {
+    line-height: 1.7;
+  }
+
+  /* Card padding illusion (Shein trick) */
+  .product-card {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+}
