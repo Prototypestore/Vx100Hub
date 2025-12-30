@@ -113,7 +113,7 @@ fetch("iframe.json")
       iframeEl.src = iframeData.iframe;
 
       // Fixed size like your example (width x height)
-      iframeEl.style.width = "470px";
+      iframeEl.style.width = "500px";
       iframeEl.style.height = "360px";
       iframeEl.style.border = "0";
       iframeEl.style.display = "block";
