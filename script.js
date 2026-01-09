@@ -41,6 +41,12 @@ async function loadServices() {
     console.error("Failed to load services.json", err);
   }
 }
-
+// -------------------- HAMBURGER --------------------
 // Load services on page load
 document.addEventListener('DOMContentLoaded', loadServices);
+
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.classList.toggle("open");
+}
+
