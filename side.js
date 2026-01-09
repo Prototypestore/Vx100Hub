@@ -1,23 +1,48 @@
-// -------------------- SVG HAMBURGER MENU --------------------
+// -------------------- SIDE HAMBURGER MENU --------------------
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("open-profile-menu");
   const menu = document.getElementById("sideMenu");
+
+  if (!hamburger || !menu) return;
+
+  // Create overlay dynamically
+  const overlay = document.createElement("div");
+  overlay.id = "menuOverlay";
+  document.body.appendChild(overlay);
+
   const links = menu.querySelectorAll("a");
 
-  if (!hamburger || !menu) {
-    console.error("Hamburger or sideMenu not found");
-    return;
+  function openMenu() {
+    menu.classList.add("open");
+    overlay.classList.add("active");
+    document.body.classList.add("menu-open");
   }
 
-  // Toggle menu on hamburger click
+  function closeMenu() {
+    menu.classList.remove("open");
+    overlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+
+  // Toggle menu
   hamburger.addEventListener("click", () => {
-    menu.classList.toggle("open");
+    if (menu.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  // Close menu when clicking any link
+  // Close when clicking overlay
+  overlay.addEventListener("click", closeMenu);
+
+  // Close when clicking any link
   links.forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-    });
+    link.addEventListener("click", closeMenu);
+  });
+
+  // ESC key support (desktop polish)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
   });
 });
