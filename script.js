@@ -42,11 +42,13 @@ async function loadServices() {
   }
 }
 // -------------------- HAMBURGER --------------------
-// Load services on page load
-document.addEventListener('DOMContentLoaded', loadServices);
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("open-profile-menu");
 
-function toggleMenu() {
-  const menu = document.getElementById("sideMenu");
-  menu.classList.toggle("open");
-}
+  if (!hamburger) {
+    console.error("Hamburger SVG not found");
+    return;
+  }
 
+  hamburger.addEventListener("click", toggleMenu);
+});
