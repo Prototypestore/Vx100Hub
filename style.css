@@ -55,17 +55,15 @@ body {
 }
 
 /* SVG Hamburger */
-#open-profile-menu line {
-  stroke: #ffffff;                 /* white by default */
-  stroke-width: 2;
-  stroke-linecap: round;
-  transition: stroke 0.3s ease;    /* smooth color change */
+/* === SVG HAMBURGER FIX === */
+#open-profile-menu rect {
+  fill: #ffffff;              /* white by default */
+  transition: fill 0.3s ease;
 }
 
-/* Hover + focus (accessibility) */
-#open-profile-menu:hover line,
-#open-profile-menu:focus line {
-  stroke: #8a7cf6;                 /* your purple */
+.hamburger-btn:hover #open-profile-menu rect,
+.hamburger-btn:focus-visible #open-profile-menu rect {
+  fill: #8a7cf6;              /* purple on hover/focus */
 }
 
 .hamburger-btn {
