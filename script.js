@@ -41,14 +41,3 @@ async function loadServices() {
     console.error("Failed to load services.json", err);
   }
 }
-// -------------------- HAMBURGER --------------------
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("open-profile-menu");
-
-  if (!hamburger) {
-    console.error("Hamburger SVG not found");
-    return;
-  }
-
-  hamburger.addEventListener("click", toggleMenu);
-});
