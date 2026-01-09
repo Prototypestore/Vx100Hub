@@ -76,6 +76,85 @@ body {
   align-items: center;
 }
 
+/* ================= SIDE HAMBURGER MENU ================= */
+
+/* Overlay (background dim) */
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+/* Show overlay */
+#menuOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Side menu container */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  right: -320px; /* hidden */
+  width: 320px;
+  height: 100vh;
+  background: #000;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+  transition: right 0.35s ease;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+/* Open state */
+#sideMenu.open {
+  right: 0;
+}
+
+/* Thin purple accent strip */
+#sideMenu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #8a7cf6;
+}
+
+/* Menu links — PRIMARY */
+#sideMenu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Hover / focus */
+#sideMenu a:hover,
+#sideMenu a:focus {
+  background: rgba(138, 124, 246, 0.12);
+  color: #8a7cf6;
+  outline: none;
+}
+
+/* Visual hierarchy spacing */
+#sideMenu a:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Prevent page scroll when menu open */
+body.menu-open {
+  overflow: hidden;
+}
+
 /* Nav accessibility: focus styles */
 .nav ul {
   display: flex;
