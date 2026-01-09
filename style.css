@@ -68,6 +68,16 @@ body {
   stroke: #8a7cf6;                 /* your purple */
 }
 
+.hamburger-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
 /* Nav accessibility: focus styles */
 .nav ul {
   display: flex;
