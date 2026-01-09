@@ -9,16 +9,31 @@
 <body>
   <!-- SITE HEADER -->
   <header class="site-header">
+  <div class="header-container">
     <div class="logo">
       <a href="index.html">Vx100<strong>Studio</strong></a>
     </div>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="custom.html">Custom Order</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- SVG Hamburger Button -->
+    <button class="hamburger-btn" aria-label="Open menu">
+      <svg
+        id="open-profile-menu"
+        width="32"
+        height="32"
+        viewBox="0 0 100 80"
+        aria-hidden="true">
+        <rect width="100" height="12"></rect>
+        <rect y="30" width="100" height="12"></rect>
+        <rect y="60" width="100" height="12"></rect>
+      </svg>
+    </button>
+  </div>
+</header>
+<!-- SIDE MENU -->
+<nav id="sideMenu" aria-label="Side Navigation">
+  <a href="index.html">Home</a>
+  <a href="custom.html">Custom Order</a>
+  <a href="index.html#services">Services</a>
+</nav>
   <!-- MAIN SERVICE DETAIL -->
   <main class="product-page">
     <section class="product-detail container">
