@@ -552,3 +552,25 @@ footer a:focus {
     box-shadow: 0 12px 25px rgba(0,0,0,0.3);
   }
 }
+
+/* ================= RESPONSIVE HEADER SWITCH ================= */
+
+/* DESKTOP (default behavior) */
+.site-nav {
+  display: block;
+}
+
+.hamburger-btn {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;           /* hide normal nav */
+  }
+
+  .hamburger-btn {
+    display: flex;           /* show hamburger */
+  }
+}
