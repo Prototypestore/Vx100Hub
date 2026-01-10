@@ -586,39 +586,40 @@ body.menu-open {
 /* ================= DESKTOP NAV FIX ================= */
 @media (min-width: 769px) {
 
-  /* Header must sit above everything */
+  /* Header stays fixed and flexed */
   .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;              /* 🔑 RESTORE FLEX */
+    align-items: center;
+    padding: 1.5rem 3rem;
     z-index: 2000;
   }
 
-  /* SHOW desktop nav */
+  /* Desktop nav visible */
   .site-nav {
     display: block;
+    margin-left: auto;          /* 🔑 push nav right */
     position: relative;
     z-index: 2001;
   }
 
   .site-nav ul {
     display: flex;
+    gap: 2rem;
     align-items: center;
   }
 
-  /* HIDE hamburger on desktop */
-  .hamburger-btn {
-    display: none !important;
-  }
-
-  /* HIDE mobile side menu */
+  /* Hide hamburger + mobile UI */
+  .hamburger-btn,
   #sideMenu,
   #menuOverlay {
     display: none !important;
   }
 
-  /* Push page content down so header doesn’t cover it */
+  /* Prevent header overlap */
   body {
     padding-top: 90px;
   }
