@@ -295,22 +295,28 @@ body.menu-open {
 
 /* ================= RESPONSIVE HEADER SWITCH ================= */
 
-/* DESKTOP (default behavior) */
+/* ================= DESKTOP HEADER FIX ================= */
+
+/* Ensure header sits ON TOP of everything */
+.site-header {
+  position: fixed;      /* keeps it visible */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Desktop navigation visible */
 .site-nav {
   display: block;
 }
 
+/* Hide hamburger on desktop */
 .hamburger-btn {
   display: none;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .site-nav {
-    display: none;           /* hide normal nav */
-  }
-
-  .hamburger-btn {
-    display: flex;           /* show hamburger */
-  }
+/* Push page content below fixed header */
+body {
+  padding-top: 90px; /* adjust to your header height */
 }
