@@ -423,7 +423,7 @@ body.menu-open {
 /* ================= DESKTOP NAV (REUSE #sideMenu) ================= */
 @media (min-width: 769px) {
 
-  /* Header stays fixed */
+  /* Header bar */
   .site-header {
     position: fixed;
     top: 0;
@@ -431,52 +431,63 @@ body.menu-open {
     width: 100%;
     display: flex;
     align-items: center;
+    padding: 1.2rem 3rem;
+    background: #ffffff;
     z-index: 2000;
   }
 
-  /* 🔑 TURN SIDE MENU INTO HORIZONTAL NAV */
+  /* Header inner layout */
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Turn sideMenu into desktop nav */
   #sideMenu {
-    position: static;          /* remove fixed */
+    position: static;
     height: auto;
     width: auto;
-    flex-direction: row;       /* horizontal */
     background: transparent;
     padding: 0;
-    margin-left: auto;         /* push right */
+    margin-left: auto;       /* 🔑 pushes nav to the right */
+    display: flex;
+    flex-direction: row;
     box-shadow: none;
+    transform: none;
     right: auto;
-    top: auto;
-    display: flex !important;  /* FORCE visible */
   }
 
+  /* Remove purple strip */
   #sideMenu::before {
-    display: none;             /* remove purple strip */
+    display: none;
   }
 
+  /* Nav links horizontal */
   #sideMenu a {
-    border: none;
-    padding: 0 1.25rem;
+    color: #6f63e6;
     font-size: 1rem;
-    color: #ffffff;
+    padding: 0 1.5rem;
+    border: none;
   }
 
   #sideMenu a:hover {
+    color: #9c8fff;
     background: none;
-    color: #c8b6ff;
   }
 
-  /* Hide hamburger only */
+  /* Hide hamburger on desktop */
   .hamburger-btn {
-    display: none !important;
+    display: none;
   }
 
-  /* Overlay not needed on desktop */
+  /* Disable overlay */
   #menuOverlay {
-    display: none !important;
+    display: none;
   }
 
-  /* Prevent content overlap */
+  /* Prevent content hiding behind fixed header */
   body {
-    padding-top: 90px;
+    padding-top: 80px;
   }
 }
