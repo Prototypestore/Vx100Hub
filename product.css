@@ -587,74 +587,51 @@ body.menu-open {
 }
 
 /* ================= RESPONSIVE HEADER SWITCH ================= */
-/* ================= DESKTOP NAV (REUSE #sideMenu) ================= */
+/* ================= DESKTOP HEADER NAV ================= */
 @media (min-width: 769px) {
 
-  /* Header bar */
-  .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 1.2rem 3rem;
-    background: #ffffff;
-    z-index: 2000;
-  }
-
-  /* Header inner layout */
+  /* Header layout */
   .header-container {
     display: flex;
     align-items: center;
-    width: 100%;
   }
 
-  /* Turn sideMenu into desktop nav */
+  /* Turn sideMenu into inline nav */
   #sideMenu {
     position: static;
-    height: auto;
-    width: auto;
-    background: transparent;
-    padding: 0;
-    margin-left: auto;       /* 🔑 pushes nav to the right */
     display: flex;
     flex-direction: row;
+    gap: 2rem;
+    margin-left: auto;      /* 🔥 pushes nav to the right */
+    height: auto;
+    width: auto;
+    padding: 0;
+    background: transparent;
     box-shadow: none;
-    transform: none;
     right: auto;
+    transform: none;
   }
 
-  /* Remove purple strip */
+  /* Remove mobile-only visuals */
   #sideMenu::before {
     display: none;
   }
 
-  /* Nav links horizontal */
+  /* Nav links */
   #sideMenu a {
-    color: #6f63e6;
     font-size: 1rem;
-    padding: 0 1.5rem;
+    padding: 0;
     border: none;
+    color: #ffffff;
   }
 
   #sideMenu a:hover {
-    color: #9c8fff;
+    color: #8a7cf6;
     background: none;
   }
 
   /* Hide hamburger on desktop */
   .hamburger-btn {
     display: none;
-  }
-
-  /* Disable overlay */
-  #menuOverlay {
-    display: none;
-  }
-
-  /* Prevent content hiding behind fixed header */
-  body {
-    padding-top: 80px;
   }
 }
