@@ -596,50 +596,53 @@ body.menu-open {
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
     z-index: 2000;
   }
 
-  /* Turn sideMenu into horizontal nav */
+  /* 🔑 TURN SIDE MENU INTO HORIZONTAL NAV */
   #sideMenu {
     position: static;          /* remove fixed */
-    width: auto;
     height: auto;
+    width: auto;
     flex-direction: row;       /* horizontal */
-    align-items: center;
-    padding: 0;
-    margin-left: auto;         /* push to right */
     background: transparent;
+    padding: 0;
+    margin-left: auto;         /* push right */
     box-shadow: none;
     right: auto;
+    top: auto;
+    display: flex !important;  /* FORCE visible */
   }
 
-  /* Remove purple strip */
   #sideMenu::before {
-    display: none;
+    display: none;             /* remove purple strip */
   }
 
-  /* Nav links */
   #sideMenu a {
-    padding: 0 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
     border: none;
-    white-space: nowrap;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    color: #ffffff;
   }
 
-  #sideMenu a:hover,
-  #sideMenu a:focus {
+  #sideMenu a:hover {
     background: none;
     color: #c8b6ff;
   }
 
-  /* Hide hamburger + overlay */
-  .hamburger-btn,
+  /* Hide hamburger only */
+  .hamburger-btn {
+    display: none !important;
+  }
+
+  /* Overlay not needed on desktop */
   #menuOverlay {
     display: none !important;
   }
 
-  /* Offset for fixed header */
+  /* Prevent content overlap */
   body {
     padding-top: 90px;
   }
