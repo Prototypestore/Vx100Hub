@@ -368,6 +368,10 @@ footer a:focus {
   }
 
   /* Navigation */
+.site-nav {
+    display: none;
+  }
+  
   .nav ul {
     display: flex;
     flex-direction: row; /* always in a row */
