@@ -416,28 +416,43 @@ body.menu-open {
 }
 
 /* ================= RESPONSIVE HEADER SWITCH ================= */
-/* ================= DESKTOP HEADER FIX ================= */
+/* ================= DESKTOP NAV FIX ================= */
+@media (min-width: 769px) {
 
-/* Ensure header sits ON TOP of everything */
-.site-header {
-  position: fixed;      /* keeps it visible */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+  /* Header must sit above everything */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
 
-/* Desktop navigation visible */
-.site-nav {
-  display: block;
-}
+  /* SHOW desktop nav */
+  .site-nav {
+    display: block;
+    position: relative;
+    z-index: 2001;
+  }
 
-/* Hide hamburger on desktop */
-.hamburger-btn {
-  display: none;
-}
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+  }
 
-/* Push page content below fixed header */
-body {
-  padding-top: 90px; /* adjust to your header height */
+  /* HIDE hamburger on desktop */
+  .hamburger-btn {
+    display: none !important;
+  }
+
+  /* HIDE mobile side menu */
+  #sideMenu,
+  #menuOverlay {
+    display: none !important;
+  }
+
+  /* Push page content down so header doesn’t cover it */
+  body {
+    padding-top: 90px;
+  }
 }
