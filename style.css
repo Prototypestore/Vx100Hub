@@ -562,52 +562,59 @@ footer a:focus {
 @media (min-width: 769px) {
 
   /* Header stays fixed */
-  .header {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
     z-index: 2000;
   }
 
-  /* Turn sideMenu into top nav */
+  /* 🔑 TURN SIDE MENU INTO HORIZONTAL NAV */
   #sideMenu {
-    position: static;          /* no longer fixed */
-    width: auto;
+    position: static;          /* remove fixed */
     height: auto;
+    width: auto;
     flex-direction: row;       /* horizontal */
-    align-items: center;
-    padding: 0;
-    margin-left: auto;         /* push nav to the right */
     background: transparent;
+    padding: 0;
+    margin-left: auto;         /* push right */
     box-shadow: none;
-    transform: none;
     right: auto;
+    top: auto;
+    display: flex !important;  /* FORCE visible */
   }
 
-  /* Remove purple strip on desktop */
   #sideMenu::before {
-    display: none;
+    display: none;             /* remove purple strip */
   }
 
-  /* Nav links */
   #sideMenu a {
-    padding: 0 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
     border: none;
-    white-space: nowrap;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    color: #ffffff;
   }
 
-  #sideMenu a:hover,
-  #sideMenu a:focus {
+  #sideMenu a:hover {
     background: none;
-    color: #8a7cf6;
+    color: #c8b6ff;
   }
 
-  /* Hide hamburger on desktop */
+  /* Hide hamburger only */
   .hamburger-btn {
-    display: none;
+    display: none !important;
   }
 
-  /* Disable overlay */
+  /* Overlay not needed on desktop */
   #menuOverlay {
-    display: none;
+    display: none !important;
+  }
+
+  /* Prevent content overlap */
+  body {
+    padding-top: 90px;
   }
 }
