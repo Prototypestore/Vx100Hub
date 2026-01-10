@@ -387,6 +387,10 @@ body.menu-open {
   }
 
   /* Navigation */
+.site-nav {
+    display: none;
+  }
+  
   .site-nav ul {
     display: flex;
     flex-direction: row; /* always in a row */
