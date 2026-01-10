@@ -15,17 +15,22 @@ body {
 /* ================= HEADER ================= */
 .site-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
   background: #111827; /* dark header */
 }
 
+/* Logo */
 .site-header .logo a {
   font-weight: 700;
   font-size: 1.8rem;
   color: #c8b6ff;
   text-decoration: none;
+}
+
+/* Desktop nav */
+.site-nav {
+  margin-left: auto;
 }
 
 .site-nav ul {
@@ -49,8 +54,8 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 /* Hamburger button */
@@ -62,21 +67,26 @@ body {
   display: flex;
   align-items: center;
 
-  /* ✅ PUSH TO FAR RIGHT (KEY FIX) */
+  /* ✅ FORCE FAR RIGHT */
   margin-left: auto;
 }
 
-/* SVG bars */
+/* ================= SVG HAMBURGER ================= */
+
+/* Rect-only SVG styling (NO HTML CHANGE) */
 #open-profile-menu rect {
   fill: #ffffff;
   transition: fill 0.3s ease;
 }
 
-#open-profile-menu:hover rect {
+/* Hover + focus */
+.hamburger-btn:hover #open-profile-menu rect,
+.hamburger-btn:focus-visible #open-profile-menu rect {
   fill: #8a7cf6;
 }
 
-/* Overlay */
+/* ================= OVERLAY ================= */
+
 #menuOverlay {
   position: fixed;
   inset: 0;
@@ -92,7 +102,8 @@ body {
   pointer-events: auto;
 }
 
-/* Side menu */
+/* ================= SIDE MENU ================= */
+
 #sideMenu {
   position: fixed;
   top: 0;
@@ -112,7 +123,7 @@ body {
   right: 0;
 }
 
-/* Purple accent strip */
+/* Thin purple accent strip */
 #sideMenu::before {
   content: "";
   position: absolute;
@@ -125,23 +136,31 @@ body {
 
 /* Menu links */
 #sideMenu a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 1rem 2rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#sideMenu a:not(:last-child) {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-#sideMenu a:hover {
+#sideMenu a:hover,
+#sideMenu a:focus {
   background: rgba(138,124,246,0.12);
   color: #8a7cf6;
+  outline: none;
 }
 
-/* Lock scroll */
+/* ================= LOCK SCROLL ================= */
+
 body.menu-open {
   overflow: hidden;
 }
+
 
 /* ================= PRODUCT PAGE LAYOUT ================= */
 .product-page .container {
