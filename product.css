@@ -61,6 +61,9 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+
+  /* ✅ PUSH TO FAR RIGHT (KEY FIX) */
+  margin-left: auto;
 }
 
 /* SVG bars */
@@ -139,7 +142,6 @@ body {
 body.menu-open {
   overflow: hidden;
 }
-
 
 /* ================= PRODUCT PAGE LAYOUT ================= */
 .product-page .container {
