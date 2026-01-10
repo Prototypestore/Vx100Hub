@@ -42,6 +42,155 @@ body {
   text-decoration: none;
 }
 
+/* ================= HEADER ================= */
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: #111827; /* dark header */
+}
+
+/* Logo */
+.site-header .logo a {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #c8b6ff;
+  text-decoration: none;
+}
+
+/* Desktop nav */
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: #c8b6ff;
+}
+
+/* ================= HAMBURGER MENU ================= */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Hamburger button */
+.hamburger-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  /* ✅ FORCE FAR RIGHT */
+  margin-left: auto;
+}
+
+/* ================= SVG HAMBURGER ================= */
+
+/* Rect-only SVG styling (NO HTML CHANGE) */
+#open-profile-menu rect {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+/* Hover + focus */
+.hamburger-btn:hover #open-profile-menu rect,
+.hamburger-btn:focus-visible #open-profile-menu rect {
+  fill: #8a7cf6;
+}
+
+/* ================= OVERLAY ================= */
+
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+#menuOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= SIDE MENU ================= */
+
+#sideMenu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: #000;
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s ease;
+  z-index: 999;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+#sideMenu.open {
+  right: 0;
+}
+
+/* Thin purple accent strip */
+#sideMenu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #8a7cf6;
+}
+
+/* Menu links */
+#sideMenu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#sideMenu a:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+#sideMenu a:hover,
+#sideMenu a:focus {
+  background: rgba(138,124,246,0.12);
+  color: #8a7cf6;
+  outline: none;
+}
+
+/* ================= LOCK SCROLL ================= */
+
+body.menu-open {
+  overflow: hidden;
+}
+
 /* ================= FORM CONTAINER ================= */
 .contact-page h1,
 .contact-page p {
