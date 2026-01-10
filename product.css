@@ -587,43 +587,59 @@ body.menu-open {
 }
 
 /* ================= RESPONSIVE HEADER SWITCH ================= */
-/* ================= DESKTOP NAV FIX ================= */
+/* ================= DESKTOP NAV (REUSE #sideMenu) ================= */
 @media (min-width: 769px) {
 
-  /* Header stays fixed and flexed */
+  /* Header stays fixed */
   .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;              /* 🔑 RESTORE FLEX */
-    align-items: center;
-    padding: 1.5rem 3rem;
     z-index: 2000;
   }
 
-  /* Desktop nav visible */
-  .site-nav {
-    display: block;
-    margin-left: auto;          /* 🔑 push nav right */
-    position: relative;
-    z-index: 2001;
-  }
-
-  .site-nav ul {
-    display: flex;
-    gap: 2rem;
+  /* Turn sideMenu into horizontal nav */
+  #sideMenu {
+    position: static;          /* remove fixed */
+    width: auto;
+    height: auto;
+    flex-direction: row;       /* horizontal */
     align-items: center;
+    padding: 0;
+    margin-left: auto;         /* push to right */
+    background: transparent;
+    box-shadow: none;
+    right: auto;
   }
 
-  /* Hide hamburger + mobile UI */
+  /* Remove purple strip */
+  #sideMenu::before {
+    display: none;
+  }
+
+  /* Nav links */
+  #sideMenu a {
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    white-space: nowrap;
+  }
+
+  #sideMenu a:hover,
+  #sideMenu a:focus {
+    background: none;
+    color: #c8b6ff;
+  }
+
+  /* Hide hamburger + overlay */
   .hamburger-btn,
-  #sideMenu,
   #menuOverlay {
     display: none !important;
   }
 
-  /* Prevent header overlap */
+  /* Offset for fixed header */
   body {
     padding-top: 90px;
   }
