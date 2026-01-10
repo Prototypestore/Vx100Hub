@@ -567,45 +567,41 @@ footer a:focus {
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 1.2rem 3rem;
     background: #ffffff;
     z-index: 2000;
   }
 
-  /* Header inner layout */
+  /* Header layout */
   .header-container {
     display: flex;
     align-items: center;
     width: 100%;
   }
 
-  /* Turn sideMenu into desktop nav */
+  /* Turn sideMenu into horizontal nav */
   #sideMenu {
-    position: static;
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
     height: auto;
     width: auto;
     background: transparent;
     padding: 0;
-    margin-left: auto;       /* 🔑 pushes nav to the right */
     display: flex;
     flex-direction: row;
+    gap: 2rem;
     box-shadow: none;
-    transform: none;
-    right: auto;
   }
 
-  /* Remove purple strip */
   #sideMenu::before {
     display: none;
   }
 
-  /* Nav links horizontal */
   #sideMenu a {
     color: #6f63e6;
     font-size: 1rem;
-    padding: 0 1.5rem;
+    padding: 0;
     border: none;
   }
 
@@ -614,7 +610,7 @@ footer a:focus {
     background: none;
   }
 
-  /* Hide hamburger on desktop */
+  /* Hide hamburger */
   .hamburger-btn {
     display: none;
   }
@@ -624,7 +620,6 @@ footer a:focus {
     display: none;
   }
 
-  /* Prevent content hiding behind fixed header */
   body {
     padding-top: 80px;
   }
