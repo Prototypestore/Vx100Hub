@@ -554,28 +554,30 @@ footer a:focus {
 }
 
 /* ================= RESPONSIVE HEADER SWITCH ================= */
-/* ================= DESKTOP NAV FIX ================= */
+/* ================= DESKTOP NAV FIX (CORRECT SELECTORS) ================= */
 @media (min-width: 769px) {
 
-  /* Header must sit above everything */
-  .site-header {
+  /* Header stays on top */
+  .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2000;
+    overflow: visible;
   }
 
   /* SHOW desktop nav */
-  .site-nav {
-    display: block;
+  .nav {
+    display: block !important;
     position: relative;
     z-index: 2001;
   }
 
-  .site-nav ul {
-    display: flex;
+  .nav ul {
+    display: flex !important;
     align-items: center;
+    gap: 2rem;
   }
 
   /* HIDE hamburger on desktop */
@@ -589,7 +591,7 @@ footer a:focus {
     display: none !important;
   }
 
-  /* Push page content down so header doesn’t cover it */
+  /* Offset content for fixed header */
   body {
     padding-top: 90px;
   }
