@@ -166,7 +166,7 @@ text-align: center;}
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns by default (mobile) */
   gap: 20px; /* spacing between items */
-  max-width: 180px;
+  max-width: 300px;
   margin: 0 auto;
 }
 
