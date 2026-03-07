@@ -64,6 +64,18 @@ nav {
   opacity: 0;
 }
 
+nav .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
 nav.active {
   display: block;
   opacity: 1;
@@ -81,7 +93,8 @@ nav ul {
 nav a {
   color: #fff;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 250px;
+  text-decoration:none;
   transition: color 0.2s ease, transform 0.2s ease, opacity 0.05s ease;
 }
 
