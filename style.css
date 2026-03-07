@@ -167,7 +167,6 @@ text-align: center;}
   grid-template-columns: repeat(2, 1fr); /* 2 columns by default (mobile) */
   gap: 20px; /* spacing between items */
   max-width: 950px;
-  max-height: 300px;
   margin: 0 auto;
 }
 
