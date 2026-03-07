@@ -1,35 +1,27 @@
-// select hamburger, nav, and links
-const menuBtn = document.querySelector('.menu-btn');
-const nav = document.querySelector('nav');
-const navLinks = document.querySelectorAll('nav a');
+// grab close button
+const closeBtn = document.querySelector('.close-btn');
 
-// toggle nav overlay
+// toggle overlay & lock/unlock scroll
 menuBtn.addEventListener('click', () => {
   nav.classList.toggle('active');
-});
-
-// close nav when any link is clicked
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('active');
-  });
-});
-
-// highlight current page link
-navLinks.forEach(link => {
-  if (link.href === window.location.href) {
-    link.classList.add('current');
+  if(nav.classList.contains('active')) {
+    // lock body scroll
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
   }
 });
 
-// fade links on scroll
-nav.addEventListener('scroll', () => {
-  navLinks.forEach(link => {
-    const rect = link.getBoundingClientRect();
-    if (rect.top < 50 || rect.bottom > window.innerHeight - 50) {
-      link.classList.add('fade');
-    } else {
-      link.classList.remove('fade');
-    }
+// close overlay with X button
+closeBtn.addEventListener('click', () => {
+  nav.classList.remove('active');
+  document.body.style.overflow = ''; // unlock scroll
+});
+
+// close overlay when link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+    document.body.style.overflow = ''; // unlock scroll
   });
 });
