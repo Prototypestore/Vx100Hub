@@ -12,12 +12,6 @@ menuBtn.addEventListener('click', () => {
   }
 });
 
-// close overlay with X button
-closeBtn.addEventListener('click', () => {
-  nav.classList.remove('active');
-  document.body.style.overflow = ''; // unlock scroll
-});
-
 // close overlay when link is clicked
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
