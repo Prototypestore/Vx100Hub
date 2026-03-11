@@ -1,1 +1,187 @@
+/* =========================
+RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: system-ui, -apple-system, sans-serif;
+  background:#ffffff;
+  color:#000000;
+  line-height:1.6;
+}
+
+/* =========================
+HEADER
+========================= */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:2px;
+}
+
+/* =========================
+HAMBURGER BUTTON (MOBILE)
+========================= */
+.menu-btn{
+  background:none;
+  border:none;
+  cursor:pointer;
+
+  /* mobile: fixed on right */
+  position: static;
+  top: 24px;
+  right: 24px;
+  width: 30px;
+  height: 30px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger path{
+  stroke:#000;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  transform-origin:center;
+  transition: transform 0.35s ease, opacity 0.25s ease, stroke 0.25s ease;
+}
+
+/* Hamburger → X animation */
+.menu-btn.open .hamburger path:nth-child(1){
+  transform: translateY(5px) rotate(45deg);
+  transform-origin: center; 
+  transform-box: fill-box;
+  stroke:#fff;
+}
+
+.menu-btn.open .hamburger path:nth-child(2){
+  opacity:0;
+}
+
+.menu-btn.open .hamburger path:nth-child(3){
+  transform: translateY(-5px) rotate(-45deg);
+  transform-origin: center; 
+  transform-box: fill-box;
+  stroke:#fff;
+}
+
+.menu-btn.open .hamburger{
+  transform: scale(1.05);
+  transition: transform 0.35s ease;
+}
+
+/* =========================
+NAVIGATION (MOBILE ONLY)
+========================= */
+@media (max-width:1023px){
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity:0;
+    pointer-events:none;
+    transform: scale(0.96);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    z-index: 1000;
+  }
+
+  nav.open{
+    opacity:1;
+    pointer-events:auto;
+    transform:scale(1);
+  }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  nav a{
+    text-decoration:none;
+    font-size:16px;
+    font-weight:300;
+    letter-spacing:1.5px;
+    color:#fff;
+    transition: color 0.3s ease, transform 0.25s ease, opacity 0.3s ease;
+  }
+
+  nav a:hover{
+    color:#f049ff;
+    transform: scale(1.06);
+  }
+
+  nav a.active{
+    color:#f049ff;
+    font-weight:500;
+    transform: scale(1.1);
+  }
+
+  nav.open ul.scrolled{
+    opacity:0.4;
+    transform:translateY(-10px);
+  }
+}
+
+/* =========================
+NAV LINKS (DESKTOP/TABLET)
+========================= */
+@media (min-width:768px){
+  nav {
+    display: block; /* show nav for tablet+ */
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    background: none;
+    backdrop-filter: none;
+  }
+
+  nav ul{
+    list-style: none;
+    display:flex;
+    gap:32px;
+    flex-direction: row;
+  }
+
+  .menu-btn{
+    display:none; /* hide hamburger on tablet+ */
+  }
+
+  nav a{
+    text-decoration:none;
+    font-weight:500;
+    color:#000;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  nav a:hover{
+    color:#f049ff;
+    transform: scale(1.05);
+    border-bottom: 2px solid #f049ff;
+    padding-bottom:2px;
+  }
+}
 
