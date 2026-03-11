@@ -40,7 +40,7 @@ HAMBURGER BUTTON (MOBILE)
   cursor:pointer;
 
   /* mobile: fixed on right */
-  position: fixed;
+  position: static;
   top: 24px;
   right: 24px;
   width: 30px;
