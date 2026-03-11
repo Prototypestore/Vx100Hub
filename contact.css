@@ -185,3 +185,33 @@ NAV LINKS (DESKTOP/TABLET)
   }
 }
 
+/* =========================
+FOOTER
+========================= */
+footer{
+  background:#000;
+  color:#fff;
+  padding:50px 24px;
+  text-align: center;
+}
+
+#mail{
+  margin-bottom:20px;
+}
+
+#mail a{
+  color:#f049ff;
+  text-decoration:none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#mail a:hover {
+  transform: scale(1.05);
+  border-bottom: 2px solid #f049ff;
+  padding-bottom: 2px;
+}
+
+footer p{
+  font-size:14px;
+  color:#aaa;
+}
