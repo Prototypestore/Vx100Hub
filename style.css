@@ -62,6 +62,8 @@ HAMBURGER BUTTON (MOBILE)
 /* Hamburger → X animation */
 .menu-btn.open .hamburger path:nth-child(1){
   transform: translateY(5px) rotate(45deg);
+  transform-origin: center; 
+  transform-box: fill-box;
   stroke:#fff;
 }
 
@@ -71,6 +73,8 @@ HAMBURGER BUTTON (MOBILE)
 
 .menu-btn.open .hamburger path:nth-child(3){
   transform: translateY(-5px) rotate(-45deg);
+  transform-origin: center; 
+  transform-box: fill-box;
   stroke:#fff;
 }
 
@@ -156,6 +160,7 @@ NAV LINKS (DESKTOP/TABLET)
   }
 
   nav ul{
+    list-style: none;
     display:flex;
     gap:32px;
     flex-direction: row;
