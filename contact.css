@@ -38,7 +38,7 @@ HAMBURGER BUTTON (MOBILE)
   background:none;
   border:none;
   cursor:pointer;
-
+  padding: 0;
   /* mobile: fixed on right */
   position: static;
   top: 24px;
