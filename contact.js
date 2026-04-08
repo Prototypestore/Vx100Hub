@@ -19,7 +19,7 @@ form.addEventListener('submit', (e) => {
   .then(data => {
     if (data.result === "success") {
       messageDiv.textContent = "Submitted successfully";
-      messageDiv.style.color = "#4CAF50"; // lighter green
+      messageDiv.style.color = "#22c55e"; // lighter green
       form.reset();
     } else {
       messageDiv.textContent = "Something went wrong";
