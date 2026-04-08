@@ -4,20 +4,11 @@ const messageDiv = document.getElementById('form-message');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Gather form data
-  const formData = {
-    name: form.name.value.trim(),
-    email: form.email.value.trim(),
-    phone: form.phone.value.trim(),
-    service: form.service.value,
-    message: form.message.value.trim()
-  };
+  const formData = new FormData(form);
 
-  // Send to Google Apps Script
-  fetch('https://script.google.com/macros/s/AKfycbybMkX7srCoofPI0yJOSq-97JiTn6ResnyyJBt0_CQkXBRl6HmGSD9QWGinOdJomOMWGQ/exec', { // replace with your web app URL
+  fetch('YOUR_REAL_WEB_APP_URL_HERE', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData)
+    body: formData
   })
   .then(res => res.json())
   .then(data => {
@@ -26,13 +17,13 @@ form.addEventListener('submit', (e) => {
       messageDiv.style.color = "green";
       form.reset();
     } else {
-      messageDiv.textContent = `Error: ${data.message || "Try again."}`;
+      messageDiv.textContent = "Something went wrong.";
       messageDiv.style.color = "red";
     }
   })
   .catch(err => {
     console.error(err);
-    messageDiv.textContent = "Something went wrong. Try again.";
+    messageDiv.textContent = "Something went wrong.";
     messageDiv.style.color = "red";
   });
 });
