@@ -195,7 +195,7 @@ main{
   justify-content: center;       /* center form vertically */
   align-items: stretch;
   background: #2f313c;
-  height: 495px;                 /* fixed height */
+  height: 510px;                 /* fixed height */
   padding: 20px 28px;            /* enough space for airy feel */
   border-radius: 10px;
   margin: 40px auto;
