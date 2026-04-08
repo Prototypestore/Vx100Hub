@@ -2,41 +2,37 @@ const form = document.getElementById('form');
 const messageDiv = document.getElementById('form-message');
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault(); // stop the default submit
+  e.preventDefault();
 
-  // collect form data
+  // Gather form data
   const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    phone: form.phone.value.trim(),
     service: form.service.value,
-    message: form.message.value
+    message: form.message.value.trim()
   };
 
-  // send to Google Apps Script
-  fetch('https://script.google.com/macros/s/AKfycbybMkX7srCoofPI0yJOSq-97JiTn6ResnyyJBt0_CQkXBRl6HmGSD9QWGinOdJomOMWGQ/exec', { // your web app URL
+  // Send to Google Apps Script
+  fetch('https://script.google.com/macros/s/AKfycbybMkX7srCoofPI0yJOSq-97JiTn6ResnyyJBt0_CQkXBRl6HmGSD9QWGinOdJomOMWGQ/exec', { // replace with your web app URL
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(formData)
   })
-  .then(response => {
-    if (response.ok) {
-      // success message
+  .then(res => res.json())
+  .then(data => {
+    if (data.result === "success") {
       messageDiv.textContent = "Form submitted successfully!";
       messageDiv.style.color = "green";
-      form.reset(); // clears the form
+      form.reset();
     } else {
-      // if Google Sheets failed
-      messageDiv.textContent = "Something went wrong. Try again.";
+      messageDiv.textContent = `Error: ${data.message || "Try again."}`;
       messageDiv.style.color = "red";
     }
   })
-  .catch(error => {
-    // network errors
+  .catch(err => {
+    console.error(err);
     messageDiv.textContent = "Something went wrong. Try again.";
     messageDiv.style.color = "red";
-    console.error(error);
   });
 });
