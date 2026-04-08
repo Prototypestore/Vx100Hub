@@ -195,7 +195,6 @@ main{
   justify-content: center;       /* center form vertically */
   align-items: stretch;
   background: #2f313c;
-  height: 510px;                 /* fixed height */
   padding: 20px 28px;            /* enough space for airy feel */
   border-radius: 10px;
   margin: 40px auto;
@@ -213,7 +212,7 @@ FORM STRUCTURE
   flex-direction: column;
   gap: 10px;                     /* more air between inputs */
   flex-grow: 1;
-  justify-content: space-between; /* stretch content proportionally */
+  justify-content: flex-start; /* stretch content proportionally */
   box-sizing: border-box;
 }
 
@@ -274,6 +273,7 @@ BUTTON
 button {
   padding: 12px;                 /* slightly smaller for balance */
   border: none;
+  margin-bottom: 15px;
   border-radius: 8px;
   background: #f049ff;
   color: #ffffff;
