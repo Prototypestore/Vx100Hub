@@ -6,7 +6,7 @@ form.addEventListener('submit', (e) => {
 
   const formData = new FormData(form);
 
-  fetch('YOUR_REAL_WEB_APP_URL_HERE', {
+  fetch('https://script.google.com/macros/s/AKfycbybMkX7srCoofPI0yJOSq-97JiTn6ResnyyJBt0_CQkXBRl6HmGSD9QWGinOdJomOMWGQ/exec', {
     method: 'POST',
     body: formData
   })
