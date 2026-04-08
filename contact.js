@@ -1,8 +1,13 @@
 const form = document.getElementById('form');
 const messageDiv = document.getElementById('form-message');
+const submitBtn = form.querySelector('button');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  // Disable button + show loading
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
 
   const formData = new FormData(form);
 
@@ -13,17 +18,31 @@ form.addEventListener('submit', (e) => {
   .then(res => res.json())
   .then(data => {
     if (data.result === "success") {
-      messageDiv.textContent = "Form submitted successfully!";
-      messageDiv.style.color = "green";
+      messageDiv.textContent = "Submitted successfully";
+      messageDiv.style.color = "#4CAF50"; // lighter green
       form.reset();
     } else {
-      messageDiv.textContent = "Something went wrong.";
+      messageDiv.textContent = "Something went wrong";
       messageDiv.style.color = "red";
     }
+
+    // Auto-hide message after 4 seconds
+    setTimeout(() => {
+      messageDiv.textContent = "";
+    }, 4000);
   })
-  .catch(err => {
-    console.error(err);
-    messageDiv.textContent = "Something went wrong.";
+  .catch(() => {
+    messageDiv.textContent = "Something went wrong";
     messageDiv.style.color = "red";
+
+    // Auto-hide error too
+    setTimeout(() => {
+      messageDiv.textContent = "";
+    }, 4000);
+  })
+  .finally(() => {
+    // Re-enable button
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
   });
 });
