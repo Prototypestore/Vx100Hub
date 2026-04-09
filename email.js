@@ -15,7 +15,7 @@ async function sendEmail(data) {
       message: data.message || "No extra details provided",
     };
 
-    await emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams);
+    await emailjs.send("service_kavlpaj", "template_as22a0t", templateParams);
     console.log(`Email sent to ${data.email}`);
   } catch (err) {
     console.error("Error sending email:", err);
