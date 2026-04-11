@@ -278,7 +278,7 @@ HERO
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1514565131-fce0801e5785") center/cover no-repeat;
+  background: url("https://media.licdn.com/dms/image/v2/D4E16AQFZbBxXdyBsGQ/profile-displaybackgroundimage-shrink_350_1400/B4EZxNVsYpGwAY-/0/1770824065282?e=1777507200&v=beta&t=8xb-UuK6VPGrTe9m3xsvGcUQWI5_nF0FmiPGITgy6Mg") center/cover no-repeat;
   filter: grayscale(100%) contrast(1.1);
   transform: scale(1.05);
 }
