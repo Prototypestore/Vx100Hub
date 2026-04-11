@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
 
   const formData = new FormData(form);
 
-  fetch('https://script.google.com/macros/s/AKfycbybMkX7srCoofPI0yJOSq-97JiTn6ResnyyJBt0_CQkXBRl6HmGSD9QWGinOdJomOMWGQ/exec', {
+  fetch('https://script.google.com/macros/s/AKfycby3aHJ0Kl-sJdu-Wj4QTJmBEpwMdOFRelAtQpZZ1BtskUZanoXoE65qe8DdTJ7JEABx9w/exec', {
     method: 'POST',
     body: formData
   })
