@@ -249,7 +249,7 @@ body {
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(20,184,166,0.35), transparent 70%);
+  background: none;
   top: -80px;
   right: -80px;
   filter: blur(40px);
