@@ -302,6 +302,7 @@ HERO
   position:relative;
   overflow:hidden;
   transition:all 0.3s ease;
+  margin-top: 10px;
 }
 
 /* Subtle glow layer */
