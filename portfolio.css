@@ -290,6 +290,10 @@ RIGHT PANEL
   font-weight: 600;
 }
 
+.btn a {
+  text-decoration: none;
+}
+
 .btn.primary {
   background: var(--primary);
   border: none;
