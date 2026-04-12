@@ -282,22 +282,32 @@ RIGHT PANEL
 }
 
 .btn {
+  display: inline-block;
   padding: 12px;
   border-radius: 30px;
   border: 2px solid var(--black);
   background: transparent;
   cursor: pointer;
   font-weight: 600;
+  text-decoration: none; /* IMPORTANT */
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
 }
 
-.btn a {
-  text-decoration: none;
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(240, 73, 255, 0.25);
+  border-color: #F049FF;
 }
 
 .btn.primary {
   background: var(--primary);
   border: none;
   color: var(--white);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 12px 30px rgba(240, 73, 255, 0.35);
 }
 
 /* =========================
