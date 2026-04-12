@@ -212,7 +212,7 @@ LEFT PANEL
 }
 
 .left {
-  background: var(--primary);
+  background: var(--muted);
   padding: 40px 20px;
   text-align: center;
 }
