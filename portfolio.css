@@ -212,7 +212,7 @@ LEFT PANEL
 }
 
 .left {
-  background: var(--muted);
+  background: #EEEEEE;
   padding: 40px 20px;
   text-align: center;
 }
@@ -229,7 +229,7 @@ LEFT PANEL
   height: 250px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  background: var(--secondary);
+  background: var(--muted);
 }
 
 .name {
@@ -240,7 +240,7 @@ LEFT PANEL
 .role {
   font-size: 12px;
   letter-spacing: 2px;
-  color: var(--muted);
+  color: var(--black);
 }
 
 /* LinkedIn */
@@ -269,7 +269,7 @@ RIGHT PANEL
 .intro,
 .secondary {
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--black);
   margin-bottom: 20px;
 }
 
