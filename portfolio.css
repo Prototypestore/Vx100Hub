@@ -185,6 +185,142 @@ NAV LINKS (DESKTOP/TABLET)
   }
 }
 
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --primary: #F049FF;
+  --secondary: #C93ED6;
+  --muted: #5F5F5F;
+}
+
+/* HERO LAYOUT (mobile stacked) */
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+LEFT PANEL
+========================= */
+.left {
+  background: var(--primary);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 16px;
+  height: 450px;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+
+.name {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* LinkedIn */
+.social {
+  margin-top: 15px;
+}
+
+.social a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+RIGHT PANEL
+========================= */
+.right {
+  padding: 40px 20px;
+}
+
+.right h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.intro,
+.secondary {
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 12px;
+  border-radius: 30px;
+  border: 2px solid var(--black);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: var(--primary);
+  border: none;
+  color: var(--white);
+}
+
+/* =========================
+DESKTOP (enhancement)
+========================= */
+@media (min-width: 900px) {
+
+  .hero {
+    flex-direction: row;
+    min-height: 100vh;
+  }
+
+  .left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+  }
+
+  .buttons {
+    flex-direction: row;
+  }
+
+  .right h1 {
+    font-size: 72px;
+  }
+}
+
 /* =========================
 FOOTER
 ========================= */
