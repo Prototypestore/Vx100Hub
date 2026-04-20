@@ -283,14 +283,12 @@ RIGHT PANEL
 }
 
 .arrow-toggle {
-  background: none;
-  border: none;
+  font-size: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
   cursor: pointer;
-  font-size: 18px;
-  color: var(--primary);
-  margin: 8px 0;
-  display: inline-block;
-  transition: transform 0.3s ease;
 }
 
 .collapse.open + .arrow-toggle {
