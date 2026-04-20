@@ -38,8 +38,6 @@ HAMBURGER BUTTON (MOBILE)
   background:none;
   border:none;
   cursor:pointer;
-
-  /* mobile: fixed on right */
   position: static;
   top: 24px;
   right: 24px;
@@ -59,7 +57,6 @@ HAMBURGER BUTTON (MOBILE)
   transition: transform 0.35s ease, opacity 0.25s ease, stroke 0.25s ease;
 }
 
-/* Hamburger → X animation */
 .menu-btn.open .hamburger path:nth-child(1){
   transform: translateY(5px) rotate(45deg);
   transform-origin: center; 
@@ -149,7 +146,7 @@ NAV LINKS (DESKTOP/TABLET)
 ========================= */
 @media (min-width:768px){
   nav {
-    display: block; /* show nav for tablet+ */
+    display: block;
     position: static;
     opacity: 1;
     pointer-events: auto;
@@ -166,7 +163,7 @@ NAV LINKS (DESKTOP/TABLET)
   }
 
   .menu-btn{
-    display:none; /* hide hamburger on tablet+ */
+    display:none;
   }
 
   nav a{
@@ -185,7 +182,7 @@ NAV LINKS (DESKTOP/TABLET)
 }
 
 /* =========================
-HERO (UPGRADED)
+HERO (ALIGNED FIXED)
 ========================= */
 #hero{
   background:#000;
@@ -201,6 +198,13 @@ HERO (UPGRADED)
   align-items:center;
   text-align:center;
   gap:40px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.hero-text{
+  width:100%;
+  max-width:600px;
 }
 
 .hero-text h1{
@@ -218,7 +222,6 @@ HERO (UPGRADED)
 .hero-text p{
   color:#ddd;
   margin-bottom:14px;
-  max-width:500px;
 }
 
 .hero-visual{
@@ -276,7 +279,6 @@ HERO (UPGRADED)
   transition:all 0.3s ease;
 }
 
-/* primary */
 .btn.primary{
   background:#f049ff;
   color:#fff;
@@ -287,7 +289,6 @@ HERO (UPGRADED)
   box-shadow:0 6px 20px rgba(240,73,255,0.4);
 }
 
-/* secondary */
 .btn.secondary{
   border:1px solid #fff;
   color:#fff;
@@ -307,11 +308,11 @@ SERVICES SECTION
 }
 
 #services header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 60px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  margin-bottom:60px;
 }
 
 #services h2{
@@ -320,9 +321,8 @@ SERVICES SECTION
 }
 
 #services header p{
-  color: #666;
-  font-size: 15px;
-  margin: 0;
+  color:#666;
+  font-size:15px;
 }
 
 #services h2::after{
@@ -334,8 +334,20 @@ SERVICES SECTION
   margin:12px auto 0;
 }
 
-.service{
-  margin-bottom:50px;
+#services .services-container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  max-width:950px;
+  margin:0 auto;
+}
+
+#services .service{
+  text-align:center;
+  padding:10px;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 .service h3{
@@ -348,28 +360,6 @@ SERVICES SECTION
   color:#555;
 }
 
-.service h3,
-.service p{
-  text-align:center;
-}
-
-#services .services-container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 950px;
-  margin: 0 auto;
-}
-
-#services .service{
-  text-align: center;
-  margin-bottom: 0;
-  padding: 10px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
 /* =========================
 FOOTER
 ========================= */
@@ -377,7 +367,7 @@ footer{
   background:#000;
   color:#fff;
   padding:50px 24px;
-  text-align: center;
+  text-align:center;
 }
 
 #mail{
@@ -387,13 +377,6 @@ footer{
 #mail a{
   color:#f049ff;
   text-decoration:none;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-#mail a:hover {
-  transform: scale(1.05);
-  border-bottom: 2px solid #f049ff;
-  padding-bottom: 2px;
 }
 
 footer p{
@@ -412,7 +395,28 @@ TABLET
   #hero{
     padding:120px 40px;
   }
-  
+
+  .hero-content{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    text-align:left;
+  }
+
+  .hero-text{
+    flex:1;
+    max-width:520px;
+  }
+
+  .hero-visual{
+    flex:1;
+    max-width:420px;
+  }
+
+  .hero-text h1{
+    font-size:48px;
+  }
+
   .hero-buttons{
     justify-content:flex-start;
   }
@@ -438,10 +442,6 @@ DESKTOP
 
   #hero{
     padding:140px 80px;
-  }
-  
-  .hero-buttons{
-    justify-content:flex-start;
   }
 
   #services{
