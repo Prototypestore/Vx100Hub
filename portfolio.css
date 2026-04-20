@@ -291,6 +291,7 @@ RIGHT PANEL
   margin: 8px 0;
   display: inline-block;
   transition: transform 0.3s ease;
+  transform: translateY(1px);
 }
 
 .collapse.open + .arrow-toggle {
