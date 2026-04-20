@@ -185,19 +185,25 @@ NAV LINKS (DESKTOP/TABLET)
 }
 
 /* =========================
-HERO
+HERO (UPGRADED)
 ========================= */
 #hero{
-  display:flex;
-  flex-direction:column;
-  text-align:center;
-  align-items: center;
-  background:#000000;
-  color:#ffffff;
+  background:#000;
+  color:#fff;
   padding:80px 24px;
+  position:relative;
+  overflow:hidden;
 }
 
-#hero h1{
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:40px;
+}
+
+.hero-text h1{
   font-size:34px;
   margin-bottom:12px;
 }
@@ -209,10 +215,87 @@ HERO
   margin-bottom:18px;
 }
 
-#hero p{
+.hero-text p{
   color:#ddd;
   margin-bottom:14px;
-  max-width:600px;
+  max-width:500px;
+}
+
+.hero-visual{
+  position:relative;
+  width:100%;
+  max-width:320px;
+}
+
+.hero-visual img{
+  width:100%;
+  border-radius:20px;
+  position:relative;
+  z-index:2;
+}
+
+.hero-glow{
+  position:absolute;
+  width:140%;
+  height:140%;
+  top:-20%;
+  left:-20%;
+  background: radial-gradient(circle, #f049ff55, transparent 70%);
+  filter:blur(50px);
+  z-index:1;
+}
+
+#hero::before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  background:#f049ff;
+  opacity:0.06;
+  border-radius:50%;
+  top:-80px;
+  right:-80px;
+  filter:blur(80px);
+}
+
+/* HERO BUTTONS */
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  margin-top:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  transition:all 0.3s ease;
+}
+
+/* primary */
+.btn.primary{
+  background:#f049ff;
+  color:#fff;
+}
+
+.btn.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(240,73,255,0.4);
+}
+
+/* secondary */
+.btn.secondary{
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.btn.secondary:hover{
+  background:#fff;
+  color:#000;
 }
 
 /* =========================
@@ -329,6 +412,10 @@ TABLET
   #hero{
     padding:120px 40px;
   }
+  
+  .hero-buttons{
+    justify-content:flex-start;
+  }
 
   #services{
     padding:100px 40px;
@@ -351,6 +438,10 @@ DESKTOP
 
   #hero{
     padding:140px 80px;
+  }
+  
+  .hero-buttons{
+    justify-content:flex-start;
   }
 
   #services{
