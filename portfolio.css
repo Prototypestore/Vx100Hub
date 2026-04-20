@@ -270,6 +270,33 @@ RIGHT PANEL
   margin-bottom: 15px;
 }
 
+.collapse .secondary {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.collapse.open .secondary {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.arrow-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--primary);
+  margin: 8px 0;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.collapse.open + .arrow-toggle {
+  transform: rotate(180deg);
+}
+
 .intro,
 .secondary {
   line-height: 1.6;
