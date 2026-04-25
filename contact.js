@@ -5,43 +5,48 @@ const submitBtn = form.querySelector('button');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Disable button + show loading
   submitBtn.disabled = true;
   submitBtn.textContent = "Sending...";
 
-  const formData = new FormData(form);
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    service: form.service.value,
+    message: form.message.value
+  };
 
-  fetch('https://script.google.com/macros/s/AKfycbzFwC2i9sIL15gNXZzcJzkSLZ-hapjjJGvwJF37wkCwrW9kcb2NH0IT2tMfVpdkZ9xY/exec', {
-    method: 'POST',
-    body: formData
+  // 1. Send to YOU
+  emailjs.send("service_kavlpaj", "template_2nz3ged", formData)
+
+  // 2. Send auto-reply to CLIENT
+  .then(() => {
+    return emailjs.send("service_kavlpaj", "template_0wo2j12", formData);
   })
-  .then(res => res.json())
-  .then(data => {
-    if (data.result === "success") {
-      messageDiv.textContent = "Submitted successfully";
-      messageDiv.style.color = "#22c55e"; // lighter green
-      form.reset();
-    } else {
-      messageDiv.textContent = "Something went wrong";
-      messageDiv.style.color = "red";
-    }
 
-    // Auto-hide message after 4 seconds
+  // 3. Success UI
+  .then(() => {
+    messageDiv.textContent = "Submitted successfully";
+    messageDiv.style.color = "#22c55e";
+    form.reset();
+
     setTimeout(() => {
       messageDiv.textContent = "";
     }, 4000);
   })
+
+  // 4. Error handling
   .catch(() => {
     messageDiv.textContent = "Something went wrong";
     messageDiv.style.color = "red";
 
-    // Auto-hide error too
     setTimeout(() => {
       messageDiv.textContent = "";
     }, 4000);
   })
+
+  // 5. Reset button
   .finally(() => {
-    // Re-enable button
     submitBtn.disabled = false;
     submitBtn.textContent = "Submit";
   });
