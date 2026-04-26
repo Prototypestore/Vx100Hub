@@ -300,6 +300,46 @@ button:active{
 }
 
 /* =========================
+FORM HEADING
+========================= */
+.form-heading{
+  text-align: center;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+PRIVACY TEXT
+========================= */
+.privacy-text{
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+.privacy-link{
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* =========================
+RESPONSE NOTE
+========================= */
+.response-note{
+  text-align: center;
+  color: #ffffff;
+  font-size: 13px;
+  margin-top: 18px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* =========================
 FOOTER
 ========================= */
 footer{
