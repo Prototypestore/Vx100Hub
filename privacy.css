@@ -278,6 +278,19 @@ PRIVACY PAGE
   margin-bottom:6px;
 }
 
+#contact{
+  margin-top:10px;
+}
+
+#contact a{
+  color:#f049ff;
+  text-decoration:none;
+}
+
+#contact a:hover{
+  text-decoration:underline;
+}
+
 /* =========================
 DESKTOP (SHOPIFY STYLE)
 ========================= */
