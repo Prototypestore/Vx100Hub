@@ -134,9 +134,7 @@ NAVIGATION (MOBILE ONLY)
     font-size: 18px; /* slightly larger = better mobile */
     font-weight: 400;
     letter-spacing: 1.5px;
-
     color: #fff;
-
     transition: color 0.25s ease, transform 0.2s ease;
   }
 
