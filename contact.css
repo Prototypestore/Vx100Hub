@@ -74,7 +74,7 @@ HAMBURGER BUTTON (MOBILE)
   transform: translateY(5px) rotate(45deg);
   transform-origin: center; 
   transform-box: fill-box;
-  stroke:#fff;
+  stroke:#000000;
 }
 
 .menu-btn.open .hamburger path:nth-child(2){
@@ -85,7 +85,7 @@ HAMBURGER BUTTON (MOBILE)
   transform: translateY(-5px) rotate(-45deg);
   transform-origin: center; 
   transform-box: fill-box;
-  stroke:#fff;
+  stroke:#000000;
 }
 
 .menu-btn.open .hamburger{
