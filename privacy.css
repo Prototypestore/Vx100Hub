@@ -123,12 +123,9 @@ NAVIGATION (MOBILE ONLY)
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     gap: 28px;
-
     margin: 0;
     padding: 0;
-
     transform: translateY(0); /* remove weird shift */
   }
 
@@ -137,9 +134,7 @@ NAVIGATION (MOBILE ONLY)
     font-size: 18px; /* slightly larger = better mobile */
     font-weight: 400;
     letter-spacing: 1.5px;
-
     color: #fff;
-
     transition: color 0.25s ease, transform 0.2s ease;
   }
 
@@ -158,14 +153,15 @@ NAVIGATION (MOBILE ONLY)
 NAV LINKS (DESKTOP/TABLET)
 ========================= */
 @media (min-width:768px){
+
   nav {
     display: block;
     position: static;
     opacity: 1;
     pointer-events: auto;
-    transform: scale(1);
     background: none;
     backdrop-filter: none;
+    margin-left: auto;
   }
 
   nav ul{
@@ -188,7 +184,7 @@ NAV LINKS (DESKTOP/TABLET)
 
   nav a:hover{
     color:#f049ff;
-    transform: scale(0.05);
+    transform: translateY(-2px);
     border-bottom: 2px solid #f049ff;
     padding-bottom:2px;
   }
