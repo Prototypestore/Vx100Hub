@@ -611,19 +611,20 @@ button {
 /* Service cards grid */
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 /* Individual card */
 .service-card {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  gap: 10px;
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-md);
-  padding: 24px 20px;
+  padding: 16px 14px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   position: relative;
@@ -645,12 +646,14 @@ button {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: rgba(240, 73, 255, 0.2);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .service-icon {
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   background: var(--pink-dim);
   border-radius: var(--radius-sm);
   display: flex;
@@ -663,32 +666,18 @@ button {
 }
 
 .service-body h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   margin-bottom: 6px;
   color: var(--black);
 }
 
 .service-body p {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-body);
-  line-height: 1.65;
+  line-height: 1.4;
   margin: 0;
 }
-
-.service-arrow {
-  flex-shrink: 0;
-  align-self: center;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity var(--transition), transform var(--transition);
-}
-
-.service-card:hover .service-arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 
 /* ==============================================
    CTA STRIP
