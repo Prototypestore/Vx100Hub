@@ -1,0 +1,13 @@
+#cta-strip {
+  background: var(--black);
+  padding: 72px 20px;
+  text-align: center;
+}
+
+.cta-text h2 {
+  color: white;
+}
+
+.cta-text p {
+  color: rgba(255,255,255,0.6);
+}
