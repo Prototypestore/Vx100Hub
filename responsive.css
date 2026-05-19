@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+
+  .hero-inner {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  #hero h1 {
+    font-size: 46px;
+  }
+
+  .services-grid {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  #hero h1 {
+    font-size: 56px;
+  }
+
+  #services {
+    padding: 120px 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
