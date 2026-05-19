@@ -1,10 +1,18 @@
 /* ==============================================
    ELEMENTS
    ============================================== */
-const menuBtn  = document.querySelector('.menu-btn');
-const nav      = document.getElementById('main-nav');
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.getElementById('main-nav');
 const navLinks = document.querySelectorAll('#main-nav a');
-const header   = document.getElementById('site-header');
+const header = document.getElementById('site-header');
+
+
+/* ==============================================
+   SAFETY CHECK (prevents silent crashes)
+   ============================================== */
+if (!menuBtn || !nav || !header) {
+  console.warn('Menu system missing required elements.');
+}
 
 
 /* ==============================================
@@ -24,8 +32,12 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-menuBtn.addEventListener('click', () => {
-  nav.classList.contains('open') ? closeMenu() : openMenu();
+menuBtn?.addEventListener('click', () => {
+  if (nav.classList.contains('open')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
 
 
@@ -38,9 +50,9 @@ navLinks.forEach(link => {
 
 
 /* ==============================================
-   CLOSE MENU ON ESCAPE KEY
+   ESC KEY CLOSE
    ============================================== */
-document.addEventListener('keydown', e => {
+document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && nav.classList.contains('open')) {
     closeMenu();
     menuBtn.focus();
@@ -49,69 +61,63 @@ document.addEventListener('keydown', e => {
 
 
 /* ==============================================
-   HEADER — SCROLL SHADOW
+   HEADER SCROLL STATE (CSS HOOK: .scrolled)
    ============================================== */
-const onScroll = () => {
+window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 10);
-};
-
-window.addEventListener('scroll', onScroll, { passive: true });
+}, { passive: true });
 
 
 /* ==============================================
-   ACTIVE NAV LINK HIGHLIGHT
+   ACTIVE LINK (SAFE FOR GITHUB PAGES)
    ============================================== */
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 navLinks.forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
+  const href = link.getAttribute('href');
+  if (href === currentPage) {
     link.classList.add('active');
   }
 });
 
 
 /* ==============================================
-   SCROLL REVEAL — INTERSECTION OBSERVER
+   SCROLL REVEAL (CSS HOOK: .reveal / .visible)
    ============================================== */
 const revealElements = document.querySelectorAll(
   '.service-card, .section-header, .hero-badge, .cta-text, .footer-brand, .footer-contact, .footer-nav'
 );
 
-// Add reveal class
-revealElements.forEach((el, i) => {
+revealElements.forEach((el) => {
   el.classList.add('reveal');
-  // Stagger service cards
-  if (el.classList.contains('service-card')) {
-    const cards = [...document.querySelectorAll('.service-card')];
-    const idx   = cards.indexOf(el);
-    if (idx > 0) el.classList.add(`reveal-delay-${Math.min(idx, 4)}`);
-  }
 });
 
-const revealObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
 
-revealElements.forEach(el => revealObserver.observe(el));
+revealElements.forEach(el => observer.observe(el));
 
 
 /* ==============================================
-   SMOOTH SCROLL FOR ANCHOR LINKS
+   SMOOTH SCROLL (ANCHORS)
    ============================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
+  anchor.addEventListener('click', (e) => {
     const target = document.querySelector(anchor.getAttribute('href'));
     if (!target) return;
+
     e.preventDefault();
+
     const offset = header.offsetHeight + 12;
+
     window.scrollTo({
       top: target.getBoundingClientRect().top + window.scrollY - offset,
       behavior: 'smooth'
