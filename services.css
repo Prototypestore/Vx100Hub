@@ -1,0 +1,21 @@
+#services {
+  background: var(--off-white);
+  padding: 80px 20px;
+}
+
+.services-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-card {
+  background: white;
+  padding: 16px;
+  border-radius: var(--radius-md);
+}
