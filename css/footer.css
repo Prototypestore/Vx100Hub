@@ -1,8 +1,119 @@
-#site-footer {
-  background: var(--surface);
-  padding: 52px 20px;
+/* ============================================================
+   FOOTER.CSS — Footer Section
+   Vx100Hub Design System
+   ============================================================ */
+ 
+/* ── FOOTER SECTION ── */
+.footer-section {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-6);
+  position: relative;
+  overflow: hidden;
 }
-
+ 
+/* Subtle glow in footer */
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 200px;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(240,73,255,0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+ 
+/* ── FOOTER INNER ── */
+.footer-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+ 
+/* ── FOOTER BRAND ── */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 280px;
+}
+ 
+.footer-brand .logo-vx {
+  font-size: var(--text-3xl);
+}
+ 
+.footer-brand p {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  line-height: 1.6;
+  max-width: 100%;
+}
+ 
+/* ── FOOTER NAV ── */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+ 
+.footer-nav a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out),
+              padding-left var(--duration-fast) var(--ease-out);
+  position: relative;
+}
+ 
+.footer-nav a:hover {
+  color: var(--color-accent);
+  padding-left: var(--space-2);
+}
+ 
+/* ── FOOTER BOTTOM ── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-6);
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+ 
 .footer-bottom p {
-  color: rgba(255,255,255,0.3);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  max-width: none;
+}
+ 
+.footer-tagline {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  font-family: var(--font-mono);
+}
+ 
+/* Highlight the tagline dots */
+.footer-tagline span,
+.footer-tagline .sep {
+  color: var(--color-accent);
+  opacity: 0.6;
 }
