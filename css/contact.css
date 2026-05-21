@@ -97,58 +97,12 @@ HAMBURGER BUTTON (MOBILE)
 NAVIGATION (MOBILE ONLY)
 ========================= */
 @media (max-width:1023px){
-  nav {
-    position: fixed;
-    top: 64px; /* push below fixed header */
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 64px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.85); /* stronger overlay */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
-    z-index: 999; /* BELOW header */
+ nav{
+    display: none;
   }
 
-  nav.open{
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  nav ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    margin: 0;
-    padding: 0;
-    transform: translateY(0); /* remove weird shift */
-  }
-
-  nav a{
-    text-decoration: none;
-    font-size: 18px; /* slightly larger = better mobile */
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    color: #fff;
-    transition: color 0.25s ease, transform 0.2s ease;
-  }
-
-  nav a:hover{
-    color: #f049ff;
-    transform: scale(1.05);
-  }
-
-  nav a.active{
-    color: #f049ff;
-    font-weight: 500;
+  .menu-btn{
+    display: none;
   }
 }
 
@@ -157,39 +111,34 @@ NAV LINKS (DESKTOP/TABLET)
 ========================= */
 @media (min-width:768px){
 
-  nav {
-    display: block;
-    position: static;
-    opacity: 1;
-    pointer-events: auto;
-    background: none;
-    backdrop-filter: none;
+  nav{
+    display: flex;
     margin-left: auto;
   }
 
   nav ul{
-    list-style: none;
-    display:flex;
-    gap:32px;
+    display: flex;
     flex-direction: row;
-  }
-
-  .menu-btn{
-    display:none;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   nav a{
-    text-decoration:none;
-    font-weight:500;
-    color:#000;
-    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: 0.3s ease;
   }
 
   nav a:hover{
-    color:#f049ff;
-    transform: translateY(-2px);
-    border-bottom: 2px solid #f049ff;
-    padding-bottom:2px;
+    color: #f049ff;
+  }
+
+  .menu-btn{
+    display: none;
   }
 }
 
