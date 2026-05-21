@@ -1,13 +1,111 @@
-#cta-strip {
-  background: var(--black);
-  padding: 72px 20px;
-  text-align: center;
+/* ============================================================
+   CTA.CSS — Call to Action Strip
+   Vx100Hub Design System
+   ============================================================ */
+ 
+/* ── CTA SECTION ── */
+.cta-section {
+  padding-block: var(--space-20);
+  position: relative;
+  overflow: hidden;
 }
-
+ 
+/* Dramatic full-width accent gradient bg */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg,
+      rgba(240,73,255,0.06) 0%,
+      transparent 50%,
+      rgba(240,73,255,0.04) 100%
+    );
+  pointer-events: none;
+}
+ 
+/* Top and bottom border lines */
+.cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  pointer-events: none;
+}
+ 
+/* ── CTA INNER ── */
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+ 
+/* ── CTA TEXT ── */
+.cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 560px;
+}
+ 
 .cta-text h2 {
-  color: white;
+  font-size: clamp(1.75rem, 3.5vw, var(--text-4xl));
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--color-white);
 }
-
+ 
 .cta-text p {
-  color: rgba(255,255,255,0.6);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 40ch;
+}
+ 
+/* ── CTA GLOW DOTS ── */
+.cta-section .glow-left {
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(240,73,255,0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+.cta-section .glow-right {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(240,73,255,0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+/* ── CTA BUTTON OVERRIDE ── */
+.cta-section .btn-primary {
+  flex-shrink: 0;
+  font-size: var(--text-base);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 32px rgba(240,73,255,0.25);
+  animation: pulseGlow 2.5s ease-in-out infinite;
 }
