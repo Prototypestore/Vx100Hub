@@ -1,24 +1,107 @@
-#hero {
-  background: var(--black);
-  color: var(--white);
-  padding: 72px 20px 0;
-  position: relative;
-}
 
+/* ============================================================
+   SECTION.CSS — Hero Section
+   Vx100Hub Design System
+   ============================================================ */
+ 
+/* ── HERO SECTION ── */
+.hero-section {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-20) var(--space-16);
+  position: relative;
+  overflow: hidden;
+}
+ 
+/* Radial purple glow top-right */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(240,73,255,0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+/* Subtle grid lines */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+ 
 .hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+ 
+/* ── HERO TEXT ── */
+.hero-text {
   display: flex;
   flex-direction: column;
-  gap: 52px;
-  text-align: center;
+  gap: var(--space-5);
 }
-
-#hero h1 {
-  font-size: 36px;
-  font-weight: 800;
+ 
+.hero-text h1 {
+  animation: fadeUp var(--duration-slow) var(--ease-out) 0.1s both;
 }
-
-.highlight {
-  color: var(--pink);
+ 
+.hero-text p.hero-sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 42ch;
+  animation: fadeUp var(--duration-slow) var(--ease-out) 0.2s both;
+}
+ 
+.trust-list {
+  animation: fadeUp var(--duration-slow) var(--ease-out) 0.3s both;
+}
+ 
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  animation: fadeUp var(--duration-slow) var(--ease-out) 0.4s both;
+}
+ 
+/* ── HERO VISUAL ── */
+.hero-visual {
+  position: relative;
+  animation: scaleIn var(--duration-xslow) var(--ease-out) 0.2s both;
+}
+ 
+/* Floating glow behind frame */
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240,73,255,0.18) 0%,
+    transparent 70%
+  );
+  border-radius: var(--radius-2xl);
+  z-index: -1;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
