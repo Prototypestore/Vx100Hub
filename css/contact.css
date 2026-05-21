@@ -97,12 +97,53 @@ HAMBURGER BUTTON (MOBILE)
 NAVIGATION (MOBILE ONLY)
 ========================= */
 @media (max-width:1023px){
- nav{
-    display: none;
+   nav{
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  nav.open{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover{
+    color: #f049ff;
   }
 
   .menu-btn{
-    display: none;
+    display: flex;
   }
 }
 
@@ -111,8 +152,14 @@ NAV LINKS (DESKTOP/TABLET)
 ========================= */
 @media (min-width:768px){
 
+  
   nav{
     display: flex;
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
+    backdrop-filter: none;
     margin-left: auto;
   }
 
@@ -121,6 +168,7 @@ NAV LINKS (DESKTOP/TABLET)
     flex-direction: row;
     align-items: center;
     gap: 32px;
+
     list-style: none;
     margin: 0;
     padding: 0;
@@ -130,7 +178,7 @@ NAV LINKS (DESKTOP/TABLET)
     text-decoration: none;
     color: #000;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
   }
 
   nav a:hover{
