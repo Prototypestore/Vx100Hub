@@ -82,6 +82,43 @@
   color: var(--color-accent);
   padding-left: var(--space-2);
 }
+
+.footer-contact{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-label{
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.footer-whatsapp{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.footer-whatsapp:hover{
+  color: var(--color-accent);
+  transform: translateX(2px);
+}
+
+.footer-whatsapp svg{
+  flex-shrink: 0;
+}
+
+
  
 /* ── FOOTER BOTTOM ── */
 .footer-bottom {
