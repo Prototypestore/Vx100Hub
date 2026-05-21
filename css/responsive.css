@@ -221,3 +221,17 @@
   }
  
 }
+
+@media (max-width: 767px){
+
+  .footer-inner{
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom{
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: center;
+  }
+}
