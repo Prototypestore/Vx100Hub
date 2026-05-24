@@ -119,7 +119,7 @@ NAVIGATION (MOBILE ONLY)
     pointer-events: auto;
   }
 
-  #main-nav.open ul {
+  #main-nav ul {
     display: flex;
     flex-direction: column;
     gap: 28px;
