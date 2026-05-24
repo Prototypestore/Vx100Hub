@@ -8,25 +8,7 @@
   padding-block: var(--space-24);
   position: relative;
   overflow: hidden;
-}
- 
-/* Subtle bottom glow */
-.services-section::before {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(240,73,255,0.06) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: 0;
+  background: var(--color-white);
 }
  
 .services-inner {
@@ -43,8 +25,8 @@
  
 /* ── SERVICE CARD ── */
 .service-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  border: none;
   border-radius: var(--radius-xl);
   padding: var(--space-8) var(--space-6);
   display: flex;
@@ -57,56 +39,6 @@
     box-shadow var(--duration-base) var(--ease-out),
     transform var(--duration-base) var(--ease-out);
   cursor: default;
-}
- 
-/* Corner accent line */
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-accent),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity var(--duration-base) var(--ease-out);
-}
- 
-/* Bottom glow fill on hover */
-.service-card::after {
-  content: '';
-  position: absolute;
-  bottom: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(240,73,255,0.1) 0%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity var(--duration-slow) var(--ease-out);
-  pointer-events: none;
-}
- 
-.service-card:hover {
-  border-color: var(--color-border-hover);
-  box-shadow: 0 4px 24px rgba(240,73,255,0.08),
-              0 1px 0 rgba(240,73,255,0.2) inset;
-  transform: translateY(-3px);
-}
- 
-.service-card:hover::before,
-.service-card:hover::after {
-  opacity: 1;
 }
  
 /* ── SERVICE CARD ICON ── */
@@ -133,13 +65,13 @@
 .service-card h3 {
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: var(--color-surface);
   letter-spacing: -0.01em;
 }
  
 .service-card p {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-faint);
   line-height: 1.6;
   max-width: 100%;
 }
