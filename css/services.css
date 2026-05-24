@@ -65,13 +65,13 @@
 .service-card h3 {
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-text-muted);
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
 }
  
 .service-card p {
   font-size: var(--text-sm);
-  color: var(--color-text-faint);
+  color: var(--color-text-muted);
   line-height: 1.6;
   max-width: 100%;
 }
