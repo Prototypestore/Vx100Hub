@@ -151,24 +151,18 @@ NAVIGATION (MOBILE ONLY)
 NAV LINKS (DESKTOP/TABLET)
 ========================= */
 @media (min-width:768px){
-
-  
-  nav{
+    #main-nav {
     display: flex;
     position: static;
-    opacity: 1;
-    pointer-events: auto;
-    background: none;
-    backdrop-filter: none;
     margin-left: auto;
   }
 
+  /* desktop row layout */
   #main-nav ul{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 32px;
-
     list-style: none;
     margin: 0;
     padding: 0;
@@ -189,10 +183,9 @@ NAV LINKS (DESKTOP/TABLET)
     color: #f049ff;
   }
 
-   .menu-btn{
+  .menu-btn{
     display: none;
   }
-
 }
 
 /* =========================
