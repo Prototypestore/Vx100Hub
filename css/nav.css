@@ -128,7 +128,7 @@ NAV LINKS (DESKTOP/TABLET)
     #main-nav {
     display: flex;
     position: static;
-    margin-right: auto;
+    margin-left: auto;
   }
 
   #main-nav ul {
