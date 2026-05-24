@@ -97,7 +97,7 @@ HAMBURGER BUTTON (MOBILE)
 NAVIGATION (MOBILE ONLY)
 ========================= */
 @media (max-width:1023px){
-   nav{
+  #main-nav {
     position: fixed;
     top: 64px;
     left: 0;
@@ -108,41 +108,28 @@ NAVIGATION (MOBILE ONLY)
     justify-content: center;
     background: rgba(0,0,0,0.88);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 999;
   }
 
-  nav.open{
+  #main-nav.open {
     opacity: 1;
     pointer-events: auto;
   }
 
-  nav.open ul{
+  #main-nav.open ul {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 28px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
-  nav a{
-    text-decoration: none;
+  #main-nav a {
     color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease;
   }
 
-  nav a:hover{
-    color: #f049ff;
-  }
-
-  .menu-btn{
+  .menu-btn {
     display: flex;
   }
 }
@@ -157,33 +144,18 @@ NAV LINKS (DESKTOP/TABLET)
     margin-left: auto;
   }
 
-  /* desktop row layout */
-  #main-nav ul{
+  #main-nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 32px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
-  #main-nav li{
-    display: flex;
-  }
-
-  #main-nav a{
-    text-decoration: none;
+  #main-nav a {
     color: #000;
-    font-weight: 500;
-    transition: color 0.3s ease;
   }
 
-  #main-nav a:hover{
-    color: #f049ff;
-  }
-
-  .menu-btn{
+  .menu-btn {
     display: none;
   }
 }
