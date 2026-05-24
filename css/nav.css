@@ -18,6 +18,13 @@ header{
   z-index: 1000;
 }
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .logo{
   font-weight:700;
   font-size:20px;
@@ -87,7 +94,7 @@ NAVIGATION (MOBILE ONLY)
   #main-nav {
     position: fixed;
     top: 64px;
-    left: 0;
+    right: 0;
     width: 100%;
     height: calc(100vh - 64px);
     display: flex;
@@ -128,7 +135,6 @@ NAV LINKS (DESKTOP/TABLET)
     #main-nav {
     display: flex;
     position: static;
-    margin-left: auto;
   }
 
   #main-nav ul {
