@@ -105,7 +105,7 @@ NAVIGATION (MOBILE ONLY)
 
   #main-nav ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 28px;
   }
 
@@ -125,7 +125,7 @@ NAV LINKS (DESKTOP/TABLET)
     #main-nav {
     display: flex;
     position: static;
-    margin-left: auto;
+    margin-right: auto;
   }
 
   #main-nav ul {
