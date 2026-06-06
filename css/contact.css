@@ -1,6 +1,6 @@
 /* =====================================================
    CONTACT PAGE
-   Accessible Light Theme
+   Accessible Light Theme (Soft Gray / White System)
    Uses Existing Vx100Hub Design Tokens
 ===================================================== */
 
@@ -9,6 +9,9 @@
   max-width:var(--max-width);
   margin:120px auto 80px;
   padding:0 var(--space-6);
+
+  /* page background for eye comfort */
+  background:var(--color-white);
 }
 
 /* =========================
@@ -16,14 +19,14 @@
 ========================= */
 
 .contact-hero{
-  background:var(--color-white);
-  border:1px solid rgba(0,0,0,0.08);
+  background:#fafafa; /* soft off-white layer */
+  border:1px solid rgba(0,0,0,0.06);
   border-radius:var(--radius-2xl);
   padding:80px 60px;
   margin-bottom:60px;
   position:relative;
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  box-shadow:0 8px 20px rgba(0,0,0,.04);
 }
 
 .contact-hero::before{
@@ -36,7 +39,7 @@
   border-radius:50%;
   background:radial-gradient(
     circle,
-    var(--color-accent-dim),
+    rgba(0,0,0,0.03),
     transparent 70%
   );
   pointer-events:none;
@@ -48,7 +51,7 @@
 }
 
 .contact-hero h1{
-  color:var(--color-bg);
+  color:var(--color-text);
   margin-bottom:12px;
 }
 
@@ -70,8 +73,8 @@
 }
 
 .info-card{
-  background:var(--color-white);
-  border:1px solid rgba(0,0,0,0.08);
+  background:#fafafa;
+  border:1px solid rgba(0,0,0,0.06);
   border-radius:var(--radius-xl);
   padding:24px;
   transition:
@@ -81,11 +84,11 @@
 
 .info-card:hover{
   transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
 }
 
 .info-card h3{
-  color:var(--color-bg);
+  color:var(--color-text);
   margin-bottom:8px;
 }
 
@@ -110,15 +113,15 @@
 ========================= */
 
 .contact-form-wrapper{
-  background:var(--color-white);
-  border:1px solid rgba(0,0,0,0.08);
+  background:#fafafa;
+  border:1px solid rgba(0,0,0,0.06);
   border-radius:var(--radius-xl);
   padding:32px;
-  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  box-shadow:0 6px 18px rgba(0,0,0,.04);
 }
 
 .contact-form-wrapper h2{
-  color:var(--color-bg);
+  color:var(--color-text);
   margin-bottom:24px;
 }
 
@@ -133,7 +136,7 @@
 }
 
 .contact-page label{
-  color:var(--color-bg);
+  color:var(--color-text);
   font-size:16px;
   font-weight:600;
 }
@@ -146,7 +149,7 @@
   border-radius:var(--radius-md);
   border:1px solid rgba(0,0,0,0.12);
   background:var(--color-white);
-  color:var(--color-bg);
+  color:var(--color-text);
   font-family:inherit;
   font-size:16px;
   line-height:1.5;
@@ -166,8 +169,7 @@
 .contact-page textarea:focus{
   outline:none;
   border-color:var(--color-accent);
-  box-shadow:
-    0 0 0 4px rgba(240,73,255,.15);
+  box-shadow:0 0 0 4px rgba(240,73,255,.12);
 }
 
 .contact-page textarea{
@@ -210,15 +212,15 @@
 
 .contact-card,
 .map-placeholder{
-  background:var(--color-white);
-  border:1px solid rgba(0,0,0,0.08);
+  background:#fafafa;
+  border:1px solid rgba(0,0,0,0.06);
   border-radius:var(--radius-xl);
   padding:24px;
-  box-shadow:0 6px 18px rgba(0,0,0,.04);
+  box-shadow:0 4px 14px rgba(0,0,0,.03);
 }
 
 .contact-card h3{
-  color:var(--color-bg);
+  color:var(--color-text);
   margin-bottom:16px;
 }
 
@@ -269,5 +271,4 @@
   .contact-grid{
     grid-template-columns:1fr;
   }
-
 }
