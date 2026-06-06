@@ -1,7 +1,5 @@
 /* =====================================================
    CONTACT PAGE
-   Accessible Light Theme (Soft Gray / White System)
-   Uses Existing Vx100Hub Design Tokens
 ===================================================== */
 
 .contact-page {
@@ -10,7 +8,7 @@
   margin: 120px auto 80px;
   padding: 0 var(--space-6);
 
-  /* page background for eye comfort */
+  /* Main page background: white */
   background: var(--color-white);
   color: var(--color-text-primary); /* Ensure text is dark */
 }
@@ -20,7 +18,7 @@
 ========================= */
 
 .contact-hero {
-  background: #fafafa; /* soft off-white layer */
+  background: #fafafa; /* soft off-white */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-2xl);
   padding: 80px 60px;
@@ -74,7 +72,7 @@
 }
 
 .info-card {
-  background: #fafafa;
+  background: #fafafa; /* card background soft gray */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 24px;
@@ -114,7 +112,7 @@
 ========================= */
 
 .contact-form-wrapper {
-  background: #fafafa;
+  background: #fafafa; /* soft light background */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 32px;
@@ -213,7 +211,7 @@
 
 .contact-card,
 .map-placeholder {
-  background: #fafafa;
+  background: #fafafa; /* light card background */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 24px;
