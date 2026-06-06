@@ -47,32 +47,77 @@
     </div>
   </header>
   <main>
-<main>
-  <h1 class="form-heading">Let's work together</h1>
-  <form id="form">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required placeholder="Your Name">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required placeholder="Your email">
-    <label for="phone">Phone (optional)</label>
-    <input type="tel" id="phone" name="phone" placeholder="Optional" maxlength="10" pattern="[1-9]{10}">
-    <label for="service">Service</label>
-    <select id="service" name="service" required>
-      <option value="" disabled selected>Select a service</option>
-      <option value="web-development">Web Development</option>
-      <option value="web-animations">UI Motion & Animation</option>
-      <option value="api-integration">API Integration</option>
-      <option value="analytics-google">Tracking & Optimization</option>
-    </select>
-    <label for="message">Additional Details</label>
-    <textarea id="message" name="message" placeholder="Any extra info..."></textarea>
-    <p class="privacy-text">By submitting, you agree to our <a href="privacy.html" class="privacy-link">privacy policy</a></p>
-    <div id="form-message"></div>
-    <button type="submit">Submit</button>
-  </form>
-  <div class="response-note">
-  I usually respond within 24–48 hours.<br>
-  Business inquiries only.</div>
+<main class="contact-page">
+  <section class="contact-hero">
+    <div class="contact-hero-content">
+      <h1>Contact Us</h1>
+      <p>Let's discuss your next website project.</p>
+    </div>
+  </section>
+  <section class="contact-info">
+    <div class="info-card">
+      <h3>Email</h3>
+      <p>hello@vx100hub.com</p>
+    </div>
+    <div class="info-card">
+      <h3>WhatsApp</h3>
+      <p>+27 073 851 9109</p>
+    </div>
+    <div class="info-card">
+      <h3>Response Time</h3>
+      <p>24–48 Hours</p>
+    </div>
+  </section>
+  <section class="contact-grid">
+    <div class="contact-form-wrapper">
+      <h2>Send a Message</h2>
+      <form id="form">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone">
+        <label for="service">Service</label>
+        <select id="service">
+          <option>Select a service</option>
+          <option>Web Development</option>
+          <option>UI Motion & Animation</option>
+          <option>API Integration</option>
+          <option>Tracking & Optimization</option>
+        </select>
+        <label for="message">Additional Details</label>
+        <textarea id="message"></textarea>
+        <p class="privacy-text">
+          By submitting, you agree to our
+          <a href="privacy.html">privacy policy</a>
+        </p>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="contact-sidebar">
+      <div class="contact-card">
+        <h3>Business Information</h3>
+        <p>
+          Looking for a premium landing page,
+          conversion-focused website or web animations?
+        </p>
+        <p>
+          WhatsApp:
+          <strong>+27 073 851 9109</strong>
+        </p>
+        <p>
+          Email:
+          <strong>hello@vx100hub.com</strong>
+        </p>
+      </div>
+      <div class="map-placeholder">
+        Google Map
+      </div>
+    </div>
+  </section>
 </main>
   <!-- ===================== FOOTER ===================== -->
   <footer id="site-footer">
