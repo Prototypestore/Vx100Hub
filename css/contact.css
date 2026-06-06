@@ -262,25 +262,3 @@
   padding-top: var(--space-12);
   padding-bottom: var(--space-6);
 }
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-  .contact-page {
-    margin-top: 100px;
-  }
-
-  .contact-hero {
-    padding: 60px 30px;
-  }
-
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
