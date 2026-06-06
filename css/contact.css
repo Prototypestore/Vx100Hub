@@ -1,24 +1,14 @@
 /* =====================================================
    CONTACT PAGE
-===================================================== */
+   ================================================ */
 
 .contact-page {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 120px auto 80px;
-  padding: 0 var(--space-6);
-
-  /* Main page background: white */
-  background: var(--color-white);
-  color: var(--color-text-primary); /* Ensure text is dark */
+  background: #ffffff;  /* Ensure the main page background is white */
+  color: var(--color-text-primary); /* Dark text for readability */
 }
 
-/* =========================
-   HERO
-========================= */
-
 .contact-hero {
-  background: #fafafa; /* soft off-white */
+  background: #fafafa; /* Soft off-white for hero section */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-2xl);
   padding: 80px 60px;
@@ -28,41 +18,13 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
-.contact-hero::before {
-  content: "";
-  position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.03),
-    transparent 70%
-  );
-  pointer-events: none;
+.contact-hero-content h1 {
+  color: var(--color-text-primary); /* Dark title */
 }
 
-.contact-hero-content {
-  position: relative;
-  z-index: 1;
+.contact-hero-content p {
+  color: var(--color-text-muted); /* Muted, but still visible */
 }
-
-.contact-hero h1 {
-  color: var(--color-text-primary);
-  margin-bottom: 12px;
-}
-
-.contact-hero p {
-  color: var(--color-text-muted);
-  font-size: var(--text-lg);
-  max-width: 50ch;
-}
-
-/* =========================
-   INFO CARDS
-========================= */
 
 .contact-info {
   display: grid;
@@ -72,34 +34,21 @@
 }
 
 .info-card {
-  background: #fafafa; /* card background soft gray */
+  background: #f7f7f7; /* Light gray card background */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 24px;
-  transition:
-    transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
-}
-
-.info-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
 }
 
 .info-card h3 {
-  color: var(--color-text-primary);
+  color: var(--color-text-primary); /* Dark headings */
   margin-bottom: 8px;
 }
 
 .info-card p {
-  color: var(--color-text-muted);
-  margin: 0;
-  max-width: none;
+  color: var(--color-text-muted); /* Muted text but readable */
 }
-
-/* =========================
-   MAIN GRID
-========================= */
 
 .contact-grid {
   display: grid;
@@ -107,12 +56,8 @@
   gap: 32px;
 }
 
-/* =========================
-   FORM WRAPPER
-========================= */
-
 .contact-form-wrapper {
-  background: #fafafa; /* soft light background */
+  background: #f7f7f7; /* Light gray background */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 32px;
@@ -122,16 +67,6 @@
 .contact-form-wrapper h2 {
   color: var(--color-text-primary);
   margin-bottom: 24px;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.contact-page #form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
 .contact-page label {
@@ -147,8 +82,8 @@
   padding: 16px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  background: var(--color-white);
-  color: var(--color-text-primary);
+  background: #ffffff; /* White input background */
+  color: var(--color-text-primary); /* Dark input text */
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
@@ -191,17 +126,9 @@
   color: var(--color-accent-dark);
 }
 
-.contact-page #form-message {
-  min-height: 20px;
-}
-
 .contact-page button {
   margin-top: 10px;
 }
-
-/* =========================
-   SIDEBAR
-========================= */
 
 .contact-sidebar {
   display: flex;
@@ -209,9 +136,8 @@
   gap: 24px;
 }
 
-.contact-card,
-.map-placeholder {
-  background: #fafafa; /* light card background */
+.contact-card {
+  background: #f7f7f7; /* Light card background */
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 24px;
@@ -239,22 +165,11 @@
 }
 
 /* =========================
-   RESPONSE NOTE
-========================= */
-
-.contact-page .response-note {
-  text-align: center;
-  margin-top: 24px;
-  color: var(--color-text-muted);
-  font-size: 15px;
-}
-
-/* =========================
    FOOTER (DARK SECTION ONLY)
 ========================= */
 
 .footer-section {
-  background: var(--color-surface); /* dark background */
+  background: var(--color-surface); /* Dark footer */
   color: var(--color-text-primary);
   border-top: 1px solid var(--color-border);
   padding-top: var(--space-12);
