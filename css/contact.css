@@ -4,7 +4,8 @@
 
 .contact-page {
   background: #ffffff;  /* Ensure the main page background is white */
-  color: var(--color-text-primary); /* Dark text for readability */
+  color: var(--color-surface); /* Dark text for readability */
+   margin-bottom: 60px;
 }
 
 .contact-hero {
