@@ -1,15 +1,19 @@
 /* =====================================================
    CONTACT PAGE
-   ================================================ */
+===================================================== */
 
 .contact-page {
-  background: #ffffff;  /* Ensure the main page background is white */
-  color: var(--color-surface); /* Dark text for readability */
-   margin-bottom: 60px;
+  background: #ffffff;
+  color: var(--color-surface);
+  margin-bottom: 60px;
 }
 
+/* =====================================================
+   HERO
+===================================================== */
+
 .contact-hero {
-  background: #fafafa; /* Soft off-white for hero section */
+  background: #fafafa;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-2xl);
   padding: 80px 60px;
@@ -20,12 +24,17 @@
 }
 
 .contact-hero-content h1 {
-  color: var(--color-text-primary); /* Dark title */
+  color: var(--color-surface);
 }
 
 .contact-hero-content p {
-  color: var(--color-text-muted); /* Muted, but still visible */
+  color: var(--color-text-faint);
+  max-width: 60ch;
 }
+
+/* =====================================================
+   INFO CARDS
+===================================================== */
 
 .contact-info {
   display: grid;
@@ -35,7 +44,7 @@
 }
 
 .info-card {
-  background: #f7f7f7; /* Light gray card background */
+  background: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 24px;
@@ -43,13 +52,18 @@
 }
 
 .info-card h3 {
-  color: var(--color-text-primary); /* Dark headings */
+  color: var(--color-surface);
   margin-bottom: 8px;
 }
 
 .info-card p {
-  color: var(--color-text-muted); /* Muted text but readable */
+  color: var(--color-text-faint);
+  max-width: none;
 }
+
+/* =====================================================
+   MAIN GRID
+===================================================== */
 
 .contact-grid {
   display: grid;
@@ -57,8 +71,12 @@
   gap: 32px;
 }
 
+/* =====================================================
+   FORM
+===================================================== */
+
 .contact-form-wrapper {
-  background: #f7f7f7; /* Light gray background */
+  background: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 32px;
@@ -66,12 +84,14 @@
 }
 
 .contact-form-wrapper h2 {
-  color: var(--color-text-primary);
+  color: var(--color-surface);
   margin-bottom: 24px;
 }
 
 .contact-page label {
-  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-surface);
   font-size: 16px;
   font-weight: 600;
 }
@@ -83,8 +103,8 @@
   padding: 16px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffffff; /* White input background */
-  color: var(--color-text-primary); /* Dark input text */
+  background: #ffffff;
+  color: var(--color-surface);
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
@@ -95,7 +115,7 @@
 
 .contact-page input::placeholder,
 .contact-page textarea::placeholder {
-  color: var(--color-text-muted);
+  color: #71717a;
   opacity: 1;
 }
 
@@ -112,10 +132,15 @@
   resize: vertical;
 }
 
+/* =====================================================
+   PRIVACY TEXT
+===================================================== */
+
 .contact-page .privacy-text {
-  color: var(--color-text-muted);
+  color: #52525b;
   font-size: 14px;
   margin-top: 4px;
+  max-width: none;
 }
 
 .contact-page .privacy-link {
@@ -131,6 +156,10 @@
   margin-top: 10px;
 }
 
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
 .contact-sidebar {
   display: flex;
   flex-direction: column;
@@ -138,7 +167,7 @@
 }
 
 .contact-card {
-  background: #f7f7f7; /* Light card background */
+  background: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-xl);
   padding: 24px;
@@ -146,15 +175,19 @@
 }
 
 .contact-card h3 {
-  color: var(--color-text-primary);
+  color: var(--color-surface);
   margin-bottom: 16px;
 }
 
 .contact-card p {
-  color: var(--color-text-muted);
+  color: var(--color-text-faint);
   margin-bottom: 12px;
   max-width: none;
 }
+
+/* =====================================================
+   MAP
+===================================================== */
 
 .map-placeholder {
   min-height: 350px;
@@ -162,5 +195,5 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--color-text-faint);
 }
