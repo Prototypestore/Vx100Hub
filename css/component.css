@@ -17,14 +17,6 @@
   margin-bottom:1.5rem;
 }
 
-.logo-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--color-accent);
-  box-shadow:0 0 10px var(--color-accent);
-}
-
 .badge-dot{
   width:8px;
   height:8px;
