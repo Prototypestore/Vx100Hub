@@ -6,6 +6,7 @@
 .hero-badge{
   display:inline-flex;
   align-items:center;
+  width:fit-content;
   gap:0.6rem;
   padding:0.7rem 1rem;
   background:rgba(240,73,255,0.12);
