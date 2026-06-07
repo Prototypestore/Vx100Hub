@@ -93,7 +93,7 @@
   margin-bottom: 8px;
   color: var(--color-surface);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .contact-page input,
@@ -145,7 +145,7 @@
 
 .contact-page .privacy-link {
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .contact-page .privacy-link:hover {
