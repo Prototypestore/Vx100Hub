@@ -1,0 +1,146 @@
+/* ============================================================
+   PORTFOLIO.CSS
+============================================================ */
+
+/* ---------- PAGE WRAPPER ---------- */
+
+.page-card{
+  max-width: var(--max-width);
+  margin: 120px auto 80px;
+  padding-inline: var(--space-6);
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+
+.hero{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+/* ---------- LEFT PANEL ---------- */
+
+.left .card{
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.avatar{
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--space-5);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(240,73,255,0.25),
+      rgba(240,73,255,0.08)
+    );
+  border: 1px solid var(--color-border-hover);
+  box-shadow: var(--shadow-accent);
+}
+
+.name{
+  margin-bottom: var(--space-2);
+}
+
+.role{
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-5);
+}
+
+.social{
+  display: flex;
+  justify-content: center;
+}
+
+.social a{
+  color: var(--color-text-muted);
+  font-weight: 500;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.social a:hover{
+  color: var(--color-accent);
+}
+
+/* ---------- RIGHT CONTENT ---------- */
+
+.right{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.right h1{
+  margin-bottom: var(--space-2);
+}
+
+.intro{
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.buttons{
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ---------- SECONDARY TEXT ---------- */
+
+.secondary{
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ---------- COLLAPSE ---------- */
+
+.collapse{
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+}
+
+.collapse.open{
+  max-height: 300px;
+  opacity: 1;
+  margin-top: var(--space-3);
+}
+
+/* ---------- TOGGLE ---------- */
+
+.arrow-toggle{
+  color: var(--color-accent);
+  margin-left: 8px;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow-toggle.active{
+  transform: rotate(180deg);
+}
+
+/* ---------- SUBTLE GLOW ---------- */
+
+.right::before{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(240,73,255,0.08),
+      transparent 70%
+    );
+  filter: blur(80px);
+  z-index:-1;
+}
