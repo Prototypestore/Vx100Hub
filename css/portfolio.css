@@ -1,151 +1,178 @@
 /* ============================================================
-   PORTFOLIO.CSS
+   PORTFOLIO.CSS — Split Layout (Beatrice-style)
+   VX100 HUB SYSTEM (light UI version)
 ============================================================ */
 
-/* ---------- PAGE WRAP ---------- */
+/* PAGE BACKGROUND (FIXED — NOT BLACK) */
+body {
+  background: #f6f7fb;
+  color: #1a1a1a;
+}
 
-.page-card{
+/* MAIN LAYOUT */
+.page-card {
   max-width: var(--max-width);
-  margin: 120px auto 80px;
-  padding-inline: var(--space-6);
+  margin: 40px auto;
+  padding: var(--space-6);
 }
 
-/* ---------- CORE LAYOUT (OLD STRUCTURE PRESERVED) ---------- */
-
-.hero{
-  display: flex;
-  gap: var(--space-12);
-  align-items: flex-start;
+/* HERO SPLIT */
+.hero {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
-/* ---------- LEFT COLUMN (PROFILE CARD) ---------- */
-
-.left{
-  flex: 0 0 320px;
-}
-
-.left .card{
-  text-align: center;
+/* =========================
+   LEFT PROFILE CARD
+========================= */
+.left .card {
+  background: #ffffff;
   border-radius: var(--radius-xl);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  padding: var(--space-6);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* avatar = OLD rectangle style (NOT circle) */
-
-.avatar{
+/* RECTANGULAR AVATAR (NOT CIRCLE) */
+.avatar {
   width: 100%;
-  height: 180px;
+  height: 220px;
   border-radius: var(--radius-lg);
-  margin-bottom: var(--space-5);
-
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-glow),
-    transparent
-  );
-
-  border: 1px solid var(--color-border-hover);
+  background: linear-gradient(135deg, #f049ff, #ff7a59);
+  margin-bottom: var(--space-4);
 }
 
-/* name */
-
-.name{
+/* NAME */
+.name {
   font-size: var(--text-xl);
-  font-weight: 700;
-  margin-bottom: var(--space-2);
+  font-weight: 800;
+  color: #111;
 }
 
-/* role */
-
-.role{
-  color: var(--color-accent);
-  font-weight: 600;
+/* ROLE */
+.role {
   font-size: var(--text-sm);
-  margin-bottom: var(--space-6);
+  color: #666;
+  margin-bottom: var(--space-4);
 }
 
-/* social */
-
-.social{
+/* SOCIAL LINKS */
+.social {
   display: flex;
-  justify-content: center;
+  gap: 10px;
+  margin-bottom: var(--space-5);
 }
 
-.social a{
-  color: var(--color-text-muted);
-  font-weight: 500;
-  transition: color var(--duration-fast) var(--ease-out);
+.social a {
+  font-size: var(--text-xs);
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid #eee;
+  color: #333;
+  background: #fafafa;
+  transition: 0.2s;
 }
 
-.social a:hover{
+.social a:hover {
+  border-color: var(--color-accent);
   color: var(--color-accent);
 }
 
-/* ---------- RIGHT COLUMN (CONTENT) ---------- */
-
-.right{
-  flex: 1;
+/* =========================
+   RIGHT CONTENT
+========================= */
+.right {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: 20px;
 }
 
-/* TITLE (old hierarchy preserved) */
-
-.right h1{
+.right h1 {
   font-size: var(--text-4xl);
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-2);
+  font-weight: 800;
+  color: #111;
 }
 
-/* intro */
-
-.intro{
-  font-size: var(--text-lg);
-  color: var(--color-text-muted);
-  max-width: 65ch;
+.intro {
+  color: #555;
+  max-width: 60ch;
 }
 
-/* buttons (USES YOUR SYSTEM ONLY) */
-
-.buttons{
+/* BUTTON ROW (USES YOUR BUTTON SYSTEM) */
+.buttons {
   display: flex;
-  gap: var(--space-3);
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-/* secondary text */
-
-.secondary{
-  color: var(--color-text-muted);
-  line-height: 1.8;
+/* SECONDARY TEXT */
+.secondary {
+  color: #666;
+  font-size: var(--text-sm);
+  line-height: 1.6;
 }
 
-/* ---------- COLLAPSE ---------- */
-
-.collapse{
+/* COLLAPSE SYSTEM */
+.collapse {
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
-  transition: all 0.35s var(--ease-out);
+  transition: max-height 0.35s ease;
 }
 
-.collapse.open{
-  max-height: 300px;
-  opacity: 1;
-  margin-top: var(--space-3);
+.collapse.open {
+  max-height: 200px;
 }
 
-/* ---------- TOGGLE ---------- */
-
-.arrow-toggle{
-  margin-left: 8px;
-  color: var(--color-accent);
-  cursor: pointer;
-  transition: transform 0.3s ease;
+/* =========================
+   SERVICES GRID (OLD STYLE STRUCTURE)
+========================= */
+.services {
+  margin-top: 20px;
 }
 
-.arrow-toggle.active{
-  transform: rotate(180deg);
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* SERVICE CARDS */
+.service-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid #eee;
+  transition: 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* ORANGE STYLE ACCENT STRIP (OLD FEEL) */
+.service-card::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--color-accent);
+  margin-bottom: 10px;
+  border-radius: 999px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
