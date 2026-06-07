@@ -1,29 +1,6 @@
 /* ============================================================
-   PORTFOLIO.CSS — Split Layout (Beatrice-style)
-   VX100 HUB SYSTEM (light UI version)
+   PORTFOLIO.CSS
 ============================================================ */
-
-/* PAGE BACKGROUND (FIXED — NOT BLACK) */
-body {
-  background: #f6f7fb;
-  color: #1a1a1a;
-}
-
-/* MAIN LAYOUT */
-.page-card {
-  max-width: var(--max-width);
-  margin: 40px auto;
-  padding: var(--space-6);
-}
-
-/* HERO SPLIT */
-.hero {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
 /* =========================
    LEFT PROFILE CARD
 ========================= */
