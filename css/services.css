@@ -2,7 +2,14 @@
    SERVICES.CSS — Services Section & Cards
    Vx100Hub Design System
    ============================================================ */
- 
+
+.section-header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
 /* ── SERVICES SECTION ── */
 .services-section {
   padding-block: var(--space-24);
