@@ -164,15 +164,3 @@
   text-align: center;
   color: var(--color-text-muted);
 }
-
-/* =========================
-   FOOTER (DARK SECTION ONLY)
-========================= */
-
-.footer-section {
-  background: var(--color-surface); /* Dark footer */
-  color: var(--color-text-primary);
-  border-top: 1px solid var(--color-border);
-  padding-top: var(--space-12);
-  padding-bottom: var(--space-6);
-}
