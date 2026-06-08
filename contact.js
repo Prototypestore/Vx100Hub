@@ -2,6 +2,11 @@ const form = document.getElementById('form');
 const messageDiv = document.getElementById('form-message');
 const submitBtn = form.querySelector('button');
 
+// Initialize EmailJS
+emailjs.init({
+  publicKey: "1gpBID1fbY4JDmxMY"
+});
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -16,18 +21,24 @@ form.addEventListener('submit', (e) => {
     message: form.message.value
   };
 
-  // 1. Send to YOU
-  emailjs.send("service_kavlpaj", "template_2nz3ged", formData)
+  emailjs.send(
+    "service_kavlpaj",
+    "template_2nz3ged",
+    formData
+  )
 
-  // 2. Send auto-reply to CLIENT
   .then(() => {
-    return emailjs.send("service_kavlpaj", "template_0wo2j12", formData);
+    return emailjs.send(
+      "service_kavlpaj",
+      "template_0wo2j12",
+      formData
+    );
   })
 
-  // 3. Success UI
   .then(() => {
     messageDiv.textContent = "Submitted successfully";
     messageDiv.style.color = "#22c55e";
+
     form.reset();
 
     setTimeout(() => {
@@ -35,8 +46,9 @@ form.addEventListener('submit', (e) => {
     }, 4000);
   })
 
-  // 4. Error handling
-  .catch(() => {
+  .catch((error) => {
+    console.error(error);
+
     messageDiv.textContent = "Something went wrong";
     messageDiv.style.color = "red";
 
@@ -45,7 +57,6 @@ form.addEventListener('submit', (e) => {
     }, 4000);
   })
 
-  // 5. Reset button
   .finally(() => {
     submitBtn.disabled = false;
     submitBtn.textContent = "Submit";
