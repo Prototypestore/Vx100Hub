@@ -78,9 +78,10 @@
 
 .section-header h2 {
    color: var(--color-bg);
+    margin-bottom: 10px;
 }
 
-.section-header h2 p{
+.section-header p{
    margin-top: 10px;
 }
  
