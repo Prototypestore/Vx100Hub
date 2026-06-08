@@ -180,9 +180,13 @@
 }
 
 .contact-card p {
-  color: var(--color-text-muted);
+  color: var(--color-text-faint);
   margin-bottom: 12px;
   max-width: none;
+}
+
+.contact-card strong {
+  color: var(--color-surface);
 }
 
 /* =====================================================
