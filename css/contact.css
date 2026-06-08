@@ -5,7 +5,7 @@
 .contact-page {
   background: #ffffff;
   color: var(--color-surface);
-  padding-bottom: 50px;
+  min-height: 100vh;
 }
 
 /* =====================================================
