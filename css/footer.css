@@ -52,6 +52,7 @@
  
 .footer-brand .logo-vx {
   font-size: var(--text-3xl);
+   color: var(--color-text-primary);
 }
  
 .footer-brand p {
