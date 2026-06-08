@@ -206,6 +206,10 @@
    Query
 ===================================================== */
 @media (max-width: 1024px) {
+   main {
+  padding-top: var(--header-height);
+   }
+   
   .contact-hero {
     padding: var(--space-16) var(--space-8);
     margin-bottom: var(--space-10);
@@ -223,7 +227,10 @@
 }
 
 @media (max-width: 768px) {
-
+   main {
+  padding-top: var(--header-height);
+   }
+   
   .contact-page {
     margin-bottom: var(--space-10);
   }
@@ -256,7 +263,10 @@
 }
 
 @media (max-width: 480px) {
-
+   main {
+  padding-top: var(--header-height);
+   }
+   
   .contact-hero {
     padding: var(--space-10) var(--space-4);
   }
