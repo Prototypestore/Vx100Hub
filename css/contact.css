@@ -5,7 +5,8 @@
 .contact-page {
   background: #ffffff;
   color: var(--color-surface);
-  min-height: 100vh;
+  margin-bottom: 0;
+  padding-bottom: 60px;
 }
 
 /* =====================================================
@@ -69,7 +70,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 32px;
-}
+  margin-bottom: 40px;
 
 /* =====================================================
    FORM
