@@ -26,6 +26,8 @@ header{
 }
 
 .logo{
+  display: inline-flex;
+  gap: 6px;
   font-weight:700;
   font-size:20px;
   letter-spacing:2px;
