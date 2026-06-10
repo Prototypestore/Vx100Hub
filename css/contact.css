@@ -190,16 +190,35 @@
 }
 
 /* =====================================================
-   MAP
+   FAQ
 ===================================================== */
 
-.map-placeholder {
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--color-text-faint);
+.faq-card{
+  display:flex;
+  flex-direction:column;
+  gap:1.25rem;
+}
+
+.faq-item{
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--color-border);
+}
+
+.faq-item:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+
+.faq-item strong{
+  display:block;
+  margin-bottom:0.5rem;
+  color:var(--color-text-primary);
+}
+
+.faq-item p{
+  margin:0;
+  color:var(--color-text-secondary);
+  line-height:1.6;
 }
 
 /* =====================================================
