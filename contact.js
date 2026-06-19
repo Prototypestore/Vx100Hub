@@ -13,12 +13,27 @@ form.addEventListener('submit', (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = "Sending...";
 
+  // ✅ TURNSTILE TOKEN CHECK (NEW)
+  const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+
+  if (!token) {
+    messageDiv.textContent = "Please complete the CAPTCHA";
+    messageDiv.style.color = "red";
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
+    return;
+  }
+
   const formData = {
     name: form.name.value,
     email: form.email.value,
     phone: form.phone.value,
     service: form.service.value,
-    message: form.message.value
+    message: form.message.value,
+
+    // ✅ send token forward (needed for backend step later)
+    turnstileToken: token
   };
 
   emailjs.send(
