@@ -32,13 +32,25 @@ export default async function handler(req, res) {
   // 🔐 STEP 2: SEND EMAIL (EmailJS server-side trigger placeholder)
   // IMPORTANT: We will plug EmailJS here next step
 
-  console.log("Form verified:", {
-    name,
-    email,
-    phone,
-    service,
-    message
-  });
+  const emailjsResponse = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    service_id: "service_kavlpaj",
+    template_id: "template_2nz3ged",
+    user_id: process.env.EMAILJS_PUBLIC_KEY,
+    template_params: {
+      name,
+      email,
+      phone,
+      service,
+      message
+    }
+  })
+});
 
-  return res.status(200).json({ success: true });
+if (!emailjsResponse.ok) {
+  return res.status(500).json({ error: "Email failed to send" });
 }
