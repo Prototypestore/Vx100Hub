@@ -9,8 +9,8 @@ form.addEventListener('submit', async (e) => {
   submitBtn.textContent = "Sending...";
 
   try {
-    // ✅ Get Turnstile token (correct method)
-    const token = turnstile.getResponse();
+    // ✅ safer token method
+    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
     if (!token) {
       messageDiv.textContent = "Please complete the CAPTCHA";
@@ -21,7 +21,6 @@ form.addEventListener('submit', async (e) => {
       return;
     }
 
-    // ✅ Collect form data
     const formData = {
       name: form.name.value,
       email: form.email.value,
@@ -31,12 +30,9 @@ form.addEventListener('submit', async (e) => {
       turnstileToken: token
     };
 
-    // ✅ SEND EVERYTHING TO VERCEL (backend controls EmailJS now)
     const res = await fetch("/api/contact", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
     });
 
@@ -50,7 +46,11 @@ form.addEventListener('submit', async (e) => {
     messageDiv.style.color = "#22c55e";
 
     form.reset();
-    turnstile.reset(); // resets CAPTCHA
+
+    // optional safe reset
+    if (window.turnstile) {
+      turnstile.reset();
+    }
 
     setTimeout(() => {
       messageDiv.textContent = "";
