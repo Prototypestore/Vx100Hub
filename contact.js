@@ -2,66 +2,61 @@ const form = document.getElementById('form');
 const messageDiv = document.getElementById('form-message');
 const submitBtn = form.querySelector('button');
 
-// Initialize EmailJS
-emailjs.init({
-  publicKey: "1gpBID1fbY4JDmxMY"
-});
-
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   submitBtn.disabled = true;
   submitBtn.textContent = "Sending...";
 
-  // ✅ TURNSTILE TOKEN CHECK (NEW)
-  const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+  try {
+    // ✅ Get Turnstile token (correct method)
+    const token = turnstile.getResponse();
 
-  if (!token) {
-    messageDiv.textContent = "Please complete the CAPTCHA";
-    messageDiv.style.color = "red";
+    if (!token) {
+      messageDiv.textContent = "Please complete the CAPTCHA";
+      messageDiv.style.color = "red";
 
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Submit";
-    return;
-  }
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+      return;
+    }
 
-  const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    service: form.service.value,
-    message: form.message.value,
+    // ✅ Collect form data
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      service: form.service.value,
+      message: form.message.value,
+      turnstileToken: token
+    };
 
-    // ✅ send token forward (needed for backend step later)
-    turnstileToken: token
-  };
+    // ✅ SEND EVERYTHING TO VERCEL (backend controls EmailJS now)
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
 
-  emailjs.send(
-    "service_kavlpaj",
-    "template_2nz3ged",
-    formData
-  )
+    const data = await res.json();
 
-  .then(() => {
-    return emailjs.send(
-      "service_kavlpaj",
-      "template_0wo2j12",
-      formData
-    );
-  })
+    if (!res.ok) {
+      throw new Error(data.error || "Request failed");
+    }
 
-  .then(() => {
     messageDiv.textContent = "Submitted successfully";
     messageDiv.style.color = "#22c55e";
 
     form.reset();
+    turnstile.reset(); // resets CAPTCHA
 
     setTimeout(() => {
       messageDiv.textContent = "";
     }, 4000);
-  })
 
-  .catch((error) => {
+  } catch (error) {
     console.error(error);
 
     messageDiv.textContent = "Something went wrong";
@@ -70,10 +65,9 @@ form.addEventListener('submit', (e) => {
     setTimeout(() => {
       messageDiv.textContent = "";
     }, 4000);
-  })
 
-  .finally(() => {
+  } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = "Submit";
-  });
+  }
 });
