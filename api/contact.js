@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     }
 
     // 🔐 CHECK ENV VARS FIRST (THIS IS THE REAL FAILURE POINT)
-    if (!process.env.TURNSTILE_SECRET_KEY || !process.env.RESEND_API_KEY) {
+    if (!process.env.if (!process.env.SecretTurnstile || !process.env.resendkey) {
       return res.status(500).json({
         error: "Server misconfigured (missing environment variables)"
       });
