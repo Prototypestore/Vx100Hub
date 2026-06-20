@@ -36,7 +36,15 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify(formData)
     });
 
-    const data = await res.json();
+    const text = await res.text();
+
+let data;
+try {
+  data = JSON.parse(text);
+} catch (e) {
+  console.error("Non-JSON response from server:", text);
+  throw new Error("Server returned invalid response");
+}
 
     if (!res.ok) {
       throw new Error(data.error || "Request failed");
