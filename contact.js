@@ -44,8 +44,8 @@ form.addEventListener('submit', async (e) => {
     }
 
     if (!res.ok) {
-      const reason = data.details?.["error-codes"]?.join(", ")
-                  || JSON.stringify(data.details)
+      const reason = (data.details?.["error-codes"]?.join(", "))
+                  || (typeof data.details === "string" ? data.details : JSON.stringify(data.details))
                   || data.error
                   || "Request failed";
       throw new Error(reason);
