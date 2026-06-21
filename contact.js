@@ -25,9 +25,6 @@ form.addEventListener('submit', async (e) => {
       turnstileToken: token
     };
 
-    console.log("TOKEN:", token);
-    console.log("TOKEN LENGTH:", token?.length);
-
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -44,11 +41,9 @@ form.addEventListener('submit', async (e) => {
     }
 
     if (!res.ok) {
-      const reason = (data.details?.["error-codes"]?.join(", "))
-                  || (typeof data.details === "string" ? data.details : JSON.stringify(data.details))
-                  || data.error
-                  || "Request failed";
-      throw new Error(reason);
+      // Full details logged for you, the developer, only.
+      console.error("Form submission failed:", data);
+      throw new Error("Request failed");
     }
 
     messageDiv.textContent = "Submitted successfully";
@@ -61,9 +56,9 @@ form.addEventListener('submit', async (e) => {
 
   } catch (error) {
     console.error(error);
-    messageDiv.textContent = "Error: " + error.message;
+    messageDiv.textContent = "Something went wrong. Please try again later.";
     messageDiv.style.color = "red";
-    setTimeout(() => { messageDiv.textContent = ""; }, 6000);
+    setTimeout(() => { messageDiv.textContent = ""; }, 4000);
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = "Submit";
