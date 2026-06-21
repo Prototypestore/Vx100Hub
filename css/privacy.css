@@ -53,8 +53,7 @@
   font-size: var(--text-sm);
   padding: 6px 10px;
   border-radius: var(--radius-sm);
-  background: var(--color-surface);
-  color: #111113; /* FIX readability */
+  color: #111113;
   border: 1px solid var(--color-border);
 }
 
@@ -120,10 +119,10 @@
 
   .privacy-sidebar{
   display:flex;
-  flex-direction:column;
+  flex-direction :column;
   gap:8px;
-  justify-content:flex-start;
-  align-items:flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
   .privacy-sidebar a{
