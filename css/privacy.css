@@ -4,11 +4,10 @@
    ========================= */
 
 #privacy{
-  background: #ffffff;
   padding: 60px 20px;
 
-  /* ✅ makes all text readable */
-  color: #111113;
+  /* FIX: white background only */
+  background: #ffffff;
 }
 
 /* HERO */
@@ -22,15 +21,14 @@
 }
 
 .privacy-hero p{
-  color: #111113;
+  color: #222222; /* FIX readability on white */
   margin-bottom: 8px;
-  opacity: 0.75;
 }
 
 .last-updated{
   font-size: var(--text-sm);
-  color: #111113;
-  opacity: 0.6;
+  color: #222222; /* FIX readability */
+  opacity: 0.8;
 }
 
 /* LAYOUT */
@@ -55,8 +53,11 @@
   font-size: var(--text-sm);
   padding: 6px 10px;
   border-radius: var(--radius-sm);
+
+  /* FIX readability */
   background: var(--color-surface);
-  color: #111113;
+  color: #222222;
+
   border: 1px solid var(--color-border);
   transition:
     color var(--duration-fast) var(--ease-out),
@@ -79,9 +80,9 @@
 .privacy-content h2{
   margin-bottom: 10px;
   position: relative;
-  color: #111113;
 }
 
+/* KEEP ORIGINAL ACCENT LINE */
 .privacy-content h2::after{
   content: "";
   display: block;
@@ -91,8 +92,9 @@
   margin-top: 6px;
 }
 
+/* FIX: readable body text only */
 .privacy-content p{
-  color: #111113;
+  color: #222222;
   max-width: none;
 }
 
@@ -103,7 +105,7 @@
 }
 
 .privacy-content li{
-  color: #111113;
+  color: #222222;
   margin-bottom: 6px;
 }
 
@@ -146,7 +148,7 @@
     border: none;
     padding: 4px 0;
     font-size: var(--text-sm);
-    color: #333;
+    color: #222222; /* FIX readability */
   }
 
   .privacy-sidebar a:hover{
