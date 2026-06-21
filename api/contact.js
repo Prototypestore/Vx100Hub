@@ -58,7 +58,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: "Vx100Hub <onboarding@resend.dev>",
-          to: ["vx100Hub@outlook.com"],
+          to: ["dikeledireeks@outlook.com"],
           subject: `New Contact Form: ${service || "No service selected"}`,
           html: `
             <h2>New Contact Form Submission</h2>
