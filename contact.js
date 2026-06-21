@@ -30,6 +30,9 @@ form.addEventListener('submit', async (e) => {
       turnstileToken: token
     };
 
+    console.log("TOKEN:", token);
+console.log("TOKEN LENGTH:", token?.length);
+    
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
