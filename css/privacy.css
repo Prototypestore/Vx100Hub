@@ -15,11 +15,13 @@
 
 .privacy-hero h1{
   margin-bottom: 10px;
+  color: #111113;
 }
 
 .privacy-hero p{
   color: #111113;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .last-updated{
