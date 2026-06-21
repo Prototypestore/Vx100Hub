@@ -1,16 +1,13 @@
-
 /* =========================
    PRIVACY PAGE
    ========================= */
 
 #privacy{
   padding: 60px 20px;
-
-  /* FIX: white background only */
   background: #ffffff;
+  color: #111113;
 }
 
-/* HERO */
 .privacy-hero{
   text-align: center;
   margin-bottom: 50px;
@@ -21,17 +18,16 @@
 }
 
 .privacy-hero p{
-  color: #222222; /* FIX readability on white */
+  color: #111113;
   margin-bottom: 8px;
 }
 
 .last-updated{
   font-size: var(--text-sm);
-  color: #222222; /* FIX readability */
-  opacity: 0.8;
+  color: #111113;
+  opacity: 0.7;
 }
 
-/* LAYOUT */
 .privacy-container{
   display: flex;
   flex-direction: column;
@@ -40,7 +36,6 @@
   margin: 0 auto;
 }
 
-/* SIDEBAR (MOBILE = TOP LINKS) */
 .privacy-sidebar{
   display: flex;
   flex-wrap: wrap;
@@ -53,24 +48,11 @@
   font-size: var(--text-sm);
   padding: 6px 10px;
   border-radius: var(--radius-sm);
-
-  /* FIX readability */
   background: var(--color-surface);
-  color: #222222;
-
+  color: #111113; /* FIX readability */
   border: 1px solid var(--color-border);
-  transition:
-    color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out),
-    background var(--duration-fast) var(--ease-out);
 }
 
-.privacy-sidebar a:hover{
-  color: var(--color-accent);
-  border-color: var(--color-border-hover);
-}
-
-/* CONTENT */
 .privacy-content{
   display: flex;
   flex-direction: column;
@@ -78,11 +60,12 @@
 }
 
 .privacy-content h2{
+  font-size: var(--text-2xl);
   margin-bottom: 10px;
   position: relative;
+  color: #111113;
 }
 
-/* KEEP ORIGINAL ACCENT LINE */
 .privacy-content h2::after{
   content: "";
   display: block;
@@ -92,31 +75,26 @@
   margin-top: 6px;
 }
 
-/* FIX: readable body text only */
 .privacy-content p{
-  color: #222222;
+  color: #111113;
   max-width: none;
 }
 
-/* Restore bullets because base.css removes them */
+.privacy-content li{
+  color: #111113;
+}
+
 .privacy-content ul{
   list-style: disc;
   padding-left: 1.5rem;
 }
 
-.privacy-content li{
-  color: #222222;
-  margin-bottom: 6px;
-}
-
-/* CONTACT */
 #contact{
   margin-top: 10px;
 }
 
 #contact a{
   color: var(--color-accent);
-  text-decoration: none;
 }
 
 #contact a:hover{
@@ -124,7 +102,7 @@
 }
 
 /* =========================
-   DESKTOP (SHOPIFY STYLE)
+   DESKTOP (UNCHANGED)
    ========================= */
 
 @media (min-width: 1024px){
@@ -147,8 +125,7 @@
     background: none;
     border: none;
     padding: 4px 0;
-    font-size: var(--text-sm);
-    color: #222222; /* FIX readability */
+    color: #444;
   }
 
   .privacy-sidebar a:hover{
