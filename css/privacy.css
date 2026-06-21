@@ -119,18 +119,19 @@
   }
 
   .privacy-sidebar{
-    flex-direction: column;
-    align-items: flex-start;
-    position: sticky;
-    top: 120px;
-    min-width: 220px;
-  }
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
 
   .privacy-sidebar a{
     background: none;
     border: none;
     padding: 4px 0;
     color: #444;
+    width: 100%;
   }
 
   .privacy-sidebar a:hover{
