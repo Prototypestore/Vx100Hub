@@ -1,149 +1,163 @@
+
 /* =========================
-PRIVACY PAGE
-========================= */
+   PRIVACY PAGE
+   ========================= */
 
 #privacy{
-  padding:60px 20px;
+  background: #ffffff;
+  padding: 60px 20px;
+
+  /* ✅ makes all text readable */
+  color: #111113;
 }
 
 /* HERO */
 .privacy-hero{
-  text-align:center;
-  margin-bottom:50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .privacy-hero h1{
-  font-size:32px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .privacy-hero p{
-  color:#666;
-  margin-bottom:8px;
+  color: #111113;
+  margin-bottom: 8px;
+  opacity: 0.75;
 }
 
 .last-updated{
-  font-size:13px;
-  color:#999;
+  font-size: var(--text-sm);
+  color: #111113;
+  opacity: 0.6;
 }
 
 /* LAYOUT */
 .privacy-container{
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-  max-width:1000px;
-  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* SIDEBAR (MOBILE = TOP LINKS) */
 .privacy-sidebar{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .privacy-sidebar a{
-  text-decoration:none;
-  font-size:13px;
-  padding:6px 10px;
-  border-radius:4px;
-  background:#f5f5f5;
-  color:#333;
-  transition:0.2s;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: #111113;
+  border: 1px solid var(--color-border);
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
 }
 
 .privacy-sidebar a:hover{
-  color:#f049ff;
+  color: var(--color-accent);
+  border-color: var(--color-border-hover);
 }
 
 /* CONTENT */
 .privacy-content{
-  display:flex;
-  flex-direction:column;
-  gap:40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .privacy-content h2{
-  font-size:20px;
-  margin-bottom:10px;
-  position:relative;
+  margin-bottom: 10px;
+  position: relative;
+  color: #111113;
 }
 
 .privacy-content h2::after{
-  content:"";
-  display:block;
-  width:30px;
-  height:2px;
-  background:#f049ff;
-  margin-top:6px;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-top: 6px;
 }
 
 .privacy-content p{
-  color:#444;
-  font-size:14px;
+  color: #111113;
+  max-width: none;
 }
 
+/* Restore bullets because base.css removes them */
 .privacy-content ul{
-  padding-left:18px;
+  list-style: disc;
+  padding-left: 1.5rem;
 }
 
 .privacy-content li{
-  font-size:14px;
-  color:#555;
-  margin-bottom:6px;
+  color: #111113;
+  margin-bottom: 6px;
 }
 
+/* CONTACT */
 #contact{
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 #contact a{
-  color:#f049ff;
-  text-decoration:none;
+  color: var(--color-accent);
+  text-decoration: none;
 }
 
 #contact a:hover{
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 /* =========================
-DESKTOP (SHOPIFY STYLE)
-========================= */
+   DESKTOP (SHOPIFY STYLE)
+   ========================= */
 
-@media (min-width:1024px){
+@media (min-width: 1024px){
 
   .privacy-container{
-    flex-direction:row;
-    align-items:flex-start;
-    gap:60px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
   }
 
   .privacy-sidebar{
-    flex-direction:column;
-    align-items:flex-start;
-    position:sticky;
-    top:120px;
-    min-width:220px;
+    flex-direction: column;
+    align-items: flex-start;
+    position: sticky;
+    top: 120px;
+    min-width: 220px;
   }
 
   .privacy-sidebar a{
-    background:none;
-    padding:4px 0;
-    font-size:14px;
-    color:#666;
+    background: none;
+    border: none;
+    padding: 4px 0;
+    font-size: var(--text-sm);
+    color: #333;
   }
 
   .privacy-sidebar a:hover{
-  background:#f049ff;
-  color:#fff;
-  padding:4px 8px;
-  border-radius:4px;
-}
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+  }
 
   .privacy-content{
-    flex:1;
-    max-width:700px;
+    flex: 1;
+    max-width: 700px;
   }
 }
